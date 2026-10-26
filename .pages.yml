@@ -21,20 +21,13 @@ content:
     format: json
     fields:
       - {name: name, label: Name, type: string}
-      - {name: kicker, label: Small header, type: string}
+      - {name: professional_title, label: Professional title, type: string}
       - {name: location, label: Location, type: string}
-      - {name: hero_line_1, label: Hero heading first line, type: string}
-      - {name: hero_line_2, label: Hero heading second line, type: string}
       - {name: introduction, label: Intro paragraph, type: text}
       - name: focus
-        label: Three research tags in hero
+        label: Fields of expertise in introduction
         type: string
         list: true
-      - name: hero_image
-        label: Homepage photograph / visualisation
-        type: image
-        options:
-          media: images
       - name: resume_url
         label: Upload / replace public CV (PDF)
         type: file
@@ -43,17 +36,8 @@ content:
           extensions: [pdf]
       - {name: show_cv, label: Show CV download link on site, type: boolean}
       - {name: email, label: Public contact email, type: string}
-      - name: theme
-        label: Colour scheme
-        type: select
-        options:
-          values: [ivory, monochrome, slate]
-      - name: density
-        label: Spacing
-        type: select
-        options:
-          values: [comfortable, compact]
-      - {name: enable_motion, label: Enable subtle hover effects, type: boolean}
+      - {name: research_statement, label: Research introduction, type: text}
+      - {name: research_note, label: Research explanatory note, type: text}
       - name: research_areas
         label: Research focus cards
         type: object
