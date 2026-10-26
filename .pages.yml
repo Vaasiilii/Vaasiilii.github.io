@@ -156,6 +156,7 @@ content:
           - {name: caption, type: string}
       - {name: featured, label: Featured (reserved for later), type: boolean}
       - {name: visible, label: Show on public site, type: boolean}
+      - {name: show_media, label: Show images and PDF documents on site, type: boolean}
 
   - name: education
     label: 04 · Education
