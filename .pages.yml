@@ -41,6 +41,7 @@ content:
         options:
           media: docs
           extensions: [pdf]
+      - {name: show_cv, label: Show CV download link on site, type: boolean}
       - {name: email, label: Public contact email, type: string}
       - name: theme
         label: Colour scheme
