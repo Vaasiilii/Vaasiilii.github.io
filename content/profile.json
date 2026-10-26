@@ -70,5 +70,6 @@
   "show_cv": false,
   "professional_title": "Civil & Structural Engineer",
   "research_statement": "Bridge infrastructure as a long-term engineering system: from structural assessment to informed decisions on maintenance and rehabilitation.",
-  "research_note": "Research interests include lifecycle-management methodology, digital twins for civil infrastructure, structural condition assessment and risk-informed maintenance planning."
+  "research_note": "Research interests include lifecycle-management methodology, digital twins for civil infrastructure, structural condition assessment and risk-informed maintenance planning.",
+  "showcase_autoplay": true
 }
