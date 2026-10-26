@@ -1,0 +1,196 @@
+# Pages CMS (https://app.pagescms.org/) reads this file from the repository root.
+# No subscription or custom backend required. Entries update JSON files directly.
+media:
+  - name: images
+    label: Site images
+    input: media/images
+    output: /media/images
+    extensions: [jpg, jpeg, png, webp, svg]
+    rename: safe
+  - name: docs
+    label: Public documents (review before uploading)
+    input: media/docs
+    output: /media/docs
+    extensions: [pdf]
+    rename: safe
+content:
+  - name: profile
+    label: 01 · Profile & design
+    type: file
+    path: content/profile.json
+    format: json
+    fields:
+      - {name: name, label: Name, type: string}
+      - {name: kicker, label: Small header, type: string}
+      - {name: location, label: Location, type: string}
+      - {name: hero_line_1, label: Hero heading first line, type: string}
+      - {name: hero_line_2, label: Hero heading second line, type: string}
+      - {name: introduction, label: Intro paragraph, type: text}
+      - name: focus
+        label: Three research tags in hero
+        type: string
+        list: true
+      - name: hero_image
+        label: Homepage photograph / visualisation
+        type: image
+        options:
+          media: images
+      - name: resume_url
+        label: Upload / replace public CV (PDF)
+        type: file
+        options:
+          media: docs
+          extensions: [pdf]
+      - {name: email, label: Public contact email, type: string}
+      - name: theme
+        label: Colour scheme
+        type: select
+        options:
+          values: [ivory, monochrome, slate]
+      - name: density
+        label: Spacing
+        type: select
+        options:
+          values: [comfortable, compact]
+      - {name: enable_motion, label: Enable subtle hover effects, type: boolean}
+      - name: research_areas
+        label: Research focus cards
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - {name: title, label: Title, type: string}
+          - {name: description, label: Description, type: text}
+      - {name: about, label: About paragraph, type: text}
+      - name: links
+        label: Public profiles
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - {name: label, type: string}
+          - {name: url, type: string}
+      - name: skills
+        label: Skills groups
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{group}"
+        fields:
+          - {name: group, label: Heading, type: string}
+          - {name: items, label: Skills text, type: text}
+
+  - name: publications
+    label: 02 · Publications
+    type: file
+    path: content/publications.json
+    format: json
+    list: true
+    fields:
+      - {name: title, label: English title (translated where necessary), type: string, required: true}
+      - {name: authors, label: Authors, type: string}
+      - {name: venue, label: Journal / conference and pages, type: string}
+      - {name: year, label: Year, type: string}
+      - {name: type, label: Kind, type: select, options: {values: [Journal, Conference, Preprint]}}
+      - {name: status, label: Publication status (verify), type: string}
+      - {name: description, label: Note / translation note, type: text}
+      - {name: url, label: DOI / official PDF / publication link, type: string}
+      - {name: visible, label: Show on public site, type: boolean}
+
+  - name: projects
+    label: 03 · Projects
+    type: file
+    path: content/projects.json
+    format: json
+    list: true
+    fields:
+      - {name: slug, label: Unique URL slug (a-z, 0-9 and -), type: string, required: true, pattern: '^[a-z0-9]+(?:-[a-z0-9]+)*$'}
+      - {name: title, label: Project title, type: string, required: true}
+      - {name: kind, label: Category, type: select, options: {values: [Academic, Professional]}}
+      - {name: discipline, label: Engineering discipline, type: string}
+      - {name: year, label: Year, type: string}
+      - {name: summary, label: Short project summary, type: text}
+      - {name: role, label: Your own contribution, type: string}
+      - {name: methods, label: Methods / software, type: string}
+      - {name: challenge, label: Context & challenge, type: text}
+      - {name: approach, label: Approach & methods, type: text}
+      - {name: outcome, label: Outcomes (only verifiable facts), type: text}
+      - name: cover_image
+        label: Cover image (upload via CMS)
+        type: image
+        options:
+          media: images
+      - {name: image_alt, label: Accessible image description, type: string}
+      - name: documents
+        label: Public documents (only if permitted)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - {name: label, label: Button label, type: string}
+          - name: url
+            label: Upload / choose PDF directly (or paste URL)
+            type: file
+            options:
+              media: docs
+              extensions: [pdf]
+      - name: gallery
+        label: Image gallery
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{caption}"
+        fields:
+          - name: url
+            type: image
+            options:
+              media: images
+          - {name: caption, type: string}
+      - {name: featured, label: Featured (reserved for later), type: boolean}
+      - {name: visible, label: Show on public site, type: boolean}
+
+  - name: education
+    label: 04 · Education
+    type: file
+    path: content/education.json
+    format: json
+    list: true
+    fields:
+      - {name: period, label: Period, type: string}
+      - {name: qualification, label: Qualification, type: string}
+      - {name: institution, label: University / institution, type: string}
+      - {name: details, label: Details, type: text}
+      - {name: marker, label: Badge (optional), type: string}
+      - {name: url, label: Public document URL (optional), type: string}
+      - {name: visible, label: Show on public site, type: boolean}
+
+  - name: sections
+    label: 05 · Additional sections
+    type: file
+    path: content/sections.json
+    format: json
+    list: true
+    fields:
+      - {name: anchor, label: Unique anchor (no spaces), type: string}
+      - {name: title, label: Heading, type: string}
+      - {name: subtitle, label: Intro line, type: text}
+      - {name: body, label: Content (plain text), type: text}
+      - name: links
+        label: Links / buttons
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - {name: label, type: string}
+          - {name: url, type: string}
+      - {name: visible, label: Show on public site, type: boolean}
