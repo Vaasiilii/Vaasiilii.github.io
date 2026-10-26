@@ -54,7 +54,8 @@
       }
     ],
     "featured": true,
-    "visible": true
+    "visible": true,
+    "show_media": false
   },
   {
     "slug": "steel-bridge-orthotropic-deck",
@@ -99,7 +100,8 @@
       }
     ],
     "featured": false,
-    "visible": true
+    "visible": true,
+    "show_media": false
   },
   {
     "slug": "excavation-plaxis-geotechnical-model",
@@ -148,7 +150,8 @@
       }
     ],
     "featured": false,
-    "visible": true
+    "visible": true,
+    "show_media": false
   },
   {
     "slug": "urban-shallow-tunnel",
@@ -189,7 +192,8 @@
       }
     ],
     "featured": false,
-    "visible": true
+    "visible": true,
+    "show_media": false
   },
   {
     "slug": "long-span-reinforced-concrete-bridge",
@@ -230,7 +234,8 @@
       }
     ],
     "featured": false,
-    "visible": true
+    "visible": true,
+    "show_media": false
   },
   {
     "slug": "timber-chapel-structural-design",
@@ -287,7 +292,8 @@
       }
     ],
     "featured": true,
-    "visible": true
+    "visible": true,
+    "show_media": false
   },
   {
     "slug": "petergof-industrial-steelwork",
@@ -348,7 +354,8 @@
       }
     ],
     "featured": true,
-    "visible": true
+    "visible": true,
+    "show_media": false
   },
   {
     "slug": "industrial-equipment-support-jacobs",
@@ -421,7 +428,8 @@
       }
     ],
     "featured": true,
-    "visible": true
+    "visible": true,
+    "show_media": false
   },
   {
     "slug": "existing-floor-verification-jacobs",
@@ -462,6 +470,7 @@
       }
     ],
     "featured": false,
-    "visible": true
+    "visible": true,
+    "show_media": false
   }
 ]
