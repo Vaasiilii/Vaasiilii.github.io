@@ -66,5 +66,6 @@
       "items": "Russian (native), English (B2 self-assessment), German (A2)"
     }
   ],
-  "hero_image": "media/images/alarchin-visual-3.webp"
+  "hero_image": "media/images/alarchin-visual-3.webp",
+  "show_cv": false
 }
