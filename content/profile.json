@@ -1,0 +1,70 @@
+{
+  "name": "Vasilii Andreev",
+  "kicker": "ACADEMIC & ENGINEERING PORTFOLIO",
+  "location": "Saint Petersburg, Russia",
+  "hero_line_1": "Engineering",
+  "hero_line_2": "in context.",
+  "introduction": "Civil & structural engineering, existing bridges, and data-informed decisions over their service life. Selected research, structural design, inspections and technical investigations.",
+  "focus": [
+    "Bridge Engineering",
+    "Structural Assessment",
+    "Lifecycle Research"
+  ],
+  "resume_url": "media/docs/Vasilii_Andreev_Academic_CV_Public.pdf",
+  "email": "vasiliiandrv@gmail.com",
+  "theme": "ivory",
+  "density": "comfortable",
+  "enable_motion": true,
+  "research_areas": [
+    {
+      "title": "Bridge lifecycle management",
+      "description": "Condition-informed inspection, maintenance and rehabilitation planning for existing bridges."
+    },
+    {
+      "title": "Digital twins for infrastructure",
+      "description": "Connecting engineering models, inspection information and evolving asset records throughout service life."
+    },
+    {
+      "title": "Structural assessment",
+      "description": "Linking structural analysis and observed condition to practical decisions about continued service and interventions."
+    }
+  ],
+  "about": "I hold a six-year honours Specialist degree in Civil and Structural Engineering (Bridge and Tunnel Construction, 360 ECTS, ISCED 7) from SPbGASU. My professional experience since 2022 includes structural design, inspection and assessment of existing civil and industrial structures. I investigate lifecycle management of bridge infrastructure and the integration of structural assessments with digital methods for practical maintenance decisions.",
+  "links": [
+    {
+      "label": "Google Scholar",
+      "url": "https://scholar.google.com/citations?user=Lcn4pJkAAAAJ"
+    },
+    {
+      "label": "ORCID",
+      "url": "https://orcid.org/0009-0003-0270-9355"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/vasilii-andreev-4634642a8/"
+    },
+    {
+      "label": "ResearchGate",
+      "url": "https://www.researchgate.net/profile/Vasilii-Andreev"
+    }
+  ],
+  "skills": [
+    {
+      "group": "Structural analysis",
+      "items": "SOFiSTiK, SCAD Office, LIRA-SAPR; introductory PLAXIS 2D"
+    },
+    {
+      "group": "BIM & technical documentation",
+      "items": "AutoCAD, Revit, Tekla Structures"
+    },
+    {
+      "group": "Field assessment",
+      "items": "Visual and instrumental surveys, defect mapping, condition assessment and verification calculations"
+    },
+    {
+      "group": "Languages",
+      "items": "Russian (native), English (B2 self-assessment), German (A2)"
+    }
+  ],
+  "hero_image": "media/images/alarchin-visual-3.webp"
+}

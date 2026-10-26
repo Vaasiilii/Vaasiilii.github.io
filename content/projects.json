@@ -1,0 +1,467 @@
+[
+  {
+    "slug": "alarchin-bridge-rehabilitation",
+    "title": "Alarchin Bridge / Rehabilitation",
+    "kind": "Academic",
+    "discipline": "Historic bridge rehabilitation",
+    "year": "2026",
+    "summary": "Major rehabilitation design for a protected bridge crossing the Griboyedov Canal in Saint Petersburg.",
+    "role": "Independent graduate qualification project",
+    "methods": "Finite-element analysis · rehabilitation design · steel / concrete · drawings",
+    "challenge": "Develop a rehabilitation scheme for an existing heritage bridge while addressing structural performance, site constraints and conservation requirements.",
+    "approach": "Developed structural models, examined the existing bridge configuration and designed rehabilitation interventions. Prepared calculation and drawing documentation.",
+    "outcome": "Graduate qualification work defended with Excellent (A). The bridge also serves as a case study in lifecycle-management research.",
+    "cover_image": "media/images/alarchin-visual-3.webp",
+    "image_alt": "Original project visual for Alarchin Bridge / Rehabilitation",
+    "gallery": [
+      {
+        "url": "media/images/alarchin-visual-1.webp",
+        "caption": "Proposed rehabilitation — architectural visualisation"
+      },
+      {
+        "url": "media/images/alarchin-visual-2.webp",
+        "caption": "Proposed rehabilitation — architectural visualisation"
+      },
+      {
+        "url": "media/images/alarchin-visual-3.webp",
+        "caption": "Proposed rehabilitation — architectural visualisation"
+      },
+      {
+        "url": "media/images/alarchin-visual-4.webp",
+        "caption": "Proposed rehabilitation — architectural visualisation"
+      },
+      {
+        "url": "media/images/alarchin-sheet-1.webp",
+        "caption": "Extract from original bridge drawing set"
+      },
+      {
+        "url": "media/images/alarchin-sheet-2.webp",
+        "caption": "Extract from original bridge drawing set"
+      },
+      {
+        "url": "media/images/alarchin-sheet-4.webp",
+        "caption": "Extract from original bridge drawing set"
+      }
+    ],
+    "documents": [
+      {
+        "label": "Bridge drawing set (8 sheets)",
+        "url": "media/docs/alarchin-bridge-engineering-drawings.pdf"
+      },
+      {
+        "label": "Project visualisations (PDF)",
+        "url": "media/docs/alarchin-bridge-visualisations.pdf"
+      }
+    ],
+    "featured": true,
+    "visible": true
+  },
+  {
+    "slug": "steel-bridge-orthotropic-deck",
+    "title": "Steel Bridge / Orthotropic Deck",
+    "kind": "Academic",
+    "discipline": "Steel bridge engineering",
+    "year": "2025",
+    "summary": "Structural analysis and design coursework for a steel bridge and orthotropic deck system.",
+    "role": "Individual academic design and analysis",
+    "methods": "Structural analysis · bridge steelwork · numerical modelling",
+    "challenge": "Investigate the behaviour and design requirements of a steel bridge superstructure and orthotropic roadway deck.",
+    "approach": "Modelled key structural components, assessed design actions and prepared the associated analytical documentation.",
+    "outcome": "Completed specialist bridge coursework supporting structural-modelling competencies.",
+    "cover_image": "media/images/orthotropic-structural-model.webp",
+    "image_alt": "Original project visual for Steel Bridge / Orthotropic Deck",
+    "gallery": [
+      {
+        "url": "media/images/orthotropic-study-6.webp",
+        "caption": "Structural analysis and calculation extract"
+      },
+      {
+        "url": "media/images/orthotropic-study-13.webp",
+        "caption": "Structural analysis and calculation extract"
+      },
+      {
+        "url": "media/images/orthotropic-study-18.webp",
+        "caption": "Structural analysis and calculation extract"
+      },
+      {
+        "url": "media/images/orthotropic-study-25.webp",
+        "caption": "Structural analysis and calculation extract"
+      }
+    ],
+    "documents": [
+      {
+        "label": "Steel bridge analysis report",
+        "url": "media/docs/steel-bridge-analysis-report.pdf"
+      },
+      {
+        "label": "Supporting analytical materials",
+        "url": "media/docs/steel-bridge-supporting-calculations.pdf"
+      }
+    ],
+    "featured": false,
+    "visible": true
+  },
+  {
+    "slug": "excavation-plaxis-geotechnical-model",
+    "title": "Excavation / PLAXIS Analysis",
+    "kind": "Academic",
+    "discipline": "Geotechnical engineering",
+    "year": "2025",
+    "summary": "Finite-element analysis of a sheet-pile supported excavation in a built-up environment.",
+    "role": "Individual academic geotechnical study",
+    "methods": "PLAXIS 2D · soil-structure interaction · pore pressure · staged construction",
+    "challenge": "Assess excavation support and ground response under construction-stage and boundary constraints.",
+    "approach": "Compared construction stages and reviewed deformation and pore-pressure response in PLAXIS 2D.",
+    "outcome": "Prepared an English-language technical presentation with FEM results and support-system decisions.",
+    "cover_image": "media/images/plaxis-slide-17.webp",
+    "image_alt": "Original project visual for Excavation / PLAXIS Analysis",
+    "gallery": [
+      {
+        "url": "media/images/plaxis-slide-2.webp",
+        "caption": "Extract from original English-language PLAXIS presentation"
+      },
+      {
+        "url": "media/images/plaxis-slide-6.webp",
+        "caption": "Extract from original English-language PLAXIS presentation"
+      },
+      {
+        "url": "media/images/plaxis-slide-11.webp",
+        "caption": "Extract from original English-language PLAXIS presentation"
+      },
+      {
+        "url": "media/images/plaxis-slide-12.webp",
+        "caption": "Extract from original English-language PLAXIS presentation"
+      },
+      {
+        "url": "media/images/plaxis-slide-17.webp",
+        "caption": "Extract from original English-language PLAXIS presentation"
+      },
+      {
+        "url": "media/images/plaxis-slide-18.webp",
+        "caption": "Extract from original English-language PLAXIS presentation"
+      }
+    ],
+    "documents": [
+      {
+        "label": "Technical presentation (English)",
+        "url": "media/docs/plaxis-excavation-presentation-en.pdf"
+      }
+    ],
+    "featured": false,
+    "visible": true
+  },
+  {
+    "slug": "urban-shallow-tunnel",
+    "title": "Urban Tunnel / Shallow Excavation",
+    "kind": "Academic",
+    "discipline": "Tunnel engineering",
+    "year": "2024",
+    "summary": "Design study for a shallow urban transport tunnel at a road intersection in Saint Petersburg.",
+    "role": "Academic project",
+    "methods": "SOFiSTiK · geotechnical / structural analysis · tunnel design",
+    "challenge": "Develop an urban tunnel configuration under constraints of the transport network and existing development.",
+    "approach": "Prepared tunnel engineering calculations and design documentation including structural and construction considerations.",
+    "outcome": "Completed an academic design report and technical drawings.",
+    "cover_image": "media/images/tunnel-report-29.webp",
+    "image_alt": "Original project visual for Urban Tunnel / Shallow Excavation",
+    "gallery": [
+      {
+        "url": "media/images/tunnel-report-26.webp",
+        "caption": "Original tunnel design report excerpt"
+      },
+      {
+        "url": "media/images/tunnel-report-29.webp",
+        "caption": "Original tunnel design report excerpt"
+      },
+      {
+        "url": "media/images/tunnel-report-33.webp",
+        "caption": "Original tunnel design report excerpt"
+      },
+      {
+        "url": "media/images/tunnel-report-38.webp",
+        "caption": "Original tunnel design report excerpt"
+      }
+    ],
+    "documents": [
+      {
+        "label": "Full project report (Russian)",
+        "url": "media/docs/urban-shallow-tunnel-report.pdf"
+      }
+    ],
+    "featured": false,
+    "visible": true
+  },
+  {
+    "slug": "long-span-reinforced-concrete-bridge",
+    "title": "Long-Span Concrete Bridge / Design",
+    "kind": "Academic",
+    "discipline": "Reinforced concrete bridges",
+    "year": "2024",
+    "summary": "Structural design and calculation documentation for a major reinforced-concrete bridge.",
+    "role": "Individual academic engineering project",
+    "methods": "Reinforced concrete · bridge analysis · design verification",
+    "challenge": "Design a large reinforced-concrete bridge system considering structural demands and construction requirements.",
+    "approach": "Prepared an analytical project report including design studies, calculations and reinforcement considerations.",
+    "outcome": "Completed an extended structural design study as part of the bridge-and-tunnel programme.",
+    "cover_image": "media/images/concrete-bridge-8.webp",
+    "image_alt": "Original project visual for Long-Span Concrete Bridge / Design",
+    "gallery": [
+      {
+        "url": "media/images/concrete-bridge-8.webp",
+        "caption": "Drawing or calculation extract from original project"
+      },
+      {
+        "url": "media/images/concrete-bridge-18.webp",
+        "caption": "Drawing or calculation extract from original project"
+      },
+      {
+        "url": "media/images/concrete-bridge-36.webp",
+        "caption": "Drawing or calculation extract from original project"
+      },
+      {
+        "url": "media/images/concrete-bridge-52.webp",
+        "caption": "Drawing or calculation extract from original project"
+      }
+    ],
+    "documents": [
+      {
+        "label": "Bridge design report (Russian)",
+        "url": "media/docs/long-span-concrete-bridge-report.pdf"
+      }
+    ],
+    "featured": false,
+    "visible": true
+  },
+  {
+    "slug": "timber-chapel-structural-design",
+    "title": "Timber Chapel / Structural Design",
+    "kind": "Professional",
+    "discipline": "Timber structures",
+    "year": "2026",
+    "summary": "Structural design and verification of a timber chapel, including drawing sets and frame force diagrams.",
+    "role": "Structural design engineer; calculations and documentation",
+    "methods": "Structural design · timber frames · internal force diagrams · CAD",
+    "challenge": "Develop coordinated timber structural members and detailing for a small chapel.",
+    "approach": "Prepared technical drawings and evaluated structural response using calculation models.",
+    "outcome": "Produced a coordinated set of design sheets and analytical results.",
+    "cover_image": "media/images/chapel-drawing-4.webp",
+    "image_alt": "Original project visual for Timber Chapel / Structural Design",
+    "gallery": [
+      {
+        "url": "media/images/chapel-drawing-2.webp",
+        "caption": "Original structural drawings"
+      },
+      {
+        "url": "media/images/chapel-drawing-4.webp",
+        "caption": "Original structural drawings"
+      },
+      {
+        "url": "media/images/chapel-drawing-7.webp",
+        "caption": "Original structural drawings"
+      },
+      {
+        "url": "media/images/chapel-drawing-10.webp",
+        "caption": "Original structural drawings"
+      },
+      {
+        "url": "media/images/chapel-calculation-1-M.webp",
+        "caption": "Original structural calculation diagram"
+      },
+      {
+        "url": "media/images/chapel-calculation-2-Q.webp",
+        "caption": "Original structural calculation diagram"
+      },
+      {
+        "url": "media/images/chapel-calculation-3-N.webp",
+        "caption": "Original structural calculation diagram"
+      }
+    ],
+    "documents": [
+      {
+        "label": "Structural drawings (12 sheets)",
+        "url": "media/docs/timber-chapel-drawing-package.pdf"
+      },
+      {
+        "label": "Design explanatory report (Russian)",
+        "url": "media/docs/timber-chapel-explanatory-report.pdf"
+      }
+    ],
+    "featured": true,
+    "visible": true
+  },
+  {
+    "slug": "petergof-industrial-steelwork",
+    "title": "Industrial Conversion / Petergof",
+    "kind": "Professional",
+    "discipline": "Steel structures",
+    "year": "2024–2025",
+    "summary": "Structural steelwork and related detailing for an industrial facility conversion in Petergof.",
+    "role": "Structural design engineer",
+    "methods": "Steel frames · AutoCAD · SOFiSTiK · force and displacement checks",
+    "challenge": "Develop buildable steelwork for an industrial adaptation involving equipment support and circulation elements.",
+    "approach": "Prepared steel drawings, selected structural analyses and coordination with related building elements.",
+    "outcome": "Completed drawing packages and structural verification outputs for the assigned elements.",
+    "cover_image": "media/images/petergof-steel-sheet-6.webp",
+    "image_alt": "Original project visual for Industrial Conversion / Petergof",
+    "gallery": [
+      {
+        "url": "media/images/petergof-steel-sheet-2.webp",
+        "caption": "Original steelwork drawing"
+      },
+      {
+        "url": "media/images/petergof-steel-sheet-4.webp",
+        "caption": "Original steelwork drawing"
+      },
+      {
+        "url": "media/images/petergof-steel-sheet-6.webp",
+        "caption": "Original steelwork drawing"
+      },
+      {
+        "url": "media/images/petergof-steel-sheet-9.webp",
+        "caption": "Original steelwork drawing"
+      },
+      {
+        "url": "media/images/petergof-analysis-scheme.webp",
+        "caption": "Design scheme from structural calculation"
+      }
+    ],
+    "documents": [
+      {
+        "label": "Steel drawing package (11 sheets)",
+        "url": "media/docs/petergof-industrial-steel-drawings.pdf"
+      },
+      {
+        "label": "Architectural elevations",
+        "url": "media/docs/petergof-facades.pdf"
+      },
+      {
+        "label": "Nodal displacements",
+        "url": "media/docs/petergof-displacements.pdf"
+      },
+      {
+        "label": "Bending-moment results",
+        "url": "media/docs/petergof-bending-moment.pdf"
+      },
+      {
+        "label": "Axial-force results",
+        "url": "media/docs/petergof-normal-force.pdf"
+      }
+    ],
+    "featured": true,
+    "visible": true
+  },
+  {
+    "slug": "industrial-equipment-support-jacobs",
+    "title": "Production Facility / Equipment Support",
+    "kind": "Professional",
+    "discipline": "Industrial structural engineering",
+    "year": "2026",
+    "summary": "Structural verification and steel support documentation for equipment handling at an operating production facility.",
+    "role": "Structural design engineer",
+    "methods": "Steel frame design · load checks · SCAD Office · CAD",
+    "challenge": "Adapt new equipment-support structures to an existing industrial environment and operational constraints.",
+    "approach": "Developed structural drawings, verification models and internal force / deformation diagrams.",
+    "outcome": "Completed engineering documentation for the equipment-support task.",
+    "cover_image": "media/images/jacobs-equipment-deformations.webp",
+    "image_alt": "Original project visual for Production Facility / Equipment Support",
+    "gallery": [
+      {
+        "url": "media/images/jacobs-equipment-sheet-1.webp",
+        "caption": "Original equipment-support design drawing"
+      },
+      {
+        "url": "media/images/jacobs-equipment-sheet-2.webp",
+        "caption": "Original equipment-support design drawing"
+      },
+      {
+        "url": "media/images/jacobs-equipment-sheet-4.webp",
+        "caption": "Original equipment-support design drawing"
+      },
+      {
+        "url": "media/images/jacobs-equipment-sheet-6.webp",
+        "caption": "Original equipment-support design drawing"
+      },
+      {
+        "url": "media/images/jacobs-equipment-Kantovatel_MY.webp",
+        "caption": "Internal force result from structural model"
+      },
+      {
+        "url": "media/images/jacobs-equipment-Kantovatel_QZ.webp",
+        "caption": "Internal force result from structural model"
+      },
+      {
+        "url": "media/images/jacobs-equipment-Kantovatel_N.webp",
+        "caption": "Internal force result from structural model"
+      }
+    ],
+    "documents": [
+      {
+        "label": "Structural drawing 1",
+        "url": "media/docs/jacobs-equipment-drawing-1.pdf"
+      },
+      {
+        "label": "Structural drawing 2",
+        "url": "media/docs/jacobs-equipment-drawing-2.pdf"
+      },
+      {
+        "label": "Structural drawing 3",
+        "url": "media/docs/jacobs-equipment-drawing-3.pdf"
+      },
+      {
+        "label": "Structural drawing 4",
+        "url": "media/docs/jacobs-equipment-drawing-4.pdf"
+      },
+      {
+        "label": "Structural drawing 5",
+        "url": "media/docs/jacobs-equipment-drawing-5.pdf"
+      },
+      {
+        "label": "Structural drawing 6",
+        "url": "media/docs/jacobs-equipment-drawing-6.pdf"
+      }
+    ],
+    "featured": true,
+    "visible": true
+  },
+  {
+    "slug": "existing-floor-verification-jacobs",
+    "title": "Existing Floor / Load Verification",
+    "kind": "Professional",
+    "discipline": "Assessment of existing structures",
+    "year": "2026",
+    "summary": "Verification assessment of an existing floor for moving heavy process equipment through an operating industrial building.",
+    "role": "Structural design engineer",
+    "methods": "Existing-structure assessment · verification calculations · load transfer",
+    "challenge": "Determine whether a load-bearing floor can accommodate a planned movement of heavy industrial equipment.",
+    "approach": "Examined existing structural information and prepared calculation checks for the proposed temporary loading scenario.",
+    "outcome": "Produced a calculation report to support an engineering decision.",
+    "cover_image": "media/images/jacobs-floor-study-8.webp",
+    "image_alt": "Original project visual for Existing Floor / Load Verification",
+    "gallery": [
+      {
+        "url": "media/images/jacobs-floor-study-8.webp",
+        "caption": "Calculation extract from original structural verification"
+      },
+      {
+        "url": "media/images/jacobs-floor-study-12.webp",
+        "caption": "Calculation extract from original structural verification"
+      },
+      {
+        "url": "media/images/jacobs-floor-study-17.webp",
+        "caption": "Calculation extract from original structural verification"
+      },
+      {
+        "url": "media/images/jacobs-floor-study-22.webp",
+        "caption": "Calculation extract from original structural verification"
+      }
+    ],
+    "documents": [
+      {
+        "label": "Verification calculation report",
+        "url": "media/docs/jacobs-existing-floor-verification.pdf"
+      }
+    ],
+    "featured": false,
+    "visible": true
+  }
+]

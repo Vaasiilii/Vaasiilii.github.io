@@ -1,0 +1,1 @@
+Only upload materials you are authorised to distribute publicly. In particular do NOT put scans of personal diplomas, apostilles, recommendation letters, internal project drawings or third-party sensitive data in this public repository.

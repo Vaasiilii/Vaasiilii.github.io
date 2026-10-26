@@ -1,0 +1,128 @@
+[
+  {
+    "project": "alarchin",
+    "source": "uni/01_Alarchin/Андреев В.К._Чертежи.pdf",
+    "site_path": "media/docs/alarchin-bridge-engineering-drawings.pdf",
+    "size_mb": 14.75
+  },
+  {
+    "project": "alarchin",
+    "source": "uni/01_Alarchin/vizualization/Thesis_Vizualization.pdf",
+    "site_path": "media/docs/alarchin-bridge-visualisations.pdf",
+    "size_mb": 4.99
+  },
+  {
+    "project": "ortho",
+    "source": "uni/02_Orto/00_Initial/2025_СУЗС(М)-5_МРПС_АндреевВК.pdf",
+    "site_path": "media/docs/steel-bridge-analysis-report.pdf",
+    "size_mb": 5.53
+  },
+  {
+    "project": "ortho",
+    "source": "uni/02_Orto/00_Initial/2025_СУЗС5_ВМ_Андреев.pdf",
+    "site_path": "media/docs/steel-bridge-supporting-calculations.pdf",
+    "size_mb": 16.2
+  },
+  {
+    "project": "plaxis",
+    "source": "uni/03_Plaxis/00_initial/en/Presentation for notion.pdf",
+    "site_path": "media/docs/plaxis-excavation-presentation-en.pdf",
+    "size_mb": 1.22
+  },
+  {
+    "project": "tunnel",
+    "source": "uni/04_Tunnel/2024_СУЗС(М)-5_Тоннели_Том_АндреевВК.pdf",
+    "site_path": "media/docs/urban-shallow-tunnel-report.pdf",
+    "size_mb": 6.6
+  },
+  {
+    "project": "concrete",
+    "source": "uni/05_LOOONG reinforced concrete bridge/2024_СУЗС-5_ВнЖБ_Том_АндреевВК.pdf",
+    "site_path": "media/docs/long-span-concrete-bridge-report.pdf",
+    "size_mb": 9.71
+  },
+  {
+    "project": "chapel",
+    "source": "work/01_chapel/01_drawings/KD_Chasovnja_Mitrofanjevskaja_1-12.pdf",
+    "site_path": "media/docs/timber-chapel-drawing-package.pdf",
+    "size_mb": 0.9
+  },
+  {
+    "project": "chapel",
+    "source": "work/01_chapel/PZ_KR_Espertiza_24_06_26.pdf",
+    "site_path": "media/docs/timber-chapel-explanatory-report.pdf",
+    "size_mb": 1.94
+  },
+  {
+    "project": "petergof",
+    "source": "work/02_Petergof/01_drawings/KM1_1-11pdf.pdf",
+    "site_path": "media/docs/petergof-industrial-steel-drawings.pdf",
+    "size_mb": 3.9
+  },
+  {
+    "project": "petergof",
+    "source": "work/02_Petergof/01_drawings/AR_Facades_1.pdf",
+    "site_path": "media/docs/petergof-facades.pdf",
+    "size_mb": 0.34
+  },
+  {
+    "project": "petergof",
+    "source": "work/02_Petergof/02_calculation/Nodal displacements.pdf",
+    "site_path": "media/docs/petergof-displacements.pdf",
+    "size_mb": 0.06
+  },
+  {
+    "project": "petergof",
+    "source": "work/02_Petergof/02_calculation/MY.pdf",
+    "site_path": "media/docs/petergof-bending-moment.pdf",
+    "size_mb": 0.06
+  },
+  {
+    "project": "petergof",
+    "source": "work/02_Petergof/02_calculation/NX.pdf",
+    "site_path": "media/docs/petergof-normal-force.pdf",
+    "size_mb": 0.05
+  },
+  {
+    "project": "jacobs-equipment",
+    "source": "work/04_Jacobs/01_Jacobs_Kantovatel/01_drawings/Jacobs Kantovatel_1.pdf",
+    "site_path": "media/docs/jacobs-equipment-drawing-1.pdf",
+    "size_mb": 0.19
+  },
+  {
+    "project": "jacobs-equipment",
+    "source": "work/04_Jacobs/01_Jacobs_Kantovatel/01_drawings/Jacobs Kantovatel_2.pdf",
+    "site_path": "media/docs/jacobs-equipment-drawing-2.pdf",
+    "size_mb": 0.3
+  },
+  {
+    "project": "jacobs-equipment",
+    "source": "work/04_Jacobs/01_Jacobs_Kantovatel/01_drawings/Jacobs Kantovatel_3.pdf",
+    "site_path": "media/docs/jacobs-equipment-drawing-3.pdf",
+    "size_mb": 0.09
+  },
+  {
+    "project": "jacobs-equipment",
+    "source": "work/04_Jacobs/01_Jacobs_Kantovatel/01_drawings/Jacobs Kantovatel_4.pdf",
+    "site_path": "media/docs/jacobs-equipment-drawing-4.pdf",
+    "size_mb": 0.38
+  },
+  {
+    "project": "jacobs-equipment",
+    "source": "work/04_Jacobs/01_Jacobs_Kantovatel/01_drawings/Jacobs Kantovatel_5.pdf",
+    "site_path": "media/docs/jacobs-equipment-drawing-5.pdf",
+    "size_mb": 0.05
+  },
+  {
+    "project": "jacobs-equipment",
+    "source": "work/04_Jacobs/01_Jacobs_Kantovatel/01_drawings/Jacobs Kantovatel_6.pdf",
+    "site_path": "media/docs/jacobs-equipment-drawing-6.pdf",
+    "size_mb": 0.13
+  },
+  {
+    "project": "jacobs-floor",
+    "source": "work/04_Jacobs/02_Jacobs_Slab Calculation/Jakobs_perekritiye_21_04_2026.pdf",
+    "site_path": "media/docs/jacobs-existing-floor-verification.pdf",
+    "size_mb": 0.81
+  }
+]
