@@ -35,6 +35,7 @@ content:
           media: docs
           extensions: [pdf]
       - {name: show_cv, label: Show CV download link on site, type: boolean}
+      - {name: showcase_autoplay, label: Auto-advance projects in homepage slideshow, type: boolean}
       - {name: email, label: Public contact email, type: string}
       - {name: research_statement, label: Research introduction, type: text}
       - {name: research_note, label: Research explanatory note, type: text}
