@@ -894,3 +894,36 @@ details.evidence-disclosure[open]>summary .plus::after{transform:rotate(60deg)}
  .site-header .brand-text{max-width:170px}
  .reading-mode .site-header .header-kicker{font-size:7.7px;letter-spacing:0}
 }
+
+
+/* v5.7.2 — mobile descriptor: show the entire name + portfolio title, no ellipsis */
+.header-kicker-mobile{display:none}
+@media(max-width:780px){
+ .site-header .brand{flex:0 1 auto;min-width:0}
+ .site-header .brand-text{flex:0 1 auto;min-width:0;max-width:none}
+ .site-header .nav-toggle{flex:0 0 auto}
+ .reading-mode .site-header .header-kicker-full,
+ .reading-mode .site-header .header-kicker-compact{display:none!important}
+ .reading-mode .site-header .brand-text .header-kicker{
+  display:block;max-width:none;white-space:normal;
+  overflow:visible;text-overflow:clip;
+  font-size:9.5px;line-height:1.15;letter-spacing:.025em
+ }
+ .reading-mode .site-header .header-kicker-mobile{
+  display:flex;flex-direction:column;gap:1px
+ }
+ .reading-mode .site-header .header-kicker-mobile span{
+  display:block;white-space:nowrap;overflow:visible
+ }
+}
+@media(max-width:390px){
+ .site-header .brand-text{max-width:none}
+ .reading-mode .site-header .brand-text .header-kicker{
+  font-size:8.8px;letter-spacing:.014em
+ }
+}
+@media(max-width:350px){
+ .reading-mode .site-header .brand-text .header-kicker{
+  font-size:8px;letter-spacing:0
+ }
+}
