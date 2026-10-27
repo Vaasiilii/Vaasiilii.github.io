@@ -92,3 +92,12 @@
 - Project slideshow: larger copy region and touch controls, responsive heights and swipe navigation. Auto-advance is suspended while the slider is outside the viewport, and disabled when reduced-motion is requested.
 - All page sections, PDF actions and content data were checked by executing the JavaScript with a simulated DOM, including menu open/close and Escape. Full real-device visual inspection is still advisable before signing off.
 - Production HTML links are versioned via `?v=20261027-mobile2` to avoid stale browser cache.
+
+## 27 October 2026 — Minimal icons and scrolling navigation (v5.6)
+
+- All user-facing arrow glyphs used for downloads, external links, carousel controls and back-to-top were replaced by monochrome inline SVG icons to avoid platform-specific emoji rendering.
+- A contextual section index appears automatically after scrolling into the content. At widths below 1550 px it is a compact tab along the right edge: the tab shows the current Roman numeral, and tapping it reveals section names. At 1550 px and wider the section list remains visible in the outer margin.
+- The side navigation opens collapsed sections by reusing the existing anchor behavior, indicates the current section, and closes via Escape, selecting an entry or clicking outside.
+- The floating rail is hidden while the mobile header menu is open.
+- Relevant files: `assets/portfolio-v5.js`, `assets/portfolio-v5.css`, `index.html`. Static asset cache version: `20261027-rail2`.
+- Smoke tests covered HTML rendering, section visibility, side-rail state and interactions, and simultaneous operation with the mobile header menu.
