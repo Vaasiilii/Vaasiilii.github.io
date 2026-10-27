@@ -30,6 +30,12 @@ function setupDisclosures(){
    const section=target.closest('[data-collapsible]');
    if(section)section.openPanel();
  };
+ document.addEventListener('click',event=>{
+  const anchor=event.target.closest('a[href^="#"]');if(!anchor)return;
+  const targetId=decodeURIComponent(anchor.getAttribute('href').slice(1));
+  const target=document.getElementById(targetId);if(!target)return;
+  const section=target.closest('[data-collapsible]');if(section)section.openPanel();
+ });
  window.addEventListener('hashchange',byHash);
  byHash();
 }
