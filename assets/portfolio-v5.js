@@ -143,22 +143,35 @@ function navigation(){
  aside.innerHTML=targets.map(([id,name,n])=>'<a href="#'+id+'" data-for="'+id+'"><span>'+n+'</span><span>'+name+'</span></a>').join('');
  document.body.appendChild(aside);
  const header=$('.site-header'),headerNav=$('#site-nav'),menu=$('#nav-toggle');
+ const label=$('.nav-toggle-label',menu);
+ const isCompact=()=>window.matchMedia('(max-width: 1020px)').matches;
+ function setMenu(open){
+   const next=Boolean(open)&&isCompact();
+   menu.setAttribute('aria-expanded',String(next));
+   menu.setAttribute('aria-label',next?'Close navigation':'Open navigation');
+   headerNav.classList.toggle('open',next);
+   header.classList.toggle('menu-active',next);
+   document.body.classList.toggle('menu-open',next);
+   if(label)label.textContent=next?'Close':'Menu';
+ }
  function scrollPosition(){
   const threshold=$('#home')?.offsetHeight||450;
-  const scrolled=window.scrollY>threshold-150;
-  document.body.classList.toggle('reading-mode',scrolled);
+  document.body.classList.toggle('reading-mode',window.scrollY>threshold-150);
  }
- window.addEventListener('scroll',scrollPosition,{passive:true});scrollPosition();
  function choose(){
   const top=window.innerHeight*.35;
   let active='research';
   for(const [id] of targets){const node=document.getElementById(id);if(node&&node.getBoundingClientRect().top<=top)active=id}
-  $$('[data-for]').forEach(a=>{let on=a.dataset.for===active;a.classList.toggle('is-active',on);if(on)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')});
+  $$('[data-for]').forEach(a=>{const on=a.dataset.for===active;a.classList.toggle('is-active',on);if(on)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')});
  }
- window.addEventListener('scroll',choose,{passive:true});choose();
- menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!open));headerNav.classList.toggle('open',!open)});
- $$('#site-nav a').forEach(a=>a.addEventListener('click',()=>{headerNav.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
- document.addEventListener('keydown',e=>{if(e.key==='Escape'){headerNav.classList.remove('open');menu.setAttribute('aria-expanded','false')}});
+ menu.addEventListener('click',()=>setMenu(menu.getAttribute('aria-expanded')!=='true'));
+ $$('#site-nav a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+ document.addEventListener('click',event=>{if(menu.getAttribute('aria-expanded')==='true'&&!header.contains(event.target))setMenu(false)});
+ document.addEventListener('keydown',event=>{if(event.key==='Escape'){setMenu(false);if(isCompact())menu.focus()}});
+ window.addEventListener('resize',()=>{if(!isCompact())setMenu(false);scrollPosition()},{passive:true});
+ window.addEventListener('scroll',scrollPosition,{passive:true});
+ window.addEventListener('scroll',choose,{passive:true});
+ scrollPosition();choose();setMenu(false);
 }
 async function main(){
  try{
