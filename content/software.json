@@ -1,0 +1,72 @@
+[
+  {
+    "name": "AutoCAD",
+    "category": "CAD",
+    "description": "Structural drawings and engineering documentation",
+    "methods": "2D drafting, detailing and coordinated drawing packages",
+    "gallery": [],
+    "documents": [],
+    "show_media": false,
+    "visible": true
+  },
+  {
+    "name": "Tekla Structures",
+    "category": "BIM / STRUCTURES",
+    "description": "Steel structural modelling and detailing",
+    "methods": "Steel elements, assemblies and model-based documentation; selected academic staircase project may be added",
+    "gallery": [],
+    "documents": [],
+    "show_media": false,
+    "visible": true
+  },
+  {
+    "name": "Revit",
+    "category": "BIM",
+    "description": "Building information modelling",
+    "methods": "Three-dimensional modelling and coordination; further portfolio examples can be attached",
+    "gallery": [],
+    "documents": [],
+    "show_media": false,
+    "visible": true
+  },
+  {
+    "name": "SOFiSTiK",
+    "category": "STRUCTURAL ANALYSIS",
+    "description": "Structural calculations and finite-element modelling",
+    "methods": "Structural analysis for bridge and building engineering; steelwork and bridge models",
+    "gallery": [],
+    "documents": [],
+    "show_media": false,
+    "visible": true
+  },
+  {
+    "name": "SCAD Office / LIRA-SAPR",
+    "category": "STRUCTURAL ANALYSIS",
+    "description": "Structural design and verification models",
+    "methods": "Force and displacement checks, design verification, industrial and civil structures",
+    "gallery": [],
+    "documents": [],
+    "show_media": false,
+    "visible": true
+  },
+  {
+    "name": "PLAXIS 2D",
+    "category": "GEOTECHNICS",
+    "description": "Introductory geotechnical finite-element analysis",
+    "methods": "Staged excavation analysis, ground response and pore pressure; academic excavation study",
+    "gallery": [],
+    "documents": [],
+    "show_media": false,
+    "visible": true
+  },
+  {
+    "name": "Independent modelling",
+    "category": "EXPERIMENTS",
+    "description": "Small personal 3D-modelling and design prototypes",
+    "methods": "Reserved for personal models and practical experiments, including small household objects; evidence to be added",
+    "gallery": [],
+    "documents": [],
+    "show_media": false,
+    "visible": true
+  }
+]
