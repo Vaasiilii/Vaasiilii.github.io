@@ -64,3 +64,12 @@
 - Новые изменения по-прежнему публикуются автоматически из ветки `main`.
 
 **Технические файлы:** `assets/portfolio-v5.css`, `assets/portfolio-v5.js`, `content/profile.json`, `content/additional.json`, `.pages.yml`.
+
+
+## 27.10.2026 — спортивный архив
+
+В разделе `Additional information → Competitive sailing` соревнования редактируются через поле **Sailing events (result and article sources)** (`regattas`). Каждое событие содержит год (`year`), название (`competition`), результат (`result`), класс яхты (`class`), необязательные пояснения (`detail`) и источники (`sources`).
+
+Каждый источник содержит `label` (короткий заголовок), `kind` (`Article` или `Results`) и `url`. Страница группирует статьи и протоколы под соответствующей регатой.
+
+Добавлена регата Palamós 2016: 14-е место, Gold Fleet; лидер после первого дня, 2-е место после второго дня. Garda Meeting отсутствует по просьбе владельца.
