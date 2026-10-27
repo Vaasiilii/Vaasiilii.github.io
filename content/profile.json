@@ -81,23 +81,25 @@
   "intro_scope": "Structural design of buildings and bridges",
   "about_sections": [
     {
-      "label": "PROFESSIONAL PRACTICE",
-      "title": "Design, assessment and technical documentation",
-      "body": "I work on the design and assessment of civil and industrial structures, including building frames, bridge-related structures and equipment supports.",
+      "label": "ENGINEERING PRACTICE · 2022–PRESENT",
+      "title": "Structural design, inspection and assessment",
+      "body": "Structural Design Engineer, Category I, at URBAN LLC in Saint Petersburg. I joined as a technician in 2022, advanced to Category III in 2024 and to Category I in 2026.",
       "points": [
-        "Structural analysis and verification of steel, reinforced-concrete and timber elements",
-        "Design drawings, calculation reports and coordination of engineering solutions",
-        "On-site investigations, defect assessment and checks of existing structures"
+        "Design and verification of steel and reinforced-concrete structures for industrial and civil buildings",
+        "Visual and instrumental inspections, dimensional and geodetic surveys, defect mapping and non-destructive assessment",
+        "Field-data analysis, verification calculations and repair or strengthening solutions for existing structures",
+        "Design documentation in AutoCAD, Revit and Tekla Structures; coordination with architectural and building-services disciplines"
       ]
     },
     {
-      "label": "RESEARCH & EDUCATION",
-      "title": "Bridge infrastructure over its service life",
-      "body": "I graduated with honours in Bridge and Tunnel Construction and pursue postgraduate research on lifecycle management of engineering assets.",
+      "label": "ACADEMIC RESEARCH · 2023–PRESENT",
+      "title": "Bridge lifecycle management and digital engineering",
+      "body": "I hold a six-year Specialist degree with honours in Bridge and Tunnel Construction (SPbGASU, GPA 4.93/5.00) and have pursued research at SPbGASU and independently since 2023. I began postgraduate studies in Construction Technology and Management in 2026.",
       "points": [
-        "Research into maintenance and rehabilitation planning for bridges",
-        "Digital twins, inspection information and condition-informed decisions",
-        "Scientific publications and the Alarchin Bridge rehabilitation case study"
+        "Developed a methodology for evaluating the effectiveness and performance of lifecycle-management systems for construction assets",
+        "Extended the assessment methodology to bridge infrastructure and applied it to the Alarchin Bridge case study",
+        "Investigated the economic implications of digital twins and their potential use in inspection- and condition-informed maintenance planning",
+        "Published research on lifecycle-management methods, digital twins in construction and bridge-specific applications"
       ]
     }
   ]
