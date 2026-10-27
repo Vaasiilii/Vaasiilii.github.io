@@ -1,7 +1,7 @@
 [
   {
     "title": "Mobile application development",
-    "description": "Independent iOS projects developed alongside engineering work: Simplphoto (manual camera, stop motion and collages), Simplreads (reading and personal library) and Simplposture (posture tracking).",
+    "description": "Independent iOS development focused on minimal, purposeful tools for photography, reading and posture tracking.",
     "links": [
       {
         "title": "Simplphoto for iPhone combines a manual camera, stop motion, and collages",
@@ -25,11 +25,16 @@
       }
     ],
     "url": "",
-    "visible": true
+    "visible": true,
+    "highlights": [
+      "Simplphoto: manual camera, stop motion and collages",
+      "Simplreads: a personal library and reading tracker",
+      "Simplposture: posture tracking and feedback"
+    ]
   },
   {
     "title": "Competitive sailing",
-    "description": "Selected international Optimist and 29er results, followed by national-level competition in the 49er class. Results and press coverage are grouped by event.",
+    "description": "Former Optimist, 29er and 49er sailor with international podium finishes and a Russian youth title.",
     "url": "",
     "visible": true,
     "regattas": [
@@ -173,6 +178,13 @@
           }
         ]
       }
+    ],
+    "highlights": [
+      "2015 Optimist World Championship: 28th overall",
+      "2018 29er Euro Cup: 3rd overall in the series",
+      "2018 29er World Championship: 10th overall and youth bronze",
+      "2019 Italian 29er National Open in Sicily: 1st place",
+      "2020 Russian National Youth Championship (49er): 1st place"
     ]
   }
 ]
