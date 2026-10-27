@@ -19,13 +19,52 @@ function link(v,label,cl=''){let u=url(v);return u?'<a class="'+E(cl)+'" href="'
 function heading(roman,title){return '<div class="section-head"><span class="section-number" aria-label="Section '+E(roman)+'">'+E(roman)+'</span><h2>'+E(title)+'</h2></div>'}
 function collapsible(roman,title,id,preview,html){
  const key='panel-'+id;
- return '<section class="site-section collapsible-section" id="'+E(id)+'" data-collapsible><div class="section-head section-toggle-head"><span class="section-number">'+E(roman)+'</span><h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="'+key+'">'+E(title)+'</button></h2><span class="section-mark" aria-hidden="true"></span></div><p class="section-preview">'+E(preview)+'</p><div class="section-expanded" id="'+key+'" hidden>'+html+'</div></section>';
+ return '<section class="site-section collapsible-section" id="'+E(id)+'" data-collapsible><div class="section-head section-toggle-head"><h2 class="section-heading"><button type="button" class="section-toggle" aria-expanded="false" aria-controls="'+key+'"><span class="section-number">'+E(roman)+'</span><span class="section-toggle-title">'+E(title)+'</span><span class="section-mark" aria-hidden="true"></span></button></h2></div><p class="section-preview">'+E(preview)+'</p><div class="section-expanded" id="'+key+'" hidden>'+html+'</div></section>';
 }
 function setupCvLinks(p){
  const cvs={work:{url:p.cv_work_url,show:p.show_cv_work},phd:{url:p.cv_phd_url,show:p.show_cv_phd}};
  $$('[data-cv]').forEach(a=>{const x=cvs[a.dataset.cv];const src=x&&url(x.url);
  if(!x||x.show!==true||!src){a.hidden=true;return}
  a.href=src;a.hidden=false;
+ });
+}
+function setupContactActions(){
+ const copyButton=$('.copy-email');
+ if(!copyButton)return;
+ copyButton.addEventListener('click',async()=>{
+  const value=copyButton.getAttribute('data-copy-email');
+  if(!value)return;
+  let copied=false;
+  try{
+   if(navigator.clipboard&&navigator.clipboard.writeText){
+    await navigator.clipboard.writeText(value);copied=true;
+   }
+  }catch(err){}
+  if(!copied){
+   let input;
+   try{
+    input=document.createElement('textarea');
+    input.value=value;input.setAttribute('readonly','');
+    input.style.position='fixed';input.style.opacity='0';
+    document.body.appendChild(input);input.select();
+    copied=document.execCommand('copy');
+   }catch(err){}
+   finally{if(input)input.remove()}
+  }
+  const status=$('.copy-feedback');
+  if(status)status.textContent=copied?'Email address copied':'Select the email address to copy';
+ });
+}
+function setupTopLink(){
+ const link=$('[data-back-to-top]');
+ if(!link)return;
+ link.addEventListener('click',event=>{
+  event.preventDefault();
+  const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.scrollTo({top:0,left:0,behavior:reduce?'auto':'smooth'});
+  if(window.history&&window.history.replaceState){
+   window.history.replaceState(null,'',window.location.pathname+window.location.search);
+  }
  });
 }
 function setupDisclosures(){
@@ -132,7 +171,7 @@ function about(p){
  const links=(p.links||[]).map(x=>link(x.url,x.label,'social-link')).join('');
  const main=groups.length?fmt(groups[0],'about-professional'):'';
  const others=groups.slice(1).map((x,i)=>fmt(x,'about-research')).join('');
- const side='<aside class="about-links"><span class="eyebrow">ACADEMIC PROFILES</span><nav aria-label="Academic profiles" class="socials">'+links+'</nav><div class="contact-block" id="contact"><span>CONTACT</span>'+link('mailto:'+p.email,p.email,'email-link')+'</div></aside>';
+ const side='<aside class="about-links"><span class="eyebrow">ACADEMIC PROFILES</span><nav aria-label="Academic profiles" class="socials">'+links+'</nav><div class="contact-block" id="contact"><span>CONTACT</span><div class="contact-tools">'+link('mailto:'+p.email,p.email,'email-link')+'<button type="button" class="copy-email" data-copy-email="'+E(p.email||'')+'" aria-label="Copy email address">Copy</button></div><span class="copy-feedback" aria-live="polite"></span></div></aside>';
  const lead='Structural engineer and postgraduate researcher working across building and bridge design, assessment of existing structures and infrastructure lifecycle management.';
  return collapsible('IV','About','about',lead,'<div class="about-grid editorial-about"><div class="about-main">'+main+'</div>'+side+others+'</div>');
 }
@@ -238,12 +277,14 @@ async function main(){
  const values=await Promise.all(names.map(n=>fetch('content/'+n+'.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error(n+' '+r.status);return r.json()})));
  const d=Object.fromEntries(names.map((k,i)=>[k,values[i]]));
  $('#app').innerHTML=intro(d.profile,d.projects,d.publications)+research(d.profile,d.publications)+projects(d.projects)+education(d.education)+about(d.profile)+software(d.software)+additional(d.additional);
- $('#header-contact').href='mailto:'+encodeURIComponent(d.profile.email);
+ $('#header-contact').href='#contact';
  $('#copyright-year').textContent=new Date().getFullYear();
  const safeInit=(name,fn)=>{try{fn()}catch(error){console.error('Portfolio '+name+' initialization failed:',error)}};
  safeInit('slideshow',()=>carouselStart(d.profile.showcase_autoplay));
  safeInit('CV links',()=>setupCvLinks(d.profile));
  safeInit('section controls',()=>setupDisclosures());
+ safeInit('contact actions',()=>setupContactActions());
+ safeInit('back to top',()=>setupTopLink());
  safeInit('navigation',()=>navigation());
  if(location.hash){requestAnimationFrame(()=>document.getElementById(location.hash.slice(1))?.scrollIntoView())}
  }catch(err){console.error(err);$('#app').innerHTML='<section class="site-section"><h2>Content unavailable</h2><p>Check portfolio content files.</p></section>'}
