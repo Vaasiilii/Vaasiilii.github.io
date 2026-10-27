@@ -83,3 +83,12 @@
 - Two downloadable PDFs are stored in `media/docs/Vasilii_Andreev_Work_CV.pdf` and `media/docs/Vasilii_Andreev_PhD_CV.pdf`. They are linked at the top of the website and controlled using `cv_work_url`, `cv_phd_url`, `show_cv_work` and `show_cv_phd` in Profile & design.
 - Both CVs are 2-page English editions based on `Andreev_Vasilii_CV.docx` and the verified publication list. They do not contain incomplete project-case descriptions. Research publications with incomplete final bibliographic metadata are clearly noted for later verification.
 - Before formal applications, update and verify issue numbers, journal pages and publication status, and decide whether to include private references. Do not publish confidential project documents by default.
+
+## Mobile optimization v5.5 — 27 October 2026
+
+- Mobile header: brand plus accessible Menu/Close control. Under 781 px, both CV PDF links move into the mobile menu, alongside section navigation and email. From 781–1020 px the CV links remain visible in the header.
+- Menu: full-width scrollable panel with safe viewport height; closes via menu button, link selection, outside click, Escape, or breakpoint change. Background scroll is suppressed while open.
+- Typography and grids: breakpoints at 1020, 780, 650, 390 and 350 px; preserve at least 44 px touch controls; project years remain visible in the narrow project list; long titles and sources wrap.
+- Project slideshow: larger copy region and touch controls, responsive heights and swipe navigation. Auto-advance is suspended while the slider is outside the viewport, and disabled when reduced-motion is requested.
+- All page sections, PDF actions and content data were checked by executing the JavaScript with a simulated DOM, including menu open/close and Escape. Full real-device visual inspection is still advisable before signing off.
+- Production HTML links are versioned via `?v=20261027-mobile2` to avoid stale browser cache.
