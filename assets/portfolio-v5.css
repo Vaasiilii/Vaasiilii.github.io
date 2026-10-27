@@ -640,3 +640,97 @@ details[open]>summary .plus:after{transform:rotate(90deg)}
  .section-preview,.project-info,.paper-main,.regatta-content{min-width:0;overflow-wrap:anywhere}
  .site-header .nav:focus-within{scrollbar-width:thin}
 }
+
+
+/* v5.6 — line icons (never rendered as platform emoji) */
+.ui-icon{display:inline-block;width:16px;height:16px;flex:0 0 auto;vertical-align:-.2em;margin-left:5px;stroke:currentColor;fill:none}
+.ui-icon-external{width:14px;height:14px;stroke-width:1.45}
+.showcase-link .ui-icon,.text-link .ui-icon,.social-link .ui-icon{vertical-align:-.21em}
+.showcase-play .ui-icon,.showcase-prev .ui-icon,.showcase-next .ui-icon{width:19px;height:19px;margin:0;vertical-align:middle}
+.cv-actions .ui-icon,.nav-cv-mobile .ui-icon{width:13px;height:13px;margin-left:3px;vertical-align:-.14em}
+.nav-contact .ui-icon,.nav-email-mobile .ui-icon{width:13px;height:13px;margin-left:2px}
+.evidence-source .ui-icon,.regatta-source .ui-icon{height:12px;width:12px;margin-left:3px;vertical-align:-.14em}
+.site-footer .ui-icon{height:13px;width:13px;margin-left:3px}
+.showcase-buttons button,.showcase-play{display:inline-flex;align-items:center;justify-content:center}
+
+/* Reading navigation — a full link index on wide screens,
+   and a slim edge tab with a labelled flyout on mobile/tablet. */
+.side-index{display:none}
+.reading-mode .side-index{
+ display:block;position:fixed;top:clamp(145px,38vh,350px);right:0;
+ width:auto;min-width:0;z-index:95;padding:0;margin:0;border:0;
+ background:transparent;box-shadow:none;
+}
+.side-index-toggle{
+ appearance:none;display:flex;flex-direction:column;align-items:center;
+ justify-content:center;gap:6px;min-width:43px;min-height:54px;
+ padding:8px 7px;border:1px solid #c6d2d7;border-right:0;
+ border-radius:7px 0 0 7px;color:#264b5e;
+ background:rgba(250,250,248,.97);
+ box-shadow:0 2px 14px rgba(29,56,71,.11);
+ cursor:pointer;
+ -webkit-tap-highlight-color:transparent;
+}
+.side-index-toggle:hover,.side-index-toggle:focus-visible{color:var(--accent);background:#eff5f7}
+.side-index-current{font-size:14px;line-height:1;font-weight:680;letter-spacing:-.05em}
+.side-index-bars{display:flex;flex-direction:column;gap:3px;align-items:center}
+.side-index-bars span{width:13px;height:1px;display:block;background:currentColor}
+.side-index-links{
+ display:none;position:absolute;right:calc(100% + 8px);top:0;
+ width:218px;max-width:calc(100vw - 65px);
+ max-height:calc(100vh - 110px);max-height:calc(100dvh - 110px);
+ overflow-y:auto;overscroll-behavior:contain;
+ padding:10px 12px;flex-direction:column;align-items:stretch;
+ background:var(--paper);border:1px solid #ccd5d8;
+ border-radius:7px;box-shadow:0 13px 35px rgba(16,38,51,.15);
+}
+.side-index.is-expanded .side-index-links{display:flex}
+.side-index-links a{
+ display:flex;align-items:center;gap:15px;min-height:44px;
+ padding:9px 7px;font-size:15px;line-height:1.25;
+ font-weight:470;white-space:normal;letter-spacing:-.01em;
+ color:#58666c;border-bottom:1px solid #e7eaea;text-decoration:none;
+}
+.side-index-links a:last-child{border-bottom:0}
+.side-index-links a:hover,.side-index-links a:focus-visible{color:var(--accent)}
+.side-index-links a.is-active{font-weight:700;color:#183749}
+.side-index-roman{min-width:24px;font-size:16px;font-weight:530;color:#4b7285}
+.side-index-links a.is-active .side-index-roman{color:#215c7d;font-weight:720}
+body.menu-open .side-index{display:none!important}
+@media(min-width:1550px){
+ .reading-mode .side-index{
+   top:32vh;right:24px;width:167px;
+   background:rgba(250,250,248,.94);border-left:1px solid #d1dadc;
+   padding:4px 0 4px 11px;box-shadow:none;
+ }
+ .side-index-toggle{display:none}
+ .side-index-links{
+   display:flex;position:static;width:auto;max-width:none;max-height:none;
+   padding:0;overflow:visible;background:transparent;
+   border:0;border-radius:0;box-shadow:none;
+ }
+ .side-index-links a{
+   min-height:41px;padding:6px 4px;gap:10px;
+   border:0;font-size:14px;
+ }
+ .side-index-roman{font-size:16px;min-width:24px}
+ /* The persistent header remains available together with the reading index. */
+ .reading-mode .site-header .nav,.reading-mode .site-header .nav-contact{
+   opacity:1;pointer-events:auto;
+ }
+}
+@media(max-width:780px){
+ .reading-mode .side-index{
+   top:auto;bottom:clamp(90px,22vh,190px);right:0;
+ }
+ .side-index-toggle{min-width:39px;min-height:50px;padding:7px 5px}
+ .side-index-links{
+   top:auto;bottom:0;right:calc(100% + 7px);
+   width:205px;max-width:calc(100vw - 52px);
+   max-height:calc(100dvh - 110px);
+ }
+ .side-index-links a{min-height:45px}
+}
+@media(prefers-reduced-motion:reduce){
+ .side-index-links,.side-index-toggle{transition:none}
+}
