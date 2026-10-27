@@ -73,3 +73,13 @@
 Каждый источник содержит `label` (короткий заголовок), `kind` (`Article` или `Results`) и `url`. Страница группирует статьи и протоколы под соответствующей регатой.
 
 Добавлена регата Palamós 2016: 14-е место, Gold Fleet; лидер после первого дня, 2-е место после второго дня. Garda Meeting отсутствует по просьбе владельца.
+
+## 27 October 2026 — Portfolio v5.4
+
+- Main order: Research → Projects → Education → About → Software → Additional information.
+- Research and Projects are always visible. Education, About, Software and Additional information start collapsed, with a concise visible summary and accessible section toggle. Hash navigation opens the appropriate section automatically.
+- About flows in two columns while professional information and academic links are shown together; the subsequent academic research block uses the full content grid.
+- Additional information shows concise activity summaries and highlights; the existing application articles and racing results are retained in independently expanding evidence archives.
+- Two downloadable PDFs are stored in `media/docs/Vasilii_Andreev_Work_CV.pdf` and `media/docs/Vasilii_Andreev_PhD_CV.pdf`. They are linked at the top of the website and controlled using `cv_work_url`, `cv_phd_url`, `show_cv_work` and `show_cv_phd` in Profile & design.
+- Both CVs are 2-page English editions based on `Andreev_Vasilii_CV.docx` and the verified publication list. They do not contain incomplete project-case descriptions. Research publications with incomplete final bibliographic metadata are clearly noted for later verification.
+- Before formal applications, update and verify issue numbers, journal pages and publication status, and decide whether to include private references. Do not publish confidential project documents by default.
