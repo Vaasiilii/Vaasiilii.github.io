@@ -304,3 +304,39 @@ details[open]>summary .plus:after{transform:rotate(90deg)}
  .evidence-title{font-size:14.5px}
  .additional-evidence{margin-top:20px}
 }
+
+
+/* v5.3 — results and race reportage kept together */
+.additional-grid{grid-template-columns:minmax(0,1fr);gap:60px}
+.additional-card{max-width:100%;padding-top:26px}
+.additional-card>p{max-width:820px}
+.additional-card:not(.additional-sailing) .additional-evidence{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 38px}
+.regatta-list{list-style:none;padding:0;margin:27px 0 0;border-top:1px solid var(--line)}
+.regatta-entry{display:grid;grid-template-columns:70px minmax(0,1fr) 70px;gap:22px;border-bottom:1px solid var(--line);padding:23px 0 24px;min-width:0}
+.regatta-year{font-size:14px;line-height:1.55;color:#627077;font-variant-numeric:tabular-nums}
+.regatta-content{min-width:0}
+.regatta-content h4{font-size:19px;font-weight:550;letter-spacing:-.03em;line-height:1.35}
+.regatta-result{font-size:16px;color:#1e678d;font-weight:550;margin-top:6px;line-height:1.45}
+.regatta-detail{font-size:14px!important;margin-top:4px!important;color:var(--secondary)!important}
+.regatta-class{text-align:right;font-size:12px;color:var(--muted);letter-spacing:.05em}
+.regatta-sources{display:flex;flex-wrap:wrap;column-gap:20px;row-gap:11px;margin-top:15px}
+.regatta-source{display:inline-flex;align-items:baseline;gap:6px;text-decoration:none;min-width:0;max-width:100%;font-size:13px;line-height:1.4}
+.source-kind{color:#748087;text-transform:uppercase;letter-spacing:.06em;font-size:10px;font-weight:650;flex-shrink:0}
+.source-title{color:#3c4d56;border-bottom:1px solid #aebabe;transition:color .15s,border-color .15s}
+.regatta-source:hover .source-title,.regatta-source:focus-visible .source-title{color:var(--accent);border-color:var(--accent)}
+.regatta-source>span:last-child{color:var(--accent)}
+@media(max-width:850px){
+ .additional-grid{gap:49px}
+ .regatta-entry{grid-template-columns:55px minmax(0,1fr) 58px;gap:13px}
+}
+@media(max-width:650px){
+ .additional-card:not(.additional-sailing) .additional-evidence{grid-template-columns:1fr}
+ .regatta-entry{grid-template-columns:42px minmax(0,1fr);gap:9px;padding:20px 0}
+ .regatta-year{font-size:12px}
+ .regatta-class{grid-column:2;grid-row:2;text-align:left;margin-top:-7px}
+ .regatta-content h4{font-size:17px}
+ .regatta-result{font-size:15px}
+ .regatta-detail{font-size:13px!important}
+ .regatta-source{font-size:12px}
+ .regatta-sources{gap:10px 17px}
+}
