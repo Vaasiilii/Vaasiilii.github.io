@@ -1,38 +1,74 @@
 [
   {
     "period": "2026–present",
-    "qualification": "Postgraduate studies · Construction Technology and Organisation",
+    "qualification": "Postgraduate studies — Construction Technology and Organisation",
     "institution": "Saint Petersburg State University of Architecture and Civil Engineering",
-    "details": "Current postgraduate research direction: lifecycle management and digital twins for engineering assets.",
-    "marker": "In progress",
-    "url": "",
+    "details": "Research in lifecycle management and digital methods for infrastructure",
+    "subjects": [
+      "Current research: lifecycle management of constructed assets",
+      "Digital twins and infrastructure maintenance planning"
+    ],
+    "competencies": [
+      "Research methodology and academic communication",
+      "Development of a research programme in infrastructure lifecycle management"
+    ],
+    "diploma_url": "",
+    "show_diploma": false,
     "visible": true
   },
   {
     "period": "2020–2026",
-    "qualification": "Specialist Degree in Civil & Structural Engineering · With Honours",
+    "qualification": "Specialist Degree in Civil and Structural Engineering, with Honours",
     "institution": "Saint Petersburg State University of Architecture and Civil Engineering",
-    "details": "Specialisation: Construction of Bridges and Tunnels. Six-year programme, 360 ECTS, ISCED level 7. Official GPA: 4.93/5.00.",
-    "marker": "Honours",
-    "url": "",
+    "details": "Bridge and Tunnel Construction · 360 ECTS · ISCED 7 · GPA 4.93/5.00",
+    "subjects": [
+      "Steel and reinforced-concrete bridge design",
+      "Bridge inspection and testing",
+      "Operation and reconstruction of transport facilities",
+      "Structural analysis and modelling of transport infrastructure",
+      "Tunnel and foundation engineering"
+    ],
+    "competencies": [
+      "Structural analysis and design of bridge structures",
+      "Condition assessment and preparation of engineering documentation",
+      "Design and verification of bridge rehabilitation schemes"
+    ],
+    "diploma_url": "",
+    "show_diploma": false,
     "visible": true
   },
   {
     "period": "2024–2025",
-    "qualification": "Professional Retraining · Programming for BIM Platforms",
+    "qualification": "Professional Retraining — Programming for BIM Platforms",
     "institution": "Peter the Great St. Petersburg Polytechnic University",
-    "details": "Qualification in programming for information modelling platforms.",
-    "marker": "",
-    "url": "",
+    "details": "Additional qualification in digital engineering and BIM-platform programming",
+    "subjects": [
+      "Programming for BIM platforms",
+      "Information modelling and workflow automation"
+    ],
+    "competencies": [
+      "BIM workflow understanding",
+      "Automation of tasks within information-modelling environments"
+    ],
+    "diploma_url": "",
+    "show_diploma": false,
     "visible": true
   },
   {
     "period": "2020–2022",
-    "qualification": "Professional Retraining · Professional Translation",
+    "qualification": "Professional Retraining — Professional Translation",
     "institution": "Saint Petersburg State University of Architecture and Civil Engineering",
-    "details": "Qualification: Translator; academic and technical English.",
-    "marker": "",
-    "url": "",
+    "details": "Qualification: translator in the professional field",
+    "subjects": [
+      "Professional English",
+      "Technical translation in engineering and construction"
+    ],
+    "competencies": [
+      "Technical terminology and bilingual engineering communication",
+      "Translation of professional documentation"
+    ],
+    "diploma_url": "",
+    "show_diploma": false,
     "visible": true
   }
 ]
