@@ -37,6 +37,10 @@ content:
           media: docs
           extensions: [pdf]
       - {name: show_cv, label: Show CV download link on site, type: boolean}
+      - {name: cv_work_url, label: Work CV PDF URL, type: string}
+      - {name: cv_phd_url, label: PhD CV PDF URL, type: string}
+      - {name: show_cv_work, label: Show Work CV link, type: boolean}
+      - {name: show_cv_phd, label: Show PhD CV link, type: boolean}
       - {name: showcase_autoplay, label: Auto-advance projects in homepage slideshow, type: boolean}
       - {name: email, label: Public contact email, type: string}
       - {name: research_statement, label: Research introduction, type: text}
@@ -253,6 +257,10 @@ content:
     fields:
       - {name: title, label: Heading, type: string, required: true}
       - {name: description, label: Short description, type: text}
+      - name: highlights
+        label: Key highlights shown before sources
+        type: string
+        list: true
       - name: links
         label: Verified published sources
         type: object
