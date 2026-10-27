@@ -734,3 +734,135 @@ body.menu-open .side-index{display:none!important}
 @media(prefers-reduced-motion:reduce){
  .side-index-links,.side-index-toggle{transition:none}
 }
+
+
+/* v5.7 — unified full-row accordion interactions */
+.collapsible-section .section-head.section-toggle-head{
+ display:block;
+ width:100%;
+ margin-bottom:10px;
+}
+.collapsible-section .section-heading{margin:0;width:100%;font-size:clamp(42px,5.7vw,73px);line-height:1.1;letter-spacing:-.072em}
+.collapsible-section .section-toggle{
+ display:grid;
+ grid-template-columns:115px minmax(0,1fr) 32px;
+ align-items:center;
+ column-gap:18px;
+ position:relative;
+ border:0;
+ width:100%;
+ min-height:74px;
+ padding:3px 4px 3px 0;
+ background:transparent;
+ color:var(--ink);
+ font:inherit;
+ font-size:inherit;
+ line-height:inherit;
+ letter-spacing:inherit;
+ font-weight:inherit;
+ text-align:left;
+ cursor:pointer;
+ -webkit-tap-highlight-color:transparent;
+}
+.collapsible-section .section-toggle::after{content:none!important;display:none!important}
+.collapsible-section .section-toggle-title{
+ display:block;
+ min-width:0;
+ font:inherit;
+ line-height:inherit;
+ letter-spacing:inherit;
+ overflow-wrap:break-word;
+ transition:color .2s ease;
+}
+.collapsible-section .section-toggle .section-number{display:block;align-self:center;transition:color .2s ease}
+.collapsible-section .section-toggle .section-mark{
+ display:block;
+ position:relative;
+ width:22px;height:22px;
+ justify-self:end;
+ align-self:center;
+ margin:0 3px 0 0;
+}
+.collapsible-section .section-toggle:hover .section-toggle-title,
+.collapsible-section .section-toggle:hover .section-number,
+.collapsible-section .section-toggle:focus-visible .section-toggle-title,
+.collapsible-section .section-toggle:focus-visible .section-number{color:var(--accent)}
+.collapsible-section .section-toggle:hover .section-mark::before,
+.collapsible-section .section-toggle:hover .section-mark::after,
+.collapsible-section .section-toggle:focus-visible .section-mark::before,
+.collapsible-section .section-toggle:focus-visible .section-mark::after{background:var(--accent)}
+.collapsible-section .section-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:6px}
+.collapsible-section .section-toggle:focus-visible::after{content:none!important}
+.collapsible-section .section-mark::before,
+.collapsible-section .section-mark::after,
+.plus::before,.plus::after{transition:transform .21s cubic-bezier(.23,.73,.37,1),background-color .18s}
+.collapsible-section.is-expanded .section-mark::after{transform:rotate(75deg)}
+details[open]>summary .plus::after,
+details.evidence-disclosure[open]>summary .plus::after{transform:rotate(75deg)}
+.project-entry summary:hover .plus::before,
+.project-entry summary:hover .plus::after,
+.education-entry summary:hover .plus::before,
+.education-entry summary:hover .plus::after,
+.software-entry summary:hover .plus::before,
+.software-entry summary:hover .plus::after,
+.evidence-disclosure summary:hover .plus::before,
+.evidence-disclosure summary:hover .plus::after{background:var(--accent)}
+.project-entry summary:hover .project-index,
+.project-entry summary:hover .project-year,
+.education-entry summary:hover .education-date,
+.software-entry summary:hover .software-index{color:var(--accent)}
+
+/* Brand label migrates to sticky header once the contextual index activates */
+.header-kicker{display:none;white-space:nowrap;color:#4d6774;font-size:10px;line-height:1.2;font-weight:660;letter-spacing:.12em}
+.header-kicker-compact{display:none}
+.reading-mode .site-header .brand-name{display:none}
+.reading-mode .site-header .header-kicker{display:block}
+.reading-mode .site-header .header-kicker-full{display:inline}
+.brand .header-kicker{overflow:hidden;text-overflow:ellipsis}
+#contact{scroll-margin-top:calc(var(--head) + 28px)}
+.site-header .nav-contact{opacity:1!important;pointer-events:auto!important}
+.site-header .nav-contact:hover,.site-header .nav-contact:focus-visible{color:var(--accent);border-color:var(--accent)}
+.contact-tools{display:flex;align-items:center;flex-wrap:wrap;gap:12px}
+.copy-email{min-height:36px;background:transparent;border:1px solid #c5d1d6;padding:5px 12px;cursor:pointer;
+ font-size:12px;color:#406477;letter-spacing:.015em}
+.copy-email:hover,.copy-email:focus-visible{color:#196b97;border-color:#196b97;background:#eaf3f7}
+.copy-feedback{display:block;font-size:12px;color:#396f89;margin-top:7px;min-height:18px}
+.site-footer [data-back-to-top]{display:inline-flex;align-items:center;min-height:36px}
+.site-footer [data-back-to-top]:hover,.site-footer [data-back-to-top]:focus-visible{color:var(--accent);border-color:var(--accent)}
+
+/* Tablet: preserve the same interaction system with more economical dimensions */
+@media(max-width:1100px){
+ .collapsible-section .section-toggle{grid-template-columns:78px minmax(0,1fr) 26px;gap:12px;min-height:64px}
+ .collapsible-section .section-heading{font-size:clamp(38px,5.5vw,58px)}
+}
+@media(max-width:780px){
+ .header-kicker{font-size:10px;letter-spacing:.07em}
+ .collapsible-section .section-toggle{grid-template-columns:55px minmax(0,1fr) 24px;gap:11px;min-height:60px}
+ .collapsible-section .section-heading{font-size:clamp(38px,6.6vw,53px)}
+ .collapsible-section .section-toggle .section-mark{width:20px;height:20px}
+ .collapsible-section .section-mark::before{top:9px;width:18px}
+ .collapsible-section .section-mark::after{left:9px;height:18px}
+}
+@media(max-width:650px){
+ .collapsible-section .section-toggle{grid-template-columns:38px minmax(0,1fr) 22px;gap:8px;min-height:54px}
+ .collapsible-section .section-heading{font-size:clamp(32px,8vw,45px)}
+ .contact-tools{gap:8px}
+ .copy-email{min-height:38px}
+}
+@media(max-width:500px){
+ .header-kicker-full{display:none!important}
+ .reading-mode .site-header .header-kicker-compact{display:inline}
+ .header-kicker{font-size:9px;letter-spacing:.045em}
+ .brand{gap:8px}
+ .collapsible-section .section-toggle-title{overflow-wrap:anywhere}
+}
+@media(max-width:390px){
+ .collapsible-section .section-heading{font-size:clamp(29px,8vw,35px)}
+}
+@media(max-width:350px){
+ .header-kicker{font-size:8.5px;letter-spacing:.025em}
+ .collapsible-section .section-heading{font-size:29px}
+}
+@media(prefers-reduced-motion:reduce){
+ .section-mark::after,.plus::after,.section-toggle-title{transition:none!important}
+}
