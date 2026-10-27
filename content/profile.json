@@ -102,5 +102,9 @@
         "Published research on lifecycle-management methods, digital twins in construction and bridge-specific applications"
       ]
     }
-  ]
+  ],
+  "cv_work_url": "media/docs/Vasilii_Andreev_Work_CV.pdf",
+  "cv_phd_url": "media/docs/Vasilii_Andreev_PhD_CV.pdf",
+  "show_cv_work": true,
+  "show_cv_phd": true
 }
