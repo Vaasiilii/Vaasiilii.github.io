@@ -22,6 +22,7 @@ content:
     fields:
       - {name: name, label: Name, type: string}
       - {name: professional_title, label: Professional title, type: string}
+      - {name: postgraduate_label, label: Researcher title, type: string}
       - {name: location, label: Location, type: string}
       - {name: introduction, label: Intro paragraph, type: text}
       - name: focus
@@ -50,6 +51,10 @@ content:
           - {name: title, label: Title, type: string}
           - {name: description, label: Description, type: text}
       - {name: about, label: About paragraph, type: text}
+      - name: about_points
+        label: Short biography statements
+        type: string
+        list: true
       - name: links
         label: Public profiles
         type: object
@@ -86,6 +91,12 @@ content:
       - {name: status, label: Publication status (verify), type: string}
       - {name: description, label: Note / translation note, type: text}
       - {name: url, label: DOI / official PDF / publication link, type: string}
+      - name: cover_image
+        label: Optional article cover image
+        type: image
+        options:
+          media: images
+      - {name: show_media, label: Show cover in homepage slideshow, type: boolean}
       - {name: visible, label: Show on public site, type: boolean}
 
   - name: projects
@@ -156,28 +167,75 @@ content:
       - {name: institution, label: University / institution, type: string}
       - {name: details, label: Details, type: text}
       - {name: marker, label: Badge (optional), type: string}
+      - name: subjects
+        label: Selected subjects / research areas
+        type: string
+        list: true
+      - name: competencies
+        label: Competencies
+        type: string
+        list: true
+      - name: diploma_url
+        label: Upload diploma for expanded panel
+        type: file
+        options:
+          media: docs
+          extensions: [pdf]
+      - {name: show_diploma, label: Show diploma preview to visitors, type: boolean}
       - {name: url, label: Public document URL (optional), type: string}
       - {name: visible, label: Show on public site, type: boolean}
 
-  - name: sections
-    label: 05 · Additional sections
+  - name: software
+    label: 05 · Software and evidence
     type: file
-    path: content/sections.json
+    path: content/software.json
     format: json
     list: true
     fields:
-      - {name: anchor, label: Unique anchor (no spaces), type: string}
-      - {name: title, label: Heading, type: string}
-      - {name: subtitle, label: Intro line, type: text}
-      - {name: body, label: Content (plain text), type: text}
-      - name: links
-        label: Links / buttons
+      - {name: name, label: Software or method, type: string, required: true}
+      - {name: category, label: Category, type: string}
+      - {name: description, label: Brief description, type: text}
+      - {name: methods, label: Technical experience, type: text}
+      - name: gallery
+        label: Model / drawing screenshots
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{caption}"
+        fields:
+          - name: url
+            label: Image
+            type: image
+            options:
+              media: images
+          - {name: caption, label: Caption, type: string}
+      - name: documents
+        label: Calculation documents
         type: object
         list:
           collapsible:
             collapsed: true
             summary: "{label}"
         fields:
-          - {name: label, type: string}
-          - {name: url, type: string}
-      - {name: visible, label: Show on public site, type: boolean}
+          - {name: label, label: Document title, type: string}
+          - name: url
+            label: Upload PDF
+            type: file
+            options:
+              media: docs
+              extensions: [pdf]
+      - {name: show_media, label: Show uploaded materials, type: boolean}
+      - {name: visible, label: Display on website, type: boolean}
+
+  - name: additional
+    label: 06 · Additional information
+    type: file
+    path: content/additional.json
+    format: json
+    list: true
+    fields:
+      - {name: title, label: Heading, type: string, required: true}
+      - {name: description, label: Short description, type: text}
+      - {name: url, label: Optional public link, type: string}
+      - {name: visible, label: Display on website, type: boolean}
