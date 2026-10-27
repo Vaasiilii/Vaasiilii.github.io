@@ -11,13 +11,13 @@ function collapsible(roman,title,id,preview,html){
 }
 function setupCvLinks(p){
  const cvs={work:{url:p.cv_work_url,show:p.show_cv_work},phd:{url:p.cv_phd_url,show:p.show_cv_phd}};
- $('[data-cv]').forEach(a=>{const x=cvs[a.dataset.cv];const src=x&&url(x.url);
+ $$('[data-cv]').forEach(a=>{const x=cvs[a.dataset.cv];const src=x&&url(x.url);
  if(!x||x.show!==true||!src){a.hidden=true;return}
  a.href=src;a.hidden=false;
  });
 }
 function setupDisclosures(){
- $('[data-collapsible]').forEach(section=>{
+ $$('[data-collapsible]').forEach(section=>{
  const button=$('.section-toggle',section),panel=$('.section-expanded',section);
  function set(open){button.setAttribute('aria-expanded',String(open));panel.hidden=!open;section.classList.toggle('is-expanded',open)}
  button.addEventListener('click',()=>set(button.getAttribute('aria-expanded')!=='true'));
