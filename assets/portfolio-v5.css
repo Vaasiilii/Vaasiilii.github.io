@@ -796,9 +796,9 @@ body.menu-open .side-index{display:none!important}
 .collapsible-section .section-mark::before,
 .collapsible-section .section-mark::after,
 .plus::before,.plus::after{transition:transform .21s cubic-bezier(.23,.73,.37,1),background-color .18s}
-.collapsible-section.is-expanded .section-mark::after{transform:rotate(75deg)}
+.collapsible-section.is-expanded .section-mark::after{transform:rotate(60deg)}
 details[open]>summary .plus::after,
-details.evidence-disclosure[open]>summary .plus::after{transform:rotate(75deg)}
+details.evidence-disclosure[open]>summary .plus::after{transform:rotate(60deg)}
 .project-entry summary:hover .plus::before,
 .project-entry summary:hover .plus::after,
 .education-entry summary:hover .plus::before,
