@@ -626,3 +626,17 @@ details[open]>summary .plus:after{transform:rotate(90deg)}
 @media(prefers-reduced-motion:reduce){
  .menu-glyph span{transition:none}
 }
+
+
+/* The entire section title row is a single accessible tap target. */
+.section-toggle-head{position:relative}
+.section-toggle{min-height:44px}
+.section-toggle::after{content:"";position:absolute;inset:0;cursor:pointer}
+.section-toggle:focus-visible{outline:none}
+.section-toggle:focus-visible::after{outline:3px solid var(--accent);outline-offset:3px}
+@media(max-width:780px){
+ .section-toggle-head{min-height:52px}
+ .section-toggle{min-height:52px}
+ .section-preview,.project-info,.paper-main,.regatta-content{min-width:0;overflow-wrap:anywhere}
+ .site-header .nav:focus-within{scrollbar-width:thin}
+}
