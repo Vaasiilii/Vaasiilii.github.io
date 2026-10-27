@@ -84,8 +84,12 @@ function about(p){
 }
 function additional(rows){
  const cards=(rows||[]).filter(x=>x.visible!==false).map(x=>{
- const refs=(x.links||[]).filter(y=>url(y.url)).map(ref=>'<li><a href="'+E(url(ref.url))+'" target="_blank" rel="noopener noreferrer"><span class="evidence-title">'+E(ref.title||'External reference')+'</span><span class="evidence-source">'+E(ref.source||'Source')+' <span aria-hidden="true">↗</span></span></a></li>').join('');
- return '<article class="additional-card"><h3>'+E(x.title)+'</h3><p>'+E(short(x.description))+'</p>'+(refs?'<ul class="additional-evidence">'+refs+'</ul>':url(x.url)?link(x.url,'Learn more ↗','additional-link'):'')+'</article>';
+  const refs=(x.links||[]).filter(y=>url(y.url)).map(ref=>'<li><a href="'+E(url(ref.url))+'" target="_blank" rel="noopener noreferrer"><span class="evidence-title">'+E(ref.title||'External reference')+'</span><span class="evidence-source">'+E(ref.source||'Source')+' <span aria-hidden="true">↗</span></span></a></li>').join('');
+  const events=(x.regattas||[]).map(ev=>{
+   const sources=(ev.sources||[]).filter(s=>url(s.url)).map(s=>'<a class="regatta-source" href="'+E(url(s.url))+'" target="_blank" rel="noopener noreferrer"><span class="source-kind">'+E(s.kind||'Source')+'</span><span class="source-title">'+E(s.label||'Reference')+'</span><span aria-hidden="true">↗</span></a>').join('');
+   return '<li class="regatta-entry"><span class="regatta-year">'+E(ev.year||'')+'</span><div class="regatta-content"><h4>'+E(ev.competition||'')+'</h4><div class="regatta-result">'+E(ev.result||'')+'</div>'+(ev.detail?'<p class="regatta-detail">'+E(ev.detail)+'</p>':'')+(sources?'<div class="regatta-sources" aria-label="Race results and articles">'+sources+'</div>':'')+'</div><span class="regatta-class">'+E(ev.class||'')+'</span></li>';
+  }).join('');
+  return '<article class="additional-card'+(events?' additional-sailing':'')+'"><h3>'+E(x.title)+'</h3><p>'+E(short(x.description))+'</p>'+(events?'<ol class="regatta-list">'+events+'</ol>':refs?'<ul class="additional-evidence">'+refs+'</ul>':url(x.url)?link(x.url,'Learn more ↗','additional-link'):'')+'</article>';
  }).join('');
  return '<section class="site-section" id="additional">'+heading('VI','Additional information')+'<div class="additional-grid">'+cards+'</div></section>';
 }
