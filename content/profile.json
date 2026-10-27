@@ -77,5 +77,28 @@
     "Bridge and tunnel engineering specialist with a six-year honours engineering degree",
     "Professional structural design and assessment experience since 2022",
     "Research interest: lifecycle management of bridges, digital twins and evidence-based maintenance"
+  ],
+  "intro_scope": "Structural design of buildings and bridges",
+  "about_sections": [
+    {
+      "label": "PROFESSIONAL PRACTICE",
+      "title": "Design, assessment and technical documentation",
+      "body": "I work on the design and assessment of civil and industrial structures, including building frames, bridge-related structures and equipment supports.",
+      "points": [
+        "Structural analysis and verification of steel, reinforced-concrete and timber elements",
+        "Design drawings, calculation reports and coordination of engineering solutions",
+        "On-site investigations, defect assessment and checks of existing structures"
+      ]
+    },
+    {
+      "label": "RESEARCH & EDUCATION",
+      "title": "Bridge infrastructure over its service life",
+      "body": "I graduated with honours in Bridge and Tunnel Construction and pursue postgraduate research on lifecycle management of engineering assets.",
+      "points": [
+        "Research into maintenance and rehabilitation planning for bridges",
+        "Digital twins, inspection information and condition-informed decisions",
+        "Scientific publications and the Alarchin Bridge rehabilitation case study"
+      ]
+    }
   ]
 }
