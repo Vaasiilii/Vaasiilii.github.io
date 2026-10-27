@@ -168,7 +168,11 @@ async function main(){
  $('#app').innerHTML=intro(d.profile,d.projects,d.publications)+research(d.profile,d.publications)+projects(d.projects)+education(d.education)+about(d.profile)+software(d.software)+additional(d.additional);
  $('#header-contact').href='mailto:'+encodeURIComponent(d.profile.email);
  $('#copyright-year').textContent=new Date().getFullYear();
- carouselStart(d.profile.showcase_autoplay);setupCvLinks(d.profile);setupDisclosures();navigation();
+ const safeInit=(name,fn)=>{try{fn()}catch(error){console.error('Portfolio '+name+' initialization failed:',error)}};
+ safeInit('slideshow',()=>carouselStart(d.profile.showcase_autoplay));
+ safeInit('CV links',()=>setupCvLinks(d.profile));
+ safeInit('section controls',()=>setupDisclosures());
+ safeInit('navigation',()=>navigation());
  if(location.hash){requestAnimationFrame(()=>document.getElementById(location.hash.slice(1))?.scrollIntoView())}
  }catch(err){console.error(err);$('#app').innerHTML='<section class="site-section"><h2>Content unavailable</h2><p>Check portfolio content files.</p></section>'}
 }
