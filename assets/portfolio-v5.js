@@ -64,7 +64,11 @@ function showcase(projects,pubs){
 function carouselStart(enabled){
  const root=$('.showcase');if(!root)return;
  const slides=$$('.showcase-slide',root),view=$('.showcase-viewport',root),counter=$('.showcase-counter',root),control=$('.showcase-play',root);
- let n=0,paused=enabled===false,hover=false,focused=false,timer=null;
+ let n=0,paused=enabled===false,hover=false,focused=false,timer=null,inViewport=true;
+ if('IntersectionObserver' in window){
+  const observer=new IntersectionObserver(entries=>{inViewport=entries[0]?.isIntersecting??true},{threshold:.1});
+  observer.observe(root);
+ }
  const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
  if(reduce)paused=true;
  const setPauseUI=()=>{control.textContent=paused?'▶':'Ⅱ';control.setAttribute('aria-pressed',String(!paused));control.setAttribute('aria-label',paused?'Play slideshow':'Pause slideshow')};
@@ -73,7 +77,7 @@ function carouselStart(enabled){
   slides.forEach((s,i)=>{const active=i===n;s.classList.toggle('is-current',active);s.setAttribute('aria-hidden',String(!active));s.querySelectorAll('a,button').forEach(el=>{el.tabIndex=active?0:-1})});
   counter.textContent=String(n+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0')
  }
- function schedule(){clearInterval(timer);if(!paused&&!reduce)timer=setInterval(()=>{if(!document.hidden&&!hover&&!focused)show(n+1)},5000)}
+ function schedule(){clearInterval(timer);if(!paused&&!reduce)timer=setInterval(()=>{if(!document.hidden&&inViewport&&!hover&&!focused)show(n+1)},5000)}
  $('.showcase-prev',root).addEventListener('click',()=>{show(n-1);schedule()});
  $('.showcase-next',root).addEventListener('click',()=>{show(n+1);schedule()});
  control.addEventListener('click',()=>{paused=!paused;setPauseUI();schedule()});
