@@ -29,40 +29,150 @@
   },
   {
     "title": "Competitive sailing",
-    "description": "Former competitive sailor in the 29er and 49er classes. Selected results include a European Cup round victory in 2017, third overall in the 2018 29er Euro Cup series, youth bronze at the 2018 World Championship, first place at the 2019 Italian 29er National Open Regatta in Sicily and the Russian youth 49er title in 2020.",
-    "links": [
-      {
-        "title": "2017 — European Cup round victory, Helsinki (29er)",
-        "source": "Marine News / Morvesti",
-        "url": "https://morvesti.ru/news/1679/63764/"
-      },
-      {
-        "title": "2018 — Third overall in the 29er Euro Cup series",
-        "source": "Sailwave · Official series standings",
-        "url": "https://www.sailwave.com/results/29er/2018-EuroCup/2018-EuropeCup.htm"
-      },
-      {
-        "title": "2018 — World Championship youth bronze, Hong Kong (29er)",
-        "source": "International 29er Class · Championship archive",
-        "url": "https://29er.org/events/world-championships/previous-championships/"
-      },
-      {
-        "title": "2018 — Tenth overall at the 29er World Championship",
-        "source": "Sailwave · Official race results",
-        "url": "https://www.sailwave.com/results/29er/2018-WorldChampionship/2018-world-championship-hkg-results.htm"
-      },
-      {
-        "title": "2019 — Winner, Italian 29er National Open Regatta, Sicily",
-        "source": "Albaria Mondello · Sferracavallo, Palermo · 2019",
-        "url": "https://www.albaria.org/italiani-open-classe-29er-a-sferracavallo-vincono-i-russi-andrew-e-pushev/"
-      },
-      {
-        "title": "2020 — Russian National Youth Champions, 49er",
-        "source": "Saint Petersburg Government · Official report",
-        "url": "https://www.gov.spb.ru/gov/terr/reg_petrograd/news/196706/"
-      }
-    ],
+    "description": "Selected international Optimist and 29er results, followed by national-level competition in the 49er class. Results and press coverage are grouped by event.",
     "url": "",
-    "visible": true
+    "visible": true,
+    "regattas": [
+      {
+        "year": "2015",
+        "competition": "Optimist World Championship · Dziwnów, Poland",
+        "result": "28th overall · Gold Fleet",
+        "class": "Optimist",
+        "sources": [
+          {
+            "label": "Final standings",
+            "kind": "Results",
+            "url": "https://www.wilkessail.net/2015%20Worlds.pdf"
+          },
+          {
+            "label": "World Championship event review",
+            "kind": "Article",
+            "url": "https://psko.pl/mistrzostwa-swiata-w-klasie-optimist-podsumowanie/"
+          }
+        ]
+      },
+      {
+        "year": "2016",
+        "competition": "International Vila de Palamós Optimist Trophy · Spain",
+        "result": "14th overall · Gold Fleet",
+        "class": "Optimist",
+        "detail": "Led after day one; 2nd overall after day two",
+        "sources": [
+          {
+            "label": "Official final standings",
+            "kind": "Results",
+            "url": "https://optimist.hu/wp-content/uploads/2016/01/palamos.pdf"
+          },
+          {
+            "label": "Andreev leads after opening day",
+            "kind": "Article",
+            "url": "https://www.lamarsalada.info/2016/02/palamos-international-optimist-trophy_20.html"
+          },
+          {
+            "label": "Andreev in second place before finals",
+            "kind": "Article",
+            "url": "https://www.lamarsalada.info/2016/02/palamos-optimist-trophy-segunda-jornada.html"
+          }
+        ]
+      },
+      {
+        "year": "2017",
+        "competition": "29er European Cup · Helsinki, Finland",
+        "result": "1st place · Cup round",
+        "class": "29er",
+        "sources": [
+          {
+            "label": "Russian crew wins European Cup round",
+            "kind": "Article",
+            "url": "https://morvesti.ru/news/1679/63764/"
+          },
+          {
+            "label": "Historic first victory, Yacht Russia",
+            "kind": "Article",
+            "url": "https://yachtrussia.com/news/archieve/2017/06/?curPos=60&cur_cc=632&date=2017-06"
+          }
+        ]
+      },
+      {
+        "year": "2018",
+        "competition": "29er World Championship · Hong Kong",
+        "result": "10th overall · Youth bronze",
+        "class": "29er",
+        "sources": [
+          {
+            "label": "Championship youth podium",
+            "kind": "Results",
+            "url": "https://29er.org/events/world-championships/previous-championships/"
+          },
+          {
+            "label": "Russian sailors reach world top ten",
+            "kind": "Article",
+            "url": "https://www.vvv.ru/news/index.php3?news=514065"
+          },
+          {
+            "label": "Final race standings",
+            "kind": "Results",
+            "url": "https://www.sailwave.com/results/29er/2018-WorldChampionship/2018-world-championship-hkg-results.htm"
+          }
+        ]
+      },
+      {
+        "year": "2018",
+        "competition": "Kiel Week · Germany",
+        "result": "5th overall",
+        "class": "29er",
+        "sources": [
+          {
+            "label": "Kiel Week race report and results",
+            "kind": "Article",
+            "url": "https://segelreporter.com/regatta/kieler-woche-13-sieger-zur-halbzeit-hunger-verpasst-22-sieg-nach-kenterung/"
+          }
+        ]
+      },
+      {
+        "year": "2018",
+        "competition": "29er Euro Cup · Overall series",
+        "result": "3rd overall · 9-regatta series",
+        "class": "29er",
+        "sources": [
+          {
+            "label": "Series standings — Andreev / Pushev, 3rd",
+            "kind": "Results",
+            "url": "https://www.sailwave.com/results/29er/2018-EuroCup/2018-EuropeCup.htm"
+          }
+        ]
+      },
+      {
+        "year": "2019",
+        "competition": "Italian 29er National Open · Sferracavallo, Sicily",
+        "result": "1st overall · 48 crews",
+        "class": "29er",
+        "sources": [
+          {
+            "label": "Russian crew wins in Sicily",
+            "kind": "Article",
+            "url": "https://www.albaria.org/italiani-open-classe-29er-a-sferracavallo-vincono-i-russi-andrew-e-pushev/"
+          },
+          {
+            "label": "Palermo race coverage",
+            "kind": "Article",
+            "url": "https://www.palermoparla.news/20335/"
+          }
+        ]
+      },
+      {
+        "year": "2020",
+        "competition": "Russian National Youth Championship",
+        "result": "1st youth · 6th overall in national championship",
+        "class": "49er",
+        "sources": [
+          {
+            "label": "Saint Petersburg Government report",
+            "kind": "Article",
+            "url": "https://www.gov.spb.ru/gov/terr/reg_petrograd/news/196706/"
+          }
+        ]
+      }
+    ]
   }
 ]
