@@ -1,21 +1,26 @@
 [
   {
     "title": "Mobile application development",
-    "description": "Independent iOS development alongside structural engineering: Simplphoto for deliberate manual photography, Simplreads for reading management and Simplposture for posture tracking.",
+    "description": "Independent iOS projects developed alongside engineering work: Simplphoto (manual camera, stop motion and collages), Simplreads (reading and personal library) and Simplposture (posture tracking).",
     "links": [
+      {
+        "title": "Simplphoto for iPhone combines a manual camera, stop motion, and collages",
+        "source": "DEV Community · English article, 2026",
+        "url": "https://dev.to/vasilii_andreev/simplphoto-for-iphone-combines-a-manual-camera-stop-motion-and-collages-21am"
+      },
       {
         "title": "Simplphoto — manual camera, stop motion and collages",
         "source": "App Store",
         "url": "https://apps.apple.com/us/app/simplphoto/id6763885431"
       },
       {
-        "title": "Simplreads — personal reading library and tracker",
+        "title": "Simplreads — reading library and tracker",
         "source": "App Store",
         "url": "https://apps.apple.com/us/app/simplreads/id6784815877"
       },
       {
         "title": "Building Simplphoto: manual camera controls on iPhone",
-        "source": "Habr · Article",
+        "source": "Habr · Russian-language article, 2026",
         "url": "https://habr.com/ru/articles/1031606/"
       }
     ],
@@ -24,22 +29,32 @@
   },
   {
     "title": "Competitive sailing",
-    "description": "Former 29er and 49er sailor. With Leonid Pushev, won a 29er European Cup event in Helsinki (2017), placed 10th overall at the 2018 World Championship and took bronze in the youth classification.",
+    "description": "Former competitive sailor in the 29er and 49er classes. With Leonid Pushev, won a 2017 European Cup round, placed third in the overall 2018 29er Euro Cup series, won youth bronze at the 2018 29er World Championship and the Russian youth title in the 49er class in 2020.",
     "links": [
       {
-        "title": "Russian crew wins 29er European Cup round in Helsinki",
-        "source": "Sport.ru · 2017",
-        "url": "https://www.sport.ru/other/Andreev_i_Pushev_zavoevali_zoloto_v_klasse_29-er_na_etape_KE_po_parusnomu_sportu_/article358864/"
+        "title": "2017 — European Cup round victory, Helsinki (29er)",
+        "source": "Marine News / Morvesti",
+        "url": "https://morvesti.ru/news/1679/63764/"
       },
       {
-        "title": "2018 29er World Championship: 10th overall",
-        "source": "Sailwave · Official results",
+        "title": "2018 — Third overall in the 29er Euro Cup series",
+        "source": "Sailwave · Official series standings",
+        "url": "https://www.sailwave.com/results/29er/2018-EuroCup/2018-EuropeCup.htm"
+      },
+      {
+        "title": "2018 — World Championship youth bronze, Hong Kong (29er)",
+        "source": "International 29er Class · Championship archive",
+        "url": "https://29er.org/events/world-championships/previous-championships/"
+      },
+      {
+        "title": "2018 — Tenth overall at the 29er World Championship",
+        "source": "Sailwave · Official race results",
         "url": "https://www.sailwave.com/results/29er/2018-WorldChampionship/2018-world-championship-hkg-results.htm"
       },
       {
-        "title": "2018 World Championship: youth bronze crew",
-        "source": "International 29er Class",
-        "url": "https://www.29er.org/events/world-championships/previous-championships/"
+        "title": "2020 — Russian National Youth Champions, 49er",
+        "source": "Saint Petersburg Government · Official report",
+        "url": "https://www.gov.spb.ru/gov/terr/reg_petrograd/news/196706/"
       }
     ],
     "url": "",
