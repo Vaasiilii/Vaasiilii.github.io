@@ -9,6 +9,13 @@ function collapsible(roman,title,id,preview,html){
  const key='panel-'+id;
  return '<section class="site-section collapsible-section" id="'+E(id)+'" data-collapsible><div class="section-head section-toggle-head"><span class="section-number">'+E(roman)+'</span><h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="'+key+'">'+E(title)+'</button></h2><span class="section-mark" aria-hidden="true"></span></div><p class="section-preview">'+E(preview)+'</p><div class="section-expanded" id="'+key+'" hidden>'+html+'</div></section>';
 }
+function setupCvLinks(p){
+ const cvs={work:{url:p.cv_work_url,show:p.show_cv_work},phd:{url:p.cv_phd_url,show:p.show_cv_phd}};
+ $('[data-cv]').forEach(a=>{const x=cvs[a.dataset.cv];const src=x&&url(x.url);
+ if(!x||x.show!==true||!src){a.hidden=true;return}
+ a.href=src;a.hidden=false;
+ });
+}
 function setupDisclosures(){
  $('[data-collapsible]').forEach(section=>{
  const button=$('.section-toggle',section),panel=$('.section-expanded',section);
@@ -155,7 +162,7 @@ async function main(){
  $('#app').innerHTML=intro(d.profile,d.projects,d.publications)+research(d.profile,d.publications)+projects(d.projects)+education(d.education)+about(d.profile)+software(d.software)+additional(d.additional);
  $('#header-contact').href='mailto:'+encodeURIComponent(d.profile.email);
  $('#copyright-year').textContent=new Date().getFullYear();
- carouselStart(d.profile.showcase_autoplay);setupDisclosures();navigation();
+ carouselStart(d.profile.showcase_autoplay);setupCvLinks(d.profile);setupDisclosures();navigation();
  if(location.hash){requestAnimationFrame(()=>document.getElementById(location.hash.slice(1))?.scrollIntoView())}
  }catch(err){console.error(err);$('#app').innerHTML='<section class="site-section"><h2>Content unavailable</h2><p>Check portfolio content files.</p></section>'}
 }
