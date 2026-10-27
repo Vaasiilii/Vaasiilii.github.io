@@ -101,3 +101,15 @@
 - The floating rail is hidden while the mobile header menu is open.
 - Relevant files: `assets/portfolio-v5.js`, `assets/portfolio-v5.css`, `index.html`. Static asset cache version: `20261027-rail2`.
 - Smoke tests covered HTML rendering, section visibility, side-rail state and interactions, and simultaneous operation with the mobile header menu.
+
+
+## UX refinement — 27 October 2026 (v5.7)
+
+- Education, About, Software and Additional use one accessible full-width button per section, including their Roman numeral and right-side cross. Every part of the heading row opens or closes its panel.
+- Hover and keyboard focus highlight the numeral, heading and cross in blue, with visible keyboard focus outlines.
+- The cross animates into a near-horizontal diagonal instead of a minus: the vertical stroke rotates by 75 degrees, ending 15 degrees from the horizontal. This applies consistently to project, education, software and source accordions.
+- The kicker ACADEMIC & ENGINEERING PORTFOLIO transfers into the sticky header when scrolling triggers the side navigation. On narrow phones the shorter ACADEMIC / ENGINEERING label fits beside the menu.
+- The header Email action now navigates to About → Contact and automatically expands the About section. There visitors can use the mailto link or copy the address directly; this avoids depending solely on a locally configured email app.
+- Back to top has an explicit window.scrollTo handler and removes the old hash after navigation; reduced-motion preference is respected.
+- Javascript, data rendering, accordion interaction, copy-email and scroll handling were exercised with a simulated DOM. Real-device visual review remains recommended.
+- Cache-busted release: 20261027-polish1.
