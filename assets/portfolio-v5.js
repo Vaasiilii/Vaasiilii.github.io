@@ -6,7 +6,7 @@ function url(v){if(typeof v!=='string'||!v.trim())return '';try{let u=new URL(v,
 function link(v,label,cl=''){let u=url(v);return u?'<a class="'+E(cl)+'" href="'+E(u)+'"'+(/^https?:/.test(u)?' target="_blank" rel="noopener noreferrer"':'')+'>'+E(label)+'</a>':''}
 function heading(roman,title){return '<div class="section-head"><span class="section-number" aria-label="Section '+E(roman)+'">'+E(roman)+'</span><h2>'+E(title)+'</h2></div>'}
 const safeId=s=>String(s||'').replace(/[^a-zA-Z0-9_-]/g,'');
-function intro(p,projects,pubs){return '<section id="home" class="intro-section"><div class="intro-grid"><div class="intro-main"><div class="intro-label">'+E('ACADEMIC & ENGINEERING PORTFOLIO')+'</div><h1>'+E(p.name||'Vasilii Andreev')+'</h1><p class="profession">'+E(p.professional_title||'Civil & Structural Engineer')+'</p><p class="research-status"><span class="status-line" aria-hidden="true"></span>'+E(p.postgraduate_label||'Postgraduate Researcher')+'</p></div>'+showcase(projects,pubs)+'</div><div class="intro-foot"><span class="intro-spacer"></span><a class="text-link" href="#research">Explore ↓</a>'+(p.show_cv===true?link(p.resume_url,'Academic CV ↗','text-link'):'')+'</div></section>'}
+function intro(p,projects,pubs){return '<section id="home" class="intro-section"><div class="intro-grid"><div class="intro-main"><div class="intro-label">'+E('ACADEMIC & ENGINEERING PORTFOLIO')+'</div><h1>'+E(p.name||'Vasilii Andreev')+'</h1><p class="profession">'+E(p.professional_title||'Civil & Structural Engineer')+'</p><p class="intro-scope">'+E(p.intro_scope||'Structural design of buildings and bridges')+'</p><p class="research-status">'+E(p.postgraduate_label||'Postgraduate Researcher')+'</p></div>'+showcase(projects,pubs)+'</div><div class="intro-foot"><span class="intro-spacer"></span><a class="text-link" href="#research">Explore ↓</a>'+(p.show_cv===true?link(p.resume_url,'Academic CV ↗','text-link'):'')+'</div></section>'}
 function mergeWorks(projects,pubs){
  let pr=(projects||[]).filter(x=>x.visible!==false).slice(0,6).map(x=>({...x,entryType:'project'}));
  let pu=(pubs||[]).filter(x=>x.visible!==false).slice(0,6).map(x=>({...x,entryType:'publication'}));
@@ -77,15 +77,17 @@ function software(rows){
  return '<section class="site-section" id="software">'+heading('IV','Software & methods')+'<p class="section-lead software-note">Engineering tools, modelling and documentation. Project models, calculations and visual evidence can be added to each entry.</p><div class="software-list">'+list+'</div></section>'
 }
 function about(p){
- let pts=(p.about_points||[]).filter(Boolean);
- if(!pts.length)pts=String(p.about||'').split(/(?<=[.!?])\s+/).filter(Boolean);
- const body=pts.map(t=>'<p>'+E(short(t))+'</p>').join('');
+ const groups=(p.about_sections||[]).filter(x=>x.title||x.body||x.points?.length);
+ const body=groups.length?groups.map(x=>'<article class="about-group"><span class="about-group-label">'+E(x.label||'')+'</span><h3>'+E(x.title||'')+'</h3>'+(x.body?'<p>'+E(x.body)+'</p>':'')+(x.points?.length?'<ul class="about-competencies">'+x.points.map(pt=>'<li>'+E(short(pt))+'</li>').join('')+'</ul>':'')+'</article>').join(''):(p.about_points||[]).map(x=>'<p>'+E(x)+'</p>').join('');
  const links=(p.links||[]).map(x=>link(x.url,x.label+' ↗','social-link')).join('');
- return '<section class="site-section" id="about">'+heading('V','About')+'<div class="about-grid"><div class="about-main"><div class="about-points">'+body+'</div></div><div class="about-links"><span class="eyebrow">ACADEMIC PROFILES</span><nav aria-label="Academic profiles" class="socials">'+links+'</nav><div class="contact-block" id="contact"><span>CONTACT</span>'+link('mailto:'+p.email,p.email,'email-link')+'</div></div></div></section>'
+ return '<section class="site-section" id="about">'+heading('V','About')+'<div class="about-grid"><div class="about-main"><div class="about-groups">'+body+'</div></div><div class="about-links"><span class="eyebrow">ACADEMIC PROFILES</span><nav aria-label="Academic profiles" class="socials">'+links+'</nav><div class="contact-block" id="contact"><span>CONTACT</span>'+link('mailto:'+p.email,p.email,'email-link')+'</div></div></div></section>';
 }
 function additional(rows){
- const cards=(rows||[]).filter(x=>x.visible!==false).map(x=>'<article class="additional-card"><h3>'+E(x.title)+'</h3><p>'+E(short(x.description))+'</p>'+(url(x.url)?link(x.url,'Learn more ↗','additional-link'):'')+'</article>').join('');
- return '<section class="site-section" id="additional">'+heading('VI','Additional information')+'<div class="additional-grid">'+cards+'</div></section>'
+ const cards=(rows||[]).filter(x=>x.visible!==false).map(x=>{
+ const refs=(x.links||[]).filter(y=>url(y.url)).map(ref=>'<li><a href="'+E(url(ref.url))+'" target="_blank" rel="noopener noreferrer"><span class="evidence-title">'+E(ref.title||'External reference')+'</span><span class="evidence-source">'+E(ref.source||'Source')+' <span aria-hidden="true">↗</span></span></a></li>').join('');
+ return '<article class="additional-card"><h3>'+E(x.title)+'</h3><p>'+E(short(x.description))+'</p>'+(refs?'<ul class="additional-evidence">'+refs+'</ul>':url(x.url)?link(x.url,'Learn more ↗','additional-link'):'')+'</article>';
+ }).join('');
+ return '<section class="site-section" id="additional">'+heading('VI','Additional information')+'<div class="additional-grid">'+cards+'</div></section>';
 }
 const targets=[['research','Research','I'],['projects','Projects','II'],['education','Education','III'],['software','Software','IV'],['about','About','V'],['additional','Additional','VI']];
 function navigation(){
