@@ -22,6 +22,7 @@ content:
     fields:
       - {name: name, label: Name, type: string}
       - {name: professional_title, label: Professional title, type: string}
+      - {name: intro_scope, label: Buildings and bridges introduction, type: string}
       - {name: postgraduate_label, label: Researcher title, type: string}
       - {name: location, label: Location, type: string}
       - {name: introduction, label: Intro paragraph, type: text}
@@ -51,6 +52,21 @@ content:
           - {name: title, label: Title, type: string}
           - {name: description, label: Description, type: text}
       - {name: about, label: About paragraph, type: text}
+      - name: about_sections
+        label: Professional practice and research
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - {name: label, label: Eyebrow, type: string}
+          - {name: title, label: Section heading, type: string}
+          - {name: body, label: Description, type: text}
+          - name: points
+            label: Key responsibilities or research activities
+            type: string
+            list: true
       - name: about_points
         label: Short biography statements
         type: string
@@ -237,5 +253,16 @@ content:
     fields:
       - {name: title, label: Heading, type: string, required: true}
       - {name: description, label: Short description, type: text}
+      - name: links
+        label: Verified published sources
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - {name: title, label: Display headline, type: string}
+          - {name: source, label: Publisher or source, type: string}
+          - {name: url, label: Verified URL, type: string}
       - {name: url, label: Optional public link, type: string}
       - {name: visible, label: Display on website, type: boolean}
