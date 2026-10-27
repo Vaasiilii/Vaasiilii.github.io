@@ -155,39 +155,82 @@ function additional(rows){
 
 const targets=[['research','Research','I'],['projects','Projects','II'],['education','Education','III'],['about','About','IV'],['software','Software','V'],['additional','Additional','VI']];
 function navigation(){
- const aside=document.createElement('nav');aside.className='side-index';aside.id='side-index';aside.setAttribute('aria-label','Section navigation');
- aside.innerHTML=targets.map(([id,name,n])=>'<a href="#'+id+'" data-for="'+id+'"><span>'+n+'</span><span>'+name+'</span></a>').join('');
+ const aside=document.createElement('nav');
+ aside.className='side-index';
+ aside.id='side-index';
+ aside.setAttribute('aria-label','Section navigation');
+ aside.innerHTML='<button type="button" class="side-index-toggle" aria-expanded="false" aria-controls="side-index-links" aria-label="Open section navigation"><span class="side-index-current">I</span><span class="side-index-bars" aria-hidden="true"><span></span><span></span></span></button><div class="side-index-links" id="side-index-links">'+targets.map(([id,name,n])=>'<a href="#'+id+'" data-for="'+id+'"><span class="side-index-roman">'+n+'</span><span>'+name+'</span></a>').join('')+'</div>';
  document.body.appendChild(aside);
  const header=$('.site-header'),headerNav=$('#site-nav'),menu=$('#nav-toggle');
  const label=$('.nav-toggle-label',menu);
+ const sideButton=$('.side-index-toggle',aside);
+ const sideCurrent=$('.side-index-current',aside);
  const isCompact=()=>window.matchMedia('(max-width: 1020px)').matches;
+ function setSide(open){
+  const next=Boolean(open)&&document.body.classList.contains('reading-mode');
+  aside.classList.toggle('is-expanded',next);
+  sideButton.setAttribute('aria-expanded',String(next));
+  const n=sideCurrent.textContent||'I';
+  sideButton.setAttribute('aria-label',(next?'Close':'Open')+' section navigation, current section '+n);
+ }
  function setMenu(open){
-   const next=Boolean(open)&&isCompact();
-   menu.setAttribute('aria-expanded',String(next));
-   menu.setAttribute('aria-label',next?'Close navigation':'Open navigation');
-   headerNav.classList.toggle('open',next);
-   header.classList.toggle('menu-active',next);
-   document.body.classList.toggle('menu-open',next);
-   if(label)label.textContent=next?'Close':'Menu';
+  const next=Boolean(open)&&isCompact();
+  if(next)setSide(false);
+  menu.setAttribute('aria-expanded',String(next));
+  menu.setAttribute('aria-label',next?'Close navigation':'Open navigation');
+  headerNav.classList.toggle('open',next);
+  header.classList.toggle('menu-active',next);
+  document.body.classList.toggle('menu-open',next);
+  if(label)label.textContent=next?'Close':'Menu';
  }
  function scrollPosition(){
-  const threshold=$('#home')?.offsetHeight||450;
-  document.body.classList.toggle('reading-mode',window.scrollY>threshold-150);
+  const introHeight=$('#home')?.offsetHeight||600;
+  const threshold=Math.min(360,Math.max(120,introHeight-240));
+  const active=window.scrollY>threshold;
+  document.body.classList.toggle('reading-mode',active);
+  if(!active)setSide(false);
  }
  function choose(){
   const top=window.innerHeight*.35;
   let active='research';
   for(const [id] of targets){const node=document.getElementById(id);if(node&&node.getBoundingClientRect().top<=top)active=id}
-  $$('[data-for]').forEach(a=>{const on=a.dataset.for===active;a.classList.toggle('is-active',on);if(on)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')});
+  const current=targets.find(item=>item[0]===active)||targets[0];
+  sideCurrent.textContent=current[2];
+  $$('[data-for]').forEach(a=>{
+   const on=a.dataset.for===active;
+   a.classList.toggle('is-active',on);
+   if(on)a.setAttribute('aria-current','location');
+   else a.removeAttribute('aria-current');
+  });
+  sideButton.setAttribute('aria-label',(sideButton.getAttribute('aria-expanded')==='true'?'Close':'Open')+' section navigation, current section '+current[1]);
  }
  menu.addEventListener('click',()=>setMenu(menu.getAttribute('aria-expanded')!=='true'));
+ sideButton.addEventListener('click',()=>{
+  setMenu(false);
+  setSide(sideButton.getAttribute('aria-expanded')!=='true');
+ });
  $$('#site-nav a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
- document.addEventListener('click',event=>{if(menu.getAttribute('aria-expanded')==='true'&&!header.contains(event.target))setMenu(false)});
- document.addEventListener('keydown',event=>{if(event.key==='Escape'){setMenu(false);if(isCompact())menu.focus()}});
- window.addEventListener('resize',()=>{if(!isCompact())setMenu(false);scrollPosition()},{passive:true});
+ $$('.side-index-links a',aside).forEach(a=>a.addEventListener('click',()=>setSide(false)));
+ document.addEventListener('click',event=>{
+  if(menu.getAttribute('aria-expanded')==='true'&&!header.contains(event.target))setMenu(false);
+  if(sideButton.getAttribute('aria-expanded')==='true'&&!aside.contains(event.target))setSide(false);
+ });
+ document.addEventListener('keydown',event=>{
+  if(event.key!=='Escape')return;
+  const sideOpen=sideButton.getAttribute('aria-expanded')==='true';
+  const menuOpen=menu.getAttribute('aria-expanded')==='true';
+  setSide(false);setMenu(false);
+  if(sideOpen)sideButton.focus();
+  else if(menuOpen&&isCompact())menu.focus();
+ });
+ window.addEventListener('resize',()=>{
+  if(!isCompact())setMenu(false);
+  if(window.innerWidth>=1550)setSide(false);
+  scrollPosition();choose();
+ },{passive:true});
  window.addEventListener('scroll',scrollPosition,{passive:true});
  window.addEventListener('scroll',choose,{passive:true});
- scrollPosition();choose();setMenu(false);
+ scrollPosition();choose();setMenu(false);setSide(false);
 }
 async function main(){
  try{
