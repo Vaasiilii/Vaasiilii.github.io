@@ -264,5 +264,33 @@ content:
           - {name: title, label: Display headline, type: string}
           - {name: source, label: Publisher or source, type: string}
           - {name: url, label: Verified URL, type: string}
+      - name: regattas
+        label: Sailing events (result and article sources)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{competition}"
+        fields:
+          - {name: year, label: Year, type: string}
+          - {name: competition, label: Competition and location, type: string}
+          - {name: result, label: Final result and category, type: string}
+          - {name: class, label: Boat class, type: string}
+          - {name: detail, label: Additional race details, type: text}
+          - name: sources
+            label: Press articles and official results
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{label}"
+            fields:
+              - {name: label, label: Article or results headline, type: string}
+              - name: kind
+                label: Kind of source
+                type: select
+                options:
+                  values: [Article, Results, Other]
+              - {name: url, label: Source URL, type: string}
       - {name: url, label: Optional public link, type: string}
       - {name: visible, label: Display on website, type: boolean}
