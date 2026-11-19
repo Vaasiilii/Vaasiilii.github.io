@@ -168,12 +168,20 @@ function mediaOf(x){
  const section=(title,body,extra='')=>body?'<section class="project-media-section '+extra+'"><div class="project-media-heading"><h4>'+E(title)+'</h4></div>'+body+'</section>':'';
  const visualisations=imageCards(x.gallery,'visual');
  const calculations=imageCards(x.calculations,'technical');
+ const resultCards=(x.calculation_results||[]).map(r=>{
+  const metrics=[['Result',r.result],['Limit',r.limit],['Utilisation',r.utilisation],['Settlement',r.settlement]].filter(v=>v[1]).map(([label,value])=>'<div class="project-result-metric"><small>'+E(label)+'</small><strong>'+E(value)+'</strong></div>').join('');
+  return '<article class="project-result-card"><span class="project-result-group">'+E(r.group||'')+'</span><h5>'+E(r.check||'')+'</h5><div class="project-result-metrics">'+metrics+'</div><p class="project-result-location">'+E(r.location||'')+'</p></article>';
+ }).join('');
+ const resultSummary=x.calculation_summary?'<p class="project-results-summary">'+E(x.calculation_summary)+'</p>':'';
+ const resultNote=x.calculation_note?'<p class="project-results-note">'+E(x.calculation_note)+'</p>':'';
+ const results=resultCards?resultSummary+'<div class="project-results-grid">'+resultCards+'</div>'+resultNote:'';
  const drawings=fileCards(x.drawings);
  const documents=fileCards(x.documents);
  const presentation=x.presentation&&url(x.presentation.url)?fileCards([x.presentation]):'';
  const html=[
   section('Visualisations',visualisations,'visualisations-section'),
   section('Calculation illustrations',calculations,'calculations-section'),
+  section('Critical calculation results',results,'results-section'),
   section('Technical drawings',drawings,'drawings-section'),
   section('Calculation summary',documents,'documents-section'),
   section('Project presentation',presentation,'presentation-section')
