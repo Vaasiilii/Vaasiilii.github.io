@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="t d">
+<title id="t">Alarchin Bridge superstructure finite-element model schematic</title>
+<desc id="d">Explanatory schematic of a plate-element bridge deck model with seven longitudinal girders, transverse members and representative moving load positions.</desc>
+<rect width="1200" height="560" fill="#fafaf8"/>
+<text x="54" y="55" fill="#53656c" font-family="Arial,sans-serif" font-size="18" letter-spacing="3">STRUCTURAL ANALYSIS / SCHEMATIC</text>
+<text x="54" y="91" fill="#182328" font-family="Arial,sans-serif" font-size="30" font-weight="600">Superstructure finite-element model</text>
+<polygon points="170,205 890,115 1050,330 330,430" fill="#e9eff1" stroke="#53656c" stroke-width="3"/>
+<g stroke="#a9b8bd" stroke-width="1.3" fill="none">
+<path d="M170 205 L330 430 M242 196 L402 421 M314 187 L474 412 M386 178 L546 403 M458 169 L618 394 M530 160 L690 385 M602 151 L762 376 M674 142 L834 367 M746 133 L906 358 M818 124 L978 349 M890 115 L1050 330"/>
+<path d="M170 205 L890 115 M186 227 L906 137 M202 248 L922 158 M218 270 L938 180 M234 291 L954 201 M250 313 L970 223 M266 334 L986 244 M282 356 L1002 266 M298 377 L1018 287 M314 399 L1034 309 M330 430 L1050 330"/>
+</g>
+<g stroke="#294d5b" stroke-width="5" fill="none"><path d="M170 205 L890 115"/><path d="M196 242 L916 152"/><path d="M223 280 L943 190"/><path d="M250 318 L970 228"/><path d="M277 355 L997 265"/><path d="M304 393 L1024 303"/><path d="M330 430 L1050 330"/></g>
+<g stroke="#b64e3d" stroke-width="4" fill="none"><path d="M350 155 L350 192 M340 180 L350 194 L360 180"/><path d="M540 132 L540 168 M530 156 L540 170 L550 156"/><path d="M735 110 L735 146 M725 134 L735 148 L745 134"/></g>
+<g fill="#b64e3d" font-family="Arial,sans-serif" font-size="18" font-weight="600"><text x="318" y="143">A11</text><text x="508" y="120">N11</text><text x="690" y="98">Pedestrian</text></g>
+<g fill="#182328" font-family="Arial,sans-serif"><text x="54" y="490" font-size="19" font-weight="600">Plate elements</text><text x="54" y="520" font-size="16" fill="#59686d">Main girders and transverse members are represented in the deck model.</text><text x="680" y="490" font-size="19" font-weight="600">Rigid links</text><text x="680" y="520" font-size="16" fill="#59686d">Auxiliary loading plate connected to the main girders.</text></g>
+</svg>

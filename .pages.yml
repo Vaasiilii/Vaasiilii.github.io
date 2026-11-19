@@ -132,6 +132,7 @@ content:
       - {name: discipline, label: Engineering discipline, type: string}
       - {name: year, label: Year, type: string}
       - {name: summary, label: Short project summary, type: text}
+      - {name: case_study_url, label: Dedicated project presentation page, type: string}
       - {name: role, label: Your own contribution, type: string}
       - {name: methods, label: Methods / software, type: string}
       - {name: challenge, label: Context & challenge, type: text}

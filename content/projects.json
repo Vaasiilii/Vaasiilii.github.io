@@ -45,17 +45,14 @@
     ],
     "documents": [
       {
-        "label": "Bridge drawing set (8 sheets)",
-        "url": "media/docs/alarchin-bridge-engineering-drawings.pdf"
-      },
-      {
-        "label": "Project visualisations (PDF)",
-        "url": "media/docs/alarchin-bridge-visualisations.pdf"
+        "label": "Selected structural calculation summary (PDF)",
+        "url": "media/docs/alarchin-calculation-summary.pdf"
       }
     ],
     "featured": true,
     "visible": true,
-    "show_media": false
+    "show_media": false,
+    "case_study_url": "alarchin-bridge.html"
   },
   {
     "slug": "steel-bridge-orthotropic-deck",
