@@ -132,7 +132,6 @@ content:
       - {name: discipline, label: Engineering discipline, type: string}
       - {name: year, label: Year, type: string}
       - {name: summary, label: Short project summary, type: text}
-      - {name: case_study_url, label: Dedicated project presentation page, type: string}
       - {name: role, label: Your own contribution, type: string}
       - {name: methods, label: Methods / software, type: string}
       - {name: challenge, label: Context & challenge, type: text}
@@ -144,23 +143,8 @@ content:
         options:
           media: images
       - {name: image_alt, label: Accessible image description, type: string}
-      - name: documents
-        label: Public documents (only if permitted)
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{label}"
-        fields:
-          - {name: label, label: Button label, type: string}
-          - name: url
-            label: Upload / choose PDF directly (or paste URL)
-            type: file
-            options:
-              media: docs
-              extensions: [pdf]
       - name: gallery
-        label: Image gallery
+        label: Visualisations
         type: object
         list:
           collapsible:
@@ -168,10 +152,83 @@ content:
             summary: "{caption}"
         fields:
           - name: url
+            label: Image
             type: image
             options:
               media: images
-          - {name: caption, type: string}
+          - {name: caption, label: Caption, type: string}
+      - name: calculations
+        label: Calculation illustrations (keep order 1–7)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{caption}"
+        fields:
+          - name: url
+            label: Calculation image
+            type: image
+            options:
+              media: images
+          - {name: caption, label: Caption, type: string}
+      - {name: calculation_summary, label: Calculation interpretation / governing girder note, type: text}
+      - name: calculation_results
+        label: Critical calculation results
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{check} · {group}"
+        fields:
+          - {name: group, label: Structural group / governing element, type: string}
+          - {name: check, label: Verification, type: string}
+          - {name: result, label: Calculated result, type: string}
+          - {name: limit, label: Limit / resistance, type: string}
+          - {name: utilisation, label: Utilisation, type: string}
+          - {name: settlement, label: Settlement (if applicable), type: string}
+          - {name: location, label: Governing location / load combination, type: text}
+      - {name: calculation_note, label: Engineering note / interpretation, type: text}
+      - name: drawings
+        label: Technical drawings (individual sheets and full set)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - {name: label, label: Drawing title, type: string}
+          - name: url
+            label: Upload drawing PDF
+            type: file
+            options:
+              media: docs
+              extensions: [pdf]
+      - name: documents
+        label: Calculation summary and supporting documents
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - {name: label, label: Document title, type: string}
+          - name: url
+            label: Upload PDF
+            type: file
+            options:
+              media: docs
+              extensions: [pdf]
+      - name: presentation
+        label: Project presentation (PDF)
+        type: object
+        fields:
+          - {name: label, label: Presentation link label, type: string}
+          - name: url
+            label: Upload English presentation PDF
+            type: file
+            options:
+              media: docs
+              extensions: [pdf]
       - {name: featured, label: Featured (reserved for later), type: boolean}
       - {name: visible, label: Show on public site, type: boolean}
       - {name: show_media, label: Show images and PDF documents on site, type: boolean}

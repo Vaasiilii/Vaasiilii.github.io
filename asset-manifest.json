@@ -1,17 +1,5 @@
 [
   {
-    "project": "alarchin",
-    "source": "uni/01_Alarchin/Андреев В.К._Чертежи.pdf",
-    "site_path": "media/docs/alarchin-bridge-engineering-drawings.pdf",
-    "size_mb": 14.75
-  },
-  {
-    "project": "alarchin",
-    "source": "uni/01_Alarchin/vizualization/Thesis_Vizualization.pdf",
-    "site_path": "media/docs/alarchin-bridge-visualisations.pdf",
-    "size_mb": 4.99
-  },
-  {
     "project": "ortho",
     "source": "uni/02_Orto/00_Initial/2025_СУЗС(М)-5_МРПС_АндреевВК.pdf",
     "site_path": "media/docs/steel-bridge-analysis-report.pdf",
@@ -124,5 +112,101 @@
     "source": "work/04_Jacobs/02_Jacobs_Slab Calculation/Jakobs_perekritiye_21_04_2026.pdf",
     "site_path": "media/docs/jacobs-existing-floor-verification.pdf",
     "size_mb": 0.81
+  },
+  {
+    "project": "alarchin",
+    "source": "alarchin_visualisation_1.png",
+    "site_path": "media/images/alarchin-visual-1.webp",
+    "size_mb": 0.44
+  },
+  {
+    "project": "alarchin",
+    "source": "alarchin_visualisation_2.png",
+    "site_path": "media/images/alarchin-visual-2.webp",
+    "size_mb": 0.53
+  },
+  {
+    "project": "alarchin",
+    "source": "alarchin_visualisation_3.png",
+    "site_path": "media/images/alarchin-visual-3.webp",
+    "size_mb": 0.46
+  },
+  {
+    "project": "alarchin",
+    "source": "alarchin_visualisation_4.png",
+    "site_path": "media/images/alarchin-visual-4.webp",
+    "size_mb": 0.46
+  },
+  {
+    "project": "alarchin",
+    "source": "alarchin_calculation_1(1).png",
+    "site_path": "media/images/alarchin-calculation-1.webp",
+    "size_mb": 0.82
+  },
+  {
+    "project": "alarchin",
+    "source": "alarchin_calculation_2(1).png",
+    "site_path": "media/images/alarchin-calculation-2.webp",
+    "size_mb": 0.72
+  },
+  {
+    "project": "alarchin",
+    "source": "alarchin_calculation_3(1).png",
+    "site_path": "media/images/alarchin-calculation-3.webp",
+    "size_mb": 0.92
+  },
+  {
+    "project": "alarchin",
+    "source": "alarchin_calculation_4(1).png",
+    "site_path": "media/images/alarchin-calculation-4.webp",
+    "size_mb": 0.24
+  },
+  {
+    "project": "alarchin",
+    "source": "alarchin_calculation_5(1).png",
+    "site_path": "media/images/alarchin-calculation-5.webp",
+    "size_mb": 0.64
+  },
+  {
+    "project": "alarchin",
+    "source": "alarchin_calculation_6(1).png",
+    "site_path": "media/images/alarchin-calculation-6.webp",
+    "size_mb": 0.27
+  },
+  {
+    "project": "alarchin",
+    "source": "alarchin_calculation_7(1).png",
+    "site_path": "media/images/alarchin-calculation-7.webp",
+    "size_mb": 0.25
+  },
+  {
+    "project": "alarchin",
+    "source": "alarchin_drawings_1.pdf",
+    "site_path": "media/docs/alarchin-drawing-superstructure.pdf",
+    "size_mb": 4.07
+  },
+  {
+    "project": "alarchin",
+    "source": "alarchin_drawings_2.pdf",
+    "site_path": "media/docs/alarchin-drawing-supports.pdf",
+    "size_mb": 0.84
+  },
+  {
+    "project": "alarchin",
+    "source": "alarchin_drawings_all.pdf",
+    "site_path": "media/docs/alarchin-drawings-all-8-sheets.pdf",
+    "size_mb": 10.86
+  },
+  {
+    "project": "alarchin",
+    "source": "alarchin_presentation_en.pdf",
+    "site_path": "media/docs/alarchin-project-presentation-en.pdf",
+    "size_mb": 13.66
+  },
+  {
+    "project": "alarchin",
+    "source": "alarchin_calculation_summary.pdf",
+    "site_path": "media/docs/alarchin-calculation-summary.pdf",
+    "size_mb": 0.01
   }
 ]

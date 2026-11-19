@@ -12,47 +12,128 @@
     "approach": "Developed structural models, examined the existing bridge configuration and designed rehabilitation interventions. Prepared calculation and drawing documentation.",
     "outcome": "Graduate qualification work defended with Excellent (A). The bridge also serves as a case study in lifecycle-management research.",
     "cover_image": "media/images/alarchin-visual-3.webp",
-    "image_alt": "Original project visual for Alarchin Bridge / Rehabilitation",
+    "image_alt": "Proposed rehabilitation visualisation of Alarchin Bridge over the Griboyedov Canal",
     "gallery": [
       {
         "url": "media/images/alarchin-visual-1.webp",
-        "caption": "Proposed rehabilitation — architectural visualisation"
+        "caption": "Canal-level view of the rehabilitated bridge"
       },
       {
         "url": "media/images/alarchin-visual-2.webp",
-        "caption": "Proposed rehabilitation — architectural visualisation"
+        "caption": "Aerial view of the bridge and surrounding urban fabric"
       },
       {
         "url": "media/images/alarchin-visual-3.webp",
-        "caption": "Proposed rehabilitation — architectural visualisation"
+        "caption": "Perspective view of the bridge superstructure and granite supports"
       },
       {
         "url": "media/images/alarchin-visual-4.webp",
-        "caption": "Proposed rehabilitation — architectural visualisation"
-      },
-      {
-        "url": "media/images/alarchin-sheet-1.webp",
-        "caption": "Extract from original bridge drawing set"
-      },
-      {
-        "url": "media/images/alarchin-sheet-2.webp",
-        "caption": "Extract from original bridge drawing set"
-      },
-      {
-        "url": "media/images/alarchin-sheet-4.webp",
-        "caption": "Extract from original bridge drawing set"
+        "caption": "View along the bridge roadway"
       }
     ],
     "documents": [
       {
-        "label": "Selected structural calculation summary (PDF)",
+        "label": "Structural analysis summary · PDF",
         "url": "media/docs/alarchin-calculation-summary.pdf"
       }
     ],
     "featured": true,
     "visible": true,
-    "show_media": false,
-    "case_study_url": "alarchin-bridge.html"
+    "show_media": true,
+    "calculations": [
+      {
+        "url": "media/images/alarchin-calculation-1.webp",
+        "caption": "Alarchin Calculation 1 — Overall finite-element model of the bridge and support foundations"
+      },
+      {
+        "url": "media/images/alarchin-calculation-2.webp",
+        "caption": "Alarchin Calculation 2 — Plate-element model of the superstructure and rigid-link loading plate"
+      },
+      {
+        "url": "media/images/alarchin-calculation-3.webp",
+        "caption": "Alarchin Calculation 3 — Live-load arrangements: A11, N11 and pedestrian loading"
+      },
+      {
+        "url": "media/images/alarchin-calculation-4.webp",
+        "caption": "Alarchin Calculation 4 — Abutment model and pile arrangement"
+      },
+      {
+        "url": "media/images/alarchin-calculation-5.webp",
+        "caption": "Alarchin Calculation 5 — Abutment model with pile–soil interaction springs"
+      },
+      {
+        "url": "media/images/alarchin-calculation-6.webp",
+        "caption": "Alarchin Calculation 6 — Intermediate-support model and pile arrangement"
+      },
+      {
+        "url": "media/images/alarchin-calculation-7.webp",
+        "caption": "Alarchin Calculation 7 — Intermediate-support model with pile–soil interaction springs"
+      }
+    ],
+    "drawings": [
+      {
+        "label": "Main superstructure and connection details",
+        "url": "media/docs/alarchin-drawing-superstructure.pdf"
+      },
+      {
+        "label": "Abutments and intermediate supports",
+        "url": "media/docs/alarchin-drawing-supports.pdf"
+      },
+      {
+        "label": "Complete drawing set · 8 sheets",
+        "url": "media/docs/alarchin-drawings-all-8-sheets.pdf"
+      }
+    ],
+    "presentation": {
+      "label": "English project presentation · 44 slides · PDF",
+      "url": "media/docs/alarchin-project-presentation-en.pdf"
+    },
+    "calculation_summary": "The superstructure checks are reported for the governing main girder Bm4, identified as the most heavily loaded beam in the model. Pile checks are shown separately for intermediate support Op2 and abutment Ok1.",
+    "calculation_results": [
+      {
+        "group": "Superstructure · governing girder Bm4",
+        "check": "Normal stress",
+        "result": "212.89 MPa",
+        "limit": "295.00 MPa",
+        "utilisation": "72.2%",
+        "location": "Midspan of the 11.15 m span under permanent + A11 + pedestrian loading."
+      },
+      {
+        "group": "Superstructure · governing girder Bm4",
+        "check": "Shear stress",
+        "result": "149.39 MPa",
+        "limit": "171.76 MPa",
+        "utilisation": "87.0%",
+        "location": "Support section at Op2 under permanent + A11 + pedestrian loading."
+      },
+      {
+        "group": "Superstructure · governing girder Bm4",
+        "check": "Deflection",
+        "result": "17.0 mm",
+        "limit": "27.9 mm",
+        "utilisation": "60.9%",
+        "location": "Midspan of the 11.15 m span under N11."
+      },
+      {
+        "group": "Pile foundation · intermediate support Op2",
+        "check": "Pile resistance",
+        "result": "744.1 kN",
+        "limit": "764.8 kN",
+        "utilisation": "0.973",
+        "settlement": "3.99 mm",
+        "location": "Intermediate support Op2."
+      },
+      {
+        "group": "Pile foundation · abutment Ok1",
+        "check": "Pile resistance",
+        "result": "216.5 kN",
+        "limit": "275.5 kN",
+        "utilisation": "0.786",
+        "settlement": "6.13 mm",
+        "location": "Abutment Ok1."
+      }
+    ],
+    "calculation_note": "The intermediate-support pile utilisation is 0.973, close to the calculated pile resistance; it should not be interpreted as a large reserve."
   },
   {
     "slug": "steel-bridge-orthotropic-deck",
