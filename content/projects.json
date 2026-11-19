@@ -43,31 +43,31 @@
     "calculations": [
       {
         "url": "media/images/alarchin-calculation-1.webp",
-        "caption": "Overall finite-element model of the bridge and support foundations"
+        "caption": "Alarchin Calculation 1 — Overall finite-element model of the bridge and support foundations"
       },
       {
         "url": "media/images/alarchin-calculation-2.webp",
-        "caption": "Plate-element model of the superstructure and rigid-link loading plate"
+        "caption": "Alarchin Calculation 2 — Plate-element model of the superstructure and rigid-link loading plate"
       },
       {
         "url": "media/images/alarchin-calculation-3.webp",
-        "caption": "Live-load arrangements: A11, N11 and pedestrian loading"
+        "caption": "Alarchin Calculation 3 — Live-load arrangements: A11, N11 and pedestrian loading"
       },
       {
         "url": "media/images/alarchin-calculation-4.webp",
-        "caption": "Abutment model and pile arrangement"
+        "caption": "Alarchin Calculation 4 — Abutment model and pile arrangement"
       },
       {
         "url": "media/images/alarchin-calculation-5.webp",
-        "caption": "Abutment model with pile–soil interaction springs"
+        "caption": "Alarchin Calculation 5 — Abutment model with pile–soil interaction springs"
       },
       {
         "url": "media/images/alarchin-calculation-6.webp",
-        "caption": "Intermediate-support model and pile arrangement"
+        "caption": "Alarchin Calculation 6 — Intermediate-support model and pile arrangement"
       },
       {
         "url": "media/images/alarchin-calculation-7.webp",
-        "caption": "Intermediate-support model with pile–soil interaction springs"
+        "caption": "Alarchin Calculation 7 — Intermediate-support model with pile–soil interaction springs"
       }
     ],
     "drawings": [
@@ -87,7 +87,53 @@
     "presentation": {
       "label": "English project presentation · 44 slides · PDF",
       "url": "media/docs/alarchin-project-presentation-en.pdf"
-    }
+    },
+    "calculation_summary": "The superstructure checks are reported for the governing main girder Bm4, identified as the most heavily loaded beam in the model. Pile checks are shown separately for intermediate support Op2 and abutment Ok1.",
+    "calculation_results": [
+      {
+        "group": "Superstructure · governing girder Bm4",
+        "check": "Normal stress",
+        "result": "212.89 MPa",
+        "limit": "295.00 MPa",
+        "utilisation": "72.2%",
+        "location": "Midspan of the 11.15 m span under permanent + A11 + pedestrian loading."
+      },
+      {
+        "group": "Superstructure · governing girder Bm4",
+        "check": "Shear stress",
+        "result": "149.39 MPa",
+        "limit": "171.76 MPa",
+        "utilisation": "87.0%",
+        "location": "Support section at Op2 under permanent + A11 + pedestrian loading."
+      },
+      {
+        "group": "Superstructure · governing girder Bm4",
+        "check": "Deflection",
+        "result": "17.0 mm",
+        "limit": "27.9 mm",
+        "utilisation": "60.9%",
+        "location": "Midspan of the 11.15 m span under N11."
+      },
+      {
+        "group": "Pile foundation · intermediate support Op2",
+        "check": "Pile resistance",
+        "result": "744.1 kN",
+        "limit": "764.8 kN",
+        "utilisation": "0.973",
+        "settlement": "3.99 mm",
+        "location": "Intermediate support Op2."
+      },
+      {
+        "group": "Pile foundation · abutment Ok1",
+        "check": "Pile resistance",
+        "result": "216.5 kN",
+        "limit": "275.5 kN",
+        "utilisation": "0.786",
+        "settlement": "6.13 mm",
+        "location": "Abutment Ok1."
+      }
+    ],
+    "calculation_note": "The intermediate-support pile utilisation is 0.973, close to the calculated pile resistance; it should not be interpreted as a large reserve."
   },
   {
     "slug": "steel-bridge-orthotropic-deck",
