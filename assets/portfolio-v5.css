@@ -1007,7 +1007,7 @@ details.evidence-disclosure[open]>summary .plus::after{transform:rotate(60deg)}
 .project-calculation-software{margin:0 0 14px;font-size:13px;line-height:1.55;color:var(--secondary)}
 .project-calculation-software strong{font-weight:600;color:var(--ink)}
 .project-document-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.project-document-grid.project-drawing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.project-document-grid.project-drawing-grid{grid-template-columns:minmax(0,1fr);gap:20px}
 .project-document-card{min-width:0;min-height:84px;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:10px;padding:14px 16px;border:1px solid var(--line);background:transparent;color:var(--ink);text-decoration:none;transition:border-color .18s,color .18s}
 .project-document-title{font-size:14px;font-weight:550;line-height:1.4;overflow-wrap:anywhere}
 .project-document-open{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--muted)}
@@ -1017,3 +1017,15 @@ details.evidence-disclosure[open]>summary .plus::after{transform:rotate(60deg)}
 @media(max-width:760px){.project-document-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.project-document-card{padding:12px;gap:8px;min-height:78px}.project-document-title{font-size:13px}}
 @media(max-width:420px){.project-document-grid,.project-document-grid.project-drawing-grid{grid-template-columns:1fr}.project-document-card{min-height:68px}}
 @media(prefers-reduced-motion:reduce){.project-document-card,.project-results-title{transition:none}}
+
+/* Full-width first-page previews for the two selected technical drawings */
+.project-drawing-grid .project-drawing-preview-card{display:block;min-height:0;padding:0;overflow:hidden}
+.project-drawing-preview-frame{position:relative;display:block;width:100%;aspect-ratio:1.45;background:#fff;border-bottom:1px solid var(--line);overflow:hidden}
+.project-drawing-preview-frame canvas{display:block;width:100%;height:100%;object-fit:contain;background:#fff}
+.project-drawing-preview-frame canvas[hidden],.project-drawing-preview-status[hidden]{display:none!important}
+.project-drawing-preview-status{position:absolute;inset:0;display:grid;place-content:center;padding:18px;text-align:center;font-size:12px;color:var(--muted)}
+.project-drawing-preview-frame.is-preview-unavailable{aspect-ratio:auto;min-height:90px}
+.project-drawing-preview-caption{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 16px}
+.project-drawing-preview-caption .project-document-title{min-width:0}
+.project-drawing-preview-caption .project-document-open{flex:none;white-space:nowrap}
+@media(max-width:760px){.project-document-grid.project-drawing-grid{gap:16px}.project-drawing-preview-caption{padding:11px 12px}}

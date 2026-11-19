@@ -172,6 +172,13 @@ function mediaOf(x){
   }).join('');
   return cards?'<div class="project-document-grid '+E(extra)+'">'+cards+'</div>':'';
  };
+ const drawingPreviews=(items)=>{
+  const cards=items.filter(d=>url(d.url)).map(d=>{
+   const href=url(d.url),label=short(d.label||'Technical drawing').replace(/\s*·\s*PDF$/i,'');
+   return '<a class="project-document-card project-drawing-preview-card" href="'+E(href)+'" target="_blank" rel="noopener noreferrer" aria-label="'+E('Open PDF: '+label)+'"><span class="project-drawing-preview-frame" data-pdf-preview="'+E(href)+'"><canvas hidden aria-hidden="true"></canvas><span class="project-drawing-preview-status" aria-hidden="true">Loading drawing preview…</span></span><span class="project-drawing-preview-caption"><span class="project-document-title">'+E(label)+'</span><span class="project-document-open" aria-hidden="true">PDF '+uiIcon('external')+'</span></span></a>';
+  }).join('');
+  return cards?'<div class="project-document-grid project-drawing-grid">'+cards+'</div>':'';
+ };
  const section=(title,body,extra='')=>body?'<section class="project-media-section '+extra+'"><div class="project-media-heading"><h4>'+E(title)+'</h4></div>'+body+'</section>':'';
  const visualisations=imageCards(x.gallery,'visual');
  const calculationImages=imageCards(x.calculations,'technical');
@@ -190,7 +197,7 @@ function mediaOf(x){
  const groupedDocuments=x.slug==='alarchin-bridge-rehabilitation';
  const selectedDrawings=groupedDocuments?(x.drawings||[]).filter(d=>d.highlight===true):[];
  const remainingDrawings=groupedDocuments?(x.drawings||[]).filter(d=>d.highlight!==true):[];
- const selected=groupedDocuments?documentGrid(selectedDrawings,'project-drawing-grid'):'';
+ const selected=groupedDocuments?drawingPreviews(selectedDrawings):'';
  const grouped=groupedDocuments?documentGrid([
   ...remainingDrawings,
   ...(x.documents||[]),
@@ -377,6 +384,48 @@ function setupEvidenceLightbox(){
   if(event.key==='ArrowRight'){event.preventDefault();move(1)}
  });
 }
+// Render the real first page only when a highlighted drawing approaches the viewport.
+// PDF.js is loaded on demand; the original PDF link remains usable without the preview.
+function setupDrawingPreviews(){
+ const frames=$$('[data-pdf-preview]');if(!frames.length)return;
+ const base='https://cdn.jsdelivr.net/npm/pdfjs-dist@5.7.284/';
+ let library;
+ const load=()=>library||(library=import(base+'legacy/build/pdf.min.mjs').then(pdfjs=>{
+  pdfjs.GlobalWorkerOptions.workerSrc=base+'legacy/build/pdf.worker.min.mjs';
+  return pdfjs;
+ }));
+ async function render(frame){
+  if(frame.dataset.previewStarted)return;
+  frame.dataset.previewStarted='true';
+  const canvas=$('canvas',frame),status=$('.project-drawing-preview-status',frame);
+  let task;
+  try{
+   const pdfjs=await load();
+   task=pdfjs.getDocument({url:frame.dataset.pdfPreview,isEvalSupported:false,cMapUrl:base+'cmaps/',cMapPacked:true,standardFontDataUrl:base+'standard_fonts/',wasmUrl:base+'wasm/'});
+   const doc=await task.promise,page=await doc.getPage(1),natural=page.getViewport({scale:1});
+   const width=Math.min(2400,Math.max(1000,Math.ceil(frame.getBoundingClientRect().width*Math.min(window.devicePixelRatio||1,2))));
+   const viewport=page.getViewport({scale:Math.min(width/natural.width,2400/natural.height)});
+   canvas.width=Math.ceil(viewport.width);canvas.height=Math.ceil(viewport.height);
+   const context=canvas.getContext('2d',{alpha:false});if(!context)throw Error('Canvas unavailable');
+   await page.render({canvas,canvasContext:context,viewport,background:'#ffffff'}).promise;
+   frame.style.aspectRatio=String(natural.width)+' / '+String(natural.height);
+   canvas.hidden=false;status.hidden=true;frame.classList.add('is-preview-ready');
+  }catch(error){
+   canvas.hidden=true;status.textContent='Preview unavailable — open the PDF';
+   frame.classList.add('is-preview-unavailable');
+   console.warn('Drawing preview unavailable:',error);
+  }finally{
+   if(task)try{await task.destroy()}catch(error){}
+  }
+ }
+ if('IntersectionObserver' in window){
+  const observer=new IntersectionObserver(entries=>{
+   entries.forEach(entry=>{if(entry.isIntersecting){observer.unobserve(entry.target);render(entry.target)}});
+  },{rootMargin:'180px 0px'});
+  frames.forEach(frame=>observer.observe(frame));
+ }else frames.forEach(render);
+}
+
 async function main(){
  try{
  const names=['profile','projects','publications','education','software','additional'];
@@ -391,6 +440,7 @@ async function main(){
  safeInit('section controls',()=>setupDisclosures());
  safeInit('contact actions',()=>setupContactActions());
  safeInit('evidence lightbox',()=>setupEvidenceLightbox());
+ safeInit('drawing previews',()=>setupDrawingPreviews());
  safeInit('back to top',()=>setupTopLink());
  safeInit('navigation',()=>navigation());
  if(location.hash){requestAnimationFrame(()=>document.getElementById(location.hash.slice(1))?.scrollIntoView())}
