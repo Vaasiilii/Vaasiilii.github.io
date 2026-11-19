@@ -151,14 +151,20 @@ function research(p,pubs){
 }
 function mediaOf(x){
  if(x.show_media!==true)return '';
- const imageCards=(items,kind)=> (items||[]).filter(g=>url(g.url)).map(g=>{
-  const src=url(g.url),caption=short(g.caption||x.title||'Project image');
-  return '<button type="button" class="evidence-image '+(kind==='technical'?'is-technical':'')+'" data-lightbox-src="'+E(src)+'" data-lightbox-caption="'+E(caption)+'" data-lightbox-alt="'+E(caption)+'" aria-label="Open image full screen: '+E(caption)+'"><img alt="'+E(caption)+'" src="'+E(src)+'" loading="lazy"><small>'+E(caption)+'</small></button>';
- }).join('');
- const fileCards=(items)=> (items||[]).filter(d=>url(d.url)).map(d=>{
-  const href=url(d.url);
-  return '<a class="evidence-document" href="'+E(href)+'" target="_blank" rel="noopener noreferrer"><span>'+E(short(d.label||'Project document'))+'</span><span>Open PDF ↗</span></a>';
- }).join('');
+ const imageCards=(items,kind)=>{
+  const cards=(items||[]).filter(g=>url(g.url)).map(g=>{
+   const src=url(g.url),caption=short(g.caption||x.title||'Project image');
+   return '<button type="button" class="evidence-image '+(kind==='technical'?'is-technical':'')+'" data-lightbox-src="'+E(src)+'" data-lightbox-caption="'+E(caption)+'" data-lightbox-alt="'+E(caption)+'" aria-label="Open image full screen: '+E(caption)+'"><img alt="'+E(caption)+'" src="'+E(src)+'" loading="lazy"><small>'+E(caption)+'</small></button>';
+  }).join('');
+  return cards?'<div class="evidence-gallery">'+cards+'</div>':'';
+ };
+ const fileCards=(items)=>{
+  const cards=(items||[]).filter(d=>url(d.url)).map(d=>{
+   const href=url(d.url);
+   return '<a class="evidence-document" href="'+E(href)+'" target="_blank" rel="noopener noreferrer"><span>'+E(short(d.label||'Project document'))+'</span><span>Open PDF ↗</span></a>';
+  }).join('');
+  return cards?'<div class="evidence-gallery evidence-file-list">'+cards+'</div>':'';
+ };
  const section=(title,body,extra='')=>body?'<section class="project-media-section '+extra+'"><div class="project-media-heading"><h4>'+E(title)+'</h4></div>'+body+'</section>':'';
  const visualisations=imageCards(x.gallery,'visual');
  const calculations=imageCards(x.calculations,'technical');
