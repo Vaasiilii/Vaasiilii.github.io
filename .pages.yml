@@ -198,6 +198,7 @@ content:
             summary: "{label}"
         fields:
           - {name: label, label: Drawing title, type: string}
+          - {name: highlight, label: Display as a separate selected drawing, type: boolean}
           - name: url
             label: Upload drawing PDF
             type: file

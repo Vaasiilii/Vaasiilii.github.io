@@ -73,11 +73,13 @@
     "drawings": [
       {
         "label": "Main superstructure and connection details",
-        "url": "media/docs/alarchin-drawing-superstructure.pdf"
+        "url": "media/docs/alarchin-drawing-superstructure.pdf",
+        "highlight": true
       },
       {
         "label": "Abutments and intermediate supports",
-        "url": "media/docs/alarchin-drawing-supports.pdf"
+        "url": "media/docs/alarchin-drawing-supports.pdf",
+        "highlight": true
       },
       {
         "label": "Complete drawing set · 8 sheets",
