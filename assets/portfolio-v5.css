@@ -929,13 +929,6 @@ details.evidence-disclosure[open]>summary .plus::after{transform:rotate(60deg)}
 }
 
 
-/* Alarchin Bridge project presentation link */
-.project-case-action{margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}
-.project-case-link{display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:550;color:var(--ink);border-bottom:1px solid #79868b;padding-bottom:5px;transition:color .18s,border-color .18s}
-.project-case-link:hover{color:var(--accent);border-color:var(--accent)}
-.project-case-link .ui-icon{width:15px;height:15px}
-
-
 /* Alarchin Bridge — grouped media inside the existing project card */
 .project-media-groups{margin-top:28px}
 .project-media-section{margin-top:26px}
