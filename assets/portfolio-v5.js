@@ -105,8 +105,8 @@ function showcase(projects,pubs){
   const paper=x.entryType==='publication',type=paper?'PUBLICATION':'PROJECT';
   const photo=!paper&&x.show_media===true&&url(x.cover_image)?'<img class="showcase-image" loading="lazy" src="'+E(url(x.cover_image))+'" alt="'+E(x.title)+'">':paper&&x.show_media===true&&url(x.cover_image)?'<img class="showcase-image" loading="lazy" src="'+E(url(x.cover_image))+'" alt="'+E(x.title)+'">':'<div class="showcase-canvas '+(paper?'canvas-publication':'canvas-project')+'" aria-hidden="true"><span class="canvas-motif"></span></div>';
   const excerpt=paper?short(x.venue):short(x.summary);
-  const dest=paper?(url(x.url)||'#research'):'#projects';
-  const external=paper&&url(x.url)?' target="_blank" rel="noopener noreferrer"':'';
+  const dest=paper?'#publication-'+(safeId(x.slug)||String((pubs||[]).filter(y=>y.visible!==false).findIndex(y=>y.title===x.title)+1)):'#projects';
+  const external='';
   const title=short(x.title);
   return '<article class="showcase-slide'+(i===0?' is-current':'')+'" role="group" aria-roledescription="slide" aria-label="'+(i+1)+' of '+items.length+'" aria-hidden="'+(i===0?'false':'true')+'" data-item-type="'+type+'"><div class="showcase-image-region">'+photo+'</div><div class="showcase-slide-copy"><span class="showcase-category">'+type+' · '+E(x.year||'')+'</span><h3>'+E(title)+'</h3><p>'+E(excerpt)+'</p><a class="showcase-link" href="'+E(dest)+'"'+external+' aria-label="Explore '+E(title)+'">View '+uiIcon('external')+'</a></div></article>';
  }).join('');
@@ -143,9 +143,16 @@ function carouselStart(enabled){
 }
 function research(p,pubs){
  const topics=(p.research_areas||[]).map((x,i)=>'<article class="topic"><span class="topic-index">'+String(i+1).padStart(2,'0')+'</span><div><h3>'+E(x.title)+'</h3><p>'+E(short(x.description))+'</p></div></article>').join('');
+ const profileLink=name=>((p.links||[]).find(l=>l.label.toLowerCase()===name.toLowerCase())||{}).url;
  const papers=(pubs||[]).filter(x=>x.visible!==false).map((x,i)=>{
- const inner='<span class="paper-year">'+E(x.year||'')+'</span><div class="paper-main"><span class="paper-meta">'+E(x.type||'Research')+'</span><h4>'+E(short(x.title))+'</h4><p>'+E([x.authors,x.venue].filter(Boolean).join(' · '))+'</p></div><span class="paper-index">'+String(i+1).padStart(2,'0')+'</span>';
- return '<li class="paper">'+(url(x.url)?'<a href="'+E(url(x.url))+'" target="_blank" rel="noopener noreferrer" class="paper-inner" aria-label="Open publication: '+E(x.title)+'">'+inner+'</a>':'<div class="paper-inner">'+inner+'</div>')+'</li>'
+  const id='publication-'+(safeId(x.slug)||String(i+1));
+  const inner='<span class="paper-year">'+E(x.year||'')+'</span><span class="paper-main"><span class="paper-meta">'+E([x.type,x.status].filter(Boolean).join(' · '))+'</span><span class="paper-title">'+E(short(x.title))+'</span><span class="paper-citation">'+E([x.authors,x.venue].filter(Boolean).join(' · '))+'</span></span><span class="plus" aria-hidden="true"></span>';
+  const primary=url(x.researchgate_url)?link(x.researchgate_url,'Read on ResearchGate','paper-action paper-action-primary'):'';
+  const source=link(x.url,x.source_label||'Original publication','paper-action'+(primary?'':' paper-action-primary'));
+  const orcid=link(x.orcid_url||profileLink('ORCID'),x.orcid_url?'ORCID record':'ORCID profile','paper-action');
+  const rg=primary?'':link(profileLink('ResearchGate'),'ResearchGate profile','paper-action');
+  const pdf=url(x.pdf_url)?'<details class="paper-pdf"><summary>Read PDF on this site <span class="plus" aria-hidden="true"></span></summary><div class="paper-pdf-body"><iframe data-publication-pdf="'+E(url(x.pdf_url))+'" title="'+E('PDF: '+x.title)+'" loading="lazy"></iframe>'+link(x.pdf_url,'Open PDF in a new tab','paper-action')+'</div></details>':'';
+  return '<li class="paper" id="'+E(id)+'"><details class="paper-entry"><summary class="paper-inner">'+inner+'</summary><div class="paper-expanded">'+(x.original_title?'<p class="paper-original-title" lang="ru">'+E(x.original_title)+'</p>':'')+(x.abstract?'<h5>Research overview</h5><p class="paper-abstract">'+E(x.abstract)+'</p>':'')+'<div class="paper-actions">'+primary+source+orcid+rg+'</div>'+pdf+'</div></details></li>';
  }).join('');
  return '<section class="site-section" id="research">'+heading('I','Research')+'<div class="intro-two"><p class="section-lead">'+E(p.research_statement)+'</p><p class="section-note">'+E(p.research_note)+'</p></div><div class="topic-list">'+topics+'</div><div class="subsection-head"><h3>Publications</h3></div><ol class="paper-list">'+papers+'</ol></section>'
 }
@@ -426,6 +433,24 @@ function setupDrawingPreviews(){
  }else frames.forEach(render);
 }
 
+function setupPublications(){
+ const openHash=()=>{
+  const id=location.hash.slice(1);if(!id.startsWith('publication-'))return;
+  const entry=document.getElementById(id)?.querySelector('.paper-entry');
+  if(entry)entry.open=true;
+ };
+ window.addEventListener('hashchange',openHash);
+ document.addEventListener('click',event=>{
+  const a=event.target.closest('a[href^="#publication-"]');if(!a)return;
+  const entry=document.getElementById(a.hash.slice(1))?.querySelector('.paper-entry');if(entry)entry.open=true;
+ });
+ $$('.paper-pdf').forEach(details=>{details.addEventListener('toggle',()=>{
+  if(!details.open)return;const frame=$('iframe[data-publication-pdf]',details);
+  if(frame&&!frame.hasAttribute('src'))frame.src=frame.dataset.publicationPdf+'#toolbar=0';
+ })});
+ openHash();
+}
+
 async function main(){
  try{
  const names=['profile','projects','publications','education','software','additional'];
@@ -438,6 +463,7 @@ async function main(){
  safeInit('slideshow',()=>carouselStart(d.profile.showcase_autoplay));
  safeInit('CV links',()=>setupCvLinks(d.profile));
  safeInit('section controls',()=>setupDisclosures());
+ safeInit('publication controls',()=>setupPublications());
  safeInit('contact actions',()=>setupContactActions());
  safeInit('evidence lightbox',()=>setupEvidenceLightbox());
  safeInit('drawing previews',()=>setupDrawingPreviews());

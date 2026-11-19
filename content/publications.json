@@ -2,24 +2,38 @@
   {
     "title": "Application of a Lifecycle-Management Assessment Algorithm: The Alarchin Bridge Case Study",
     "authors": "V. K. Andreev, E. N. Kornylev",
-    "venue": "Ekonomika Stroitelstva (Economics of Construction), issue 8 (2026)",
+    "venue": "Ekonomika Stroitelstva (Economics of Construction), 8 (2026), pp. 615–618",
     "year": "2026",
     "type": "Journal",
-    "status": "Accepted — verify issue",
-    "description": "English rendering of the original Russian title; acceptance confirmed in 2026. Verify final pagination and public link before changing status.",
-    "url": "",
-    "visible": true
+    "status": "Published",
+    "description": "English rendering of the original Russian title.",
+    "url": "https://www.econom-journal.ru/archive/69447/",
+    "visible": true,
+    "slug": "alarchin-bridge-case-study",
+    "original_title": "Апробация алгоритма оценки эффективности и результативности управления жизненным циклом мостового сооружения на примере Аларчина моста",
+    "source_label": "Journal issue",
+    "abstract": "The assessment algorithm is tested using inspection data for Alarchin Bridge in Saint Petersburg. Five groups of operational indicators are combined into a weighted index. The resulting index of 0.28 indicates low lifecycle-management performance, consistent with the inspection report's findings and the need for urgent rehabilitation.",
+    "researchgate_url": "",
+    "orcid_url": "",
+    "pdf_url": ""
   },
   {
     "title": "Algorithm for Assessing the Effectiveness of Lifecycle Management of Bridge Structures",
     "authors": "V. K. Andreev, E. N. Kornylev",
-    "venue": "Ekonomika Stroitelstva (Economics of Construction), issue 7 (2026)",
+    "venue": "Ekonomika Stroitelstva (Economics of Construction), 7 (2026), pp. 704–708",
     "year": "2026",
     "type": "Journal",
-    "status": "Accepted — verify issue",
-    "description": "English rendering of the original Russian title; acceptance confirmed in 2026.",
-    "url": "",
-    "visible": true
+    "status": "Published",
+    "description": "English rendering of the original Russian title.",
+    "url": "https://www.econom-journal.ru/archive/69208/",
+    "visible": true,
+    "slug": "bridge-lifecycle-assessment",
+    "original_title": "Алгоритм оценки эффективности и результативности системы управления жизненным циклом объекта по профилю мостовых сооружений",
+    "source_label": "Journal issue",
+    "abstract": "The paper adapts a lifecycle-management assessment algorithm to bridge operation. Weighted, normalised indicators cover traffic safety, deck condition, structural condition, inspections and monitoring, and heritage requirements. The method defines thresholds and targets over a ten-year evaluation horizon to support maintenance and repair decisions.",
+    "researchgate_url": "",
+    "orcid_url": "",
+    "pdf_url": ""
   },
   {
     "title": "Algorithm for Assessing the Effectiveness of Lifecycle Management of Civil and Industrial Facilities",
@@ -30,7 +44,13 @@
     "status": "Published",
     "description": "English rendering of the original Russian title.",
     "url": "https://kantiana.ru/advanced-building-materials-and-technologies/",
-    "visible": true
+    "visible": true,
+    "slug": "civil-industrial-lifecycle-assessment",
+    "original_title": "Алгоритм оценки эффективности и результативности системы управления жизненным циклом объектов гражданского и промышленного назначения",
+    "source_label": "Conference website",
+    "researchgate_url": "",
+    "orcid_url": "",
+    "pdf_url": ""
   },
   {
     "title": "Digital Twin Technology: Economic Benefits",
@@ -41,7 +61,14 @@
     "status": "Published",
     "description": "English rendering of the original Russian title.",
     "url": "https://sciff.ru/wp-content/uploads/2026/03/Sciff_1_113.pdf",
-    "visible": true
+    "visible": true,
+    "slug": "digital-twin-economic-benefits",
+    "original_title": "Технология цифровых двойников: экономическая выгода",
+    "source_label": "Journal issue · PDF",
+    "abstract": "The paper reviews digital twins in civil infrastructure, including bridges, buildings and smart cities. It considers sensor-based monitoring, early defect detection, repair optimisation and the costs of implementation, from data collection and instrumentation to digital platforms and staff training.",
+    "researchgate_url": "",
+    "orcid_url": "",
+    "pdf_url": ""
   },
   {
     "title": "Digitalisation of Capital Construction in Russia: Lifecycle Management, Standards and Vulnerabilities",
@@ -52,7 +79,14 @@
     "status": "Published",
     "description": "English rendering of the original Russian title.",
     "url": "https://sciff.ru/wp-content/uploads/2026/03/Sciff_1_113.pdf",
-    "visible": true
+    "visible": true,
+    "slug": "construction-digitalisation",
+    "original_title": "Цифровизация капитального строительства в России: управление жизненным циклом, стандарты и уязвимые места",
+    "source_label": "Journal issue · PDF",
+    "abstract": "The paper examines lifecycle management in capital construction in Russia and abroad, focusing on regulatory requirements for information modelling and data handover. Case studies include integrated building management at Lakhta Center and remote monitoring and inspection of wind turbines.",
+    "researchgate_url": "",
+    "orcid_url": "",
+    "pdf_url": ""
   },
   {
     "title": "Algorithm for Assessing the Effectiveness and Performance of a Facility Lifecycle Management System",
@@ -63,6 +97,13 @@
     "status": "Published",
     "description": "English rendering of the original Russian title.",
     "url": "https://disk.bstu.ru/storage/1b40cd9a-d8c1-4ee6-885e-9b45dc20f795.pdf",
-    "visible": true
+    "visible": true,
+    "slug": "facility-lifecycle-assessment",
+    "original_title": "Алгоритм оценки эффективности и результативности системы управления жизненным циклом объекта",
+    "source_label": "Conference proceedings · PDF",
+    "abstract": "The paper considers facility lifecycle management as an integrated process combining sensor data, information models and digital twins. It addresses the evaluation of management effectiveness and performance and the application of operational information to maintenance and repair planning.",
+    "researchgate_url": "",
+    "orcid_url": "",
+    "pdf_url": ""
   }
 ]

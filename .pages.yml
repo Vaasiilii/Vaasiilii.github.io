@@ -104,6 +104,9 @@ content:
     list: true
     fields:
       - {name: title, label: English title (translated where necessary), type: string, required: true}
+      - {name: slug, label: Publication URL slug, type: string}
+      - {name: original_title, label: Original title, type: string}
+      - {name: abstract, label: Research overview in English, type: text}
       - {name: authors, label: Authors, type: string}
       - {name: venue, label: Journal / conference and pages, type: string}
       - {name: year, label: Year, type: string}
@@ -111,6 +114,15 @@ content:
       - {name: status, label: Publication status (verify), type: string}
       - {name: description, label: Note / translation note, type: text}
       - {name: url, label: DOI / official PDF / publication link, type: string}
+      - {name: source_label, label: Official source link text, type: string}
+      - {name: researchgate_url, label: Individual ResearchGate publication URL, type: string}
+      - {name: orcid_url, label: Individual ORCID work URL (optional), type: string}
+      - name: pdf_url
+        label: Optional authorised full-text PDF for on-site reading
+        type: file
+        options:
+          media: docs
+          extensions: [pdf]
       - name: cover_image
         label: Optional article cover image
         type: image
