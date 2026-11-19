@@ -974,3 +974,17 @@ details.evidence-disclosure[open]>summary .plus::after{transform:rotate(60deg)}
  .evidence-lightbox-figure img{max-height:calc(100dvh - 104px)}
  .evidence-document{align-items:flex-start;flex-direction:column;gap:4px}
 }
+
+
+/* Compact critical-result cards for the Alarchin Bridge calculation summary */
+.project-results-summary{max-width:760px;margin:0 0 14px;font-size:14px;line-height:1.6;color:var(--secondary)}
+.project-results-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.project-result-card{min-width:0;padding:14px 15px;border:1px solid var(--line);background:transparent}
+.project-result-group{display:block;margin-bottom:7px;font-size:10px;line-height:1.4;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.project-result-card h5{margin:0;font-size:15px;line-height:1.35;font-weight:600;color:var(--ink)}
+.project-result-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(84px,1fr));gap:10px;margin-top:13px}
+.project-result-metric small{display:block;margin-bottom:4px;font-size:10px;line-height:1.2;color:var(--muted)}
+.project-result-metric strong{display:block;font-size:13px;line-height:1.3;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+.project-result-location{margin:12px 0 0;font-size:11px;line-height:1.5;color:var(--secondary)}
+.project-results-note{margin:12px 0 0;padding:11px 14px;border-left:2px solid var(--accent);font-size:12px;line-height:1.55;color:var(--secondary)}
+@media(max-width:520px){.project-results-grid{grid-template-columns:1fr}}
