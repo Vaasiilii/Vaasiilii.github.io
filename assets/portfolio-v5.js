@@ -149,14 +149,37 @@ function research(p,pubs){
  }).join('');
  return '<section class="site-section" id="research">'+heading('I','Research')+'<div class="intro-two"><p class="section-lead">'+E(p.research_statement)+'</p><p class="section-note">'+E(p.research_note)+'</p></div><div class="topic-list">'+topics+'</div><div class="subsection-head"><h3>Publications</h3></div><ol class="paper-list">'+papers+'</ol></section>'
 }
-function mediaOf(x){if(x.show_media!==true)return '';const imgs=(x.gallery||[]).filter(g=>url(g.url)).map(g=>'<a class="evidence-image" href="'+E(url(g.url))+'" target="_blank" rel="noopener noreferrer"><img alt="'+E(g.caption||x.title)+'" src="'+E(url(g.url))+'" loading="lazy"><small>'+E(g.caption||'Image')+'</small></a>').join('');const docs=(x.documents||[]).filter(d=>url(d.url)).map(d=>link(d.url,short(d.label||'Technical document'),'evidence-document')).join('');return imgs||docs?'<div class="evidence-gallery">'+imgs+docs+'</div>':''}
+function mediaOf(x){
+ if(x.show_media!==true)return '';
+ const imageCards=(items,kind)=> (items||[]).filter(g=>url(g.url)).map(g=>{
+  const src=url(g.url),caption=short(g.caption||x.title||'Project image');
+  return '<button type="button" class="evidence-image '+(kind==='technical'?'is-technical':'')+'" data-lightbox-src="'+E(src)+'" data-lightbox-caption="'+E(caption)+'" data-lightbox-alt="'+E(caption)+'" aria-label="Open image full screen: '+E(caption)+'"><img alt="'+E(caption)+'" src="'+E(src)+'" loading="lazy"><small>'+E(caption)+'</small></button>';
+ }).join('');
+ const fileCards=(items)=> (items||[]).filter(d=>url(d.url)).map(d=>{
+  const href=url(d.url);
+  return '<a class="evidence-document" href="'+E(href)+'" target="_blank" rel="noopener noreferrer"><span>'+E(short(d.label||'Project document'))+'</span><span>Open PDF ↗</span></a>';
+ }).join('');
+ const section=(title,body,extra='')=>body?'<section class="project-media-section '+extra+'"><div class="project-media-heading"><h4>'+E(title)+'</h4></div>'+body+'</section>':'';
+ const visualisations=imageCards(x.gallery,'visual');
+ const calculations=imageCards(x.calculations,'technical');
+ const drawings=fileCards(x.drawings);
+ const documents=fileCards(x.documents);
+ const presentation=x.presentation&&url(x.presentation.url)?fileCards([x.presentation]):'';
+ const html=[
+  section('Visualisations',visualisations,'visualisations-section'),
+  section('Calculation illustrations',calculations,'calculations-section'),
+  section('Technical drawings',drawings,'drawings-section'),
+  section('Calculation summary',documents,'documents-section'),
+  section('Project presentation',presentation,'presentation-section')
+ ].join('');
+ return html?'<div class="project-media-groups">'+html+'</div>':'';
+}
 function projects(rows){
  const visible=(rows||[]).filter(x=>x.visible!==false);
  const group=kind=>visible.filter(x=>x.kind===kind).map((x,i)=>{
-  const caseLink=url(x.case_study_url)?'<div class="project-case-action"><a class="project-case-link" href="'+E(url(x.case_study_url))+'">View project presentation '+uiIcon('external')+'</a></div>':'';
   const facts=[['Contribution',x.role],['Context',x.challenge],['Approach',x.approach],['Outcome',x.outcome],['Methods',x.methods]].filter(y=>y[1]);
   const detail=facts.map(([k,v])=>'<div class="project-fact"><dt>'+E(k)+'</dt><dd>'+E(short(v))+'</dd></div>').join('');
-  return '<details class="project-entry"><summary><span class="project-index">'+String(i+1).padStart(2,'0')+'</span><span class="project-info"><span class="project-title">'+E(short(x.title))+'</span><span class="project-description">'+E(short(x.summary))+'</span><span class="project-discipline">'+E(x.discipline||'')+'</span></span><span class="project-year">'+E(x.year||'')+'</span><span class="plus" aria-hidden="true"></span></summary><div class="project-expanded"><dl>'+detail+'</dl>'+caseLink+mediaOf(x)+'</div></details>';
+  return '<details class="project-entry"><summary><span class="project-index">'+String(i+1).padStart(2,'0')+'</span><span class="project-info"><span class="project-title">'+E(short(x.title))+'</span><span class="project-description">'+E(short(x.summary))+'</span><span class="project-discipline">'+E(x.discipline||'')+'</span></span><span class="project-year">'+E(x.year||'')+'</span><span class="plus" aria-hidden="true"></span></summary><div class="project-expanded"><dl>'+detail+'</dl>'+mediaOf(x)+'</div></details>';
  }).join('');
  return '<section class="site-section" id="projects">'+heading('II','Projects')+'<div class="subsection-head" id="academic-projects"><h3>Academic projects</h3></div><div class="project-list">'+group('Academic')+'</div><div class="subsection-head project-group" id="professional-projects"><h3>Professional projects</h3></div><div class="project-list">'+group('Professional')+'</div></section>';
 }
@@ -278,6 +301,48 @@ function navigation(){
  window.addEventListener('scroll',choose,{passive:true});
  scrollPosition();choose();setMenu(false);setSide(false);
 }
+
+function setupEvidenceLightbox(){
+ if(document.querySelector('.evidence-lightbox'))return;
+ const dialog=document.createElement('dialog');
+ dialog.className='evidence-lightbox';
+ dialog.setAttribute('aria-label','Project image viewer');
+ dialog.innerHTML='<div class="evidence-lightbox-toolbar"><button type="button" class="evidence-lightbox-close" data-lightbox-close aria-label="Close image viewer">×</button></div><button type="button" class="evidence-lightbox-arrow is-prev" data-lightbox-prev aria-label="Previous image">‹</button><figure class="evidence-lightbox-figure"><img alt=""><figcaption></figcaption></figure><button type="button" class="evidence-lightbox-arrow is-next" data-lightbox-next aria-label="Next image">›</button>';
+ document.body.append(dialog);
+ const image=$('img',dialog),caption=$('figcaption',dialog),prev=$('[data-lightbox-prev]',dialog),next=$('[data-lightbox-next]',dialog),close=$('[data-lightbox-close]',dialog);
+ let items=[],index=0,returnFocus=null;
+ function render(){
+  const item=items[index];
+  if(!item)return;
+  image.src=item.dataset.lightboxSrc;
+  image.alt=item.dataset.lightboxAlt||'Project image';
+  caption.textContent=item.dataset.lightboxCaption||'';
+  const multiple=items.length>1;
+  prev.hidden=!multiple;next.hidden=!multiple;
+  prev.disabled=!multiple;next.disabled=!multiple;
+ }
+ function move(step){if(!items.length)return;index=(index+step+items.length)%items.length;render()}
+ document.addEventListener('click',event=>{
+  const trigger=event.target.closest('[data-lightbox-src]');
+  if(!trigger)return;
+  event.preventDefault();
+  const group=trigger.closest('.evidence-gallery');
+  items=group?Array.from(group.querySelectorAll('[data-lightbox-src]')):[trigger];
+  index=Math.max(0,items.indexOf(trigger));returnFocus=trigger;render();
+  if(typeof dialog.showModal==='function')dialog.showModal();else dialog.setAttribute('open','');
+  close.focus();
+ });
+ close.addEventListener('click',()=>dialog.close());
+ prev.addEventListener('click',()=>move(-1));
+ next.addEventListener('click',()=>move(1));
+ dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
+ dialog.addEventListener('close',()=>{if(returnFocus&&document.contains(returnFocus))returnFocus.focus()});
+ document.addEventListener('keydown',event=>{
+  if(!dialog.open)return;
+  if(event.key==='ArrowLeft'){event.preventDefault();move(-1)}
+  if(event.key==='ArrowRight'){event.preventDefault();move(1)}
+ });
+}
 async function main(){
  try{
  const names=['profile','projects','publications','education','software','additional'];
@@ -291,6 +356,7 @@ async function main(){
  safeInit('CV links',()=>setupCvLinks(d.profile));
  safeInit('section controls',()=>setupDisclosures());
  safeInit('contact actions',()=>setupContactActions());
+ safeInit('evidence lightbox',()=>setupEvidenceLightbox());
  safeInit('back to top',()=>setupTopLink());
  safeInit('navigation',()=>navigation());
  if(location.hash){requestAnimationFrame(()=>document.getElementById(location.hash.slice(1))?.scrollIntoView())}
