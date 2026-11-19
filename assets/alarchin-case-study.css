@@ -64,3 +64,8 @@
 .case-hero h1{font-size:48px}.case-hero-visual img{aspect-ratio:1.25}.case-detours{grid-template-columns:1fr}
 .case-download{align-items:flex-start;flex-direction:column}.case-download>span:last-child{margin-top:5px}
 .case-timeline article{grid-template-columns:36px 1fr;gap:10px}.case-page .brand{white-space:normal}}
+.case-media-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:34px 0 0 108px}
+.case-media-gallery .case-media img{aspect-ratio:1.65;max-height:none;object-fit:contain;background:#f2f4f4}
+.case-media-gallery-single{grid-template-columns:minmax(0,1fr);max-width:760px}
+@media(max-width:900px){.case-media-gallery{margin-left:0}}
+@media(max-width:620px){.case-media-gallery{grid-template-columns:1fr;gap:20px}}
