@@ -113,3 +113,12 @@
 - Back to top has an explicit window.scrollTo handler and removes the old hash after navigation; reduced-motion preference is respected.
 - Javascript, data rendering, accordion interaction, copy-email and scroll handling were exercised with a simulated DOM. Real-device visual review remains recommended.
 - Cache-busted release: 20261027-polish1.
+
+
+## Alarchin Bridge media inside the project card — 19 November 2026
+
+- Alarchin materials are rendered inside the existing expandable project card in `content/projects.json`; no dedicated case-study link is used.
+- Pages CMS exposes four visualisations, seven ordered calculation illustrations, two individual drawing PDFs, the complete eight-sheet drawing set, a one-page calculation summary and the English 44-slide presentation.
+- Image previews open in a full-viewport viewer with previous/next navigation and keyboard arrow support.
+- Upload the files from `alarchin_site_package/media/images/` to `media/images/` and files from `alarchin_site_package/media/docs/` to `media/docs/`. The package README contains the exact file mapping.
+- The full presentation is published as PDF for browser viewing; the editable PPTX is not included in the public media set.
