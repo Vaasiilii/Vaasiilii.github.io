@@ -12,47 +12,82 @@
     "approach": "Developed structural models, examined the existing bridge configuration and designed rehabilitation interventions. Prepared calculation and drawing documentation.",
     "outcome": "Graduate qualification work defended with Excellent (A). The bridge also serves as a case study in lifecycle-management research.",
     "cover_image": "media/images/alarchin-visual-3.webp",
-    "image_alt": "Original project visual for Alarchin Bridge / Rehabilitation",
+    "image_alt": "Proposed rehabilitation visualisation of Alarchin Bridge over the Griboyedov Canal",
     "gallery": [
       {
         "url": "media/images/alarchin-visual-1.webp",
-        "caption": "Proposed rehabilitation — architectural visualisation"
+        "caption": "Canal-level view of the rehabilitated bridge"
       },
       {
         "url": "media/images/alarchin-visual-2.webp",
-        "caption": "Proposed rehabilitation — architectural visualisation"
+        "caption": "Aerial view of the bridge and surrounding urban fabric"
       },
       {
         "url": "media/images/alarchin-visual-3.webp",
-        "caption": "Proposed rehabilitation — architectural visualisation"
+        "caption": "Perspective view of the bridge superstructure and granite supports"
       },
       {
         "url": "media/images/alarchin-visual-4.webp",
-        "caption": "Proposed rehabilitation — architectural visualisation"
-      },
-      {
-        "url": "media/images/alarchin-sheet-1.webp",
-        "caption": "Extract from original bridge drawing set"
-      },
-      {
-        "url": "media/images/alarchin-sheet-2.webp",
-        "caption": "Extract from original bridge drawing set"
-      },
-      {
-        "url": "media/images/alarchin-sheet-4.webp",
-        "caption": "Extract from original bridge drawing set"
+        "caption": "View along the bridge roadway"
       }
     ],
     "documents": [
       {
-        "label": "Selected structural calculation summary (PDF)",
+        "label": "Structural analysis summary · PDF",
         "url": "media/docs/alarchin-calculation-summary.pdf"
       }
     ],
     "featured": true,
     "visible": true,
-    "show_media": false,
-    "case_study_url": "alarchin-bridge.html"
+    "show_media": true,
+    "calculations": [
+      {
+        "url": "media/images/alarchin-calculation-1.webp",
+        "caption": "Overall finite-element model of the bridge and support foundations"
+      },
+      {
+        "url": "media/images/alarchin-calculation-2.webp",
+        "caption": "Plate-element model of the superstructure and rigid-link loading plate"
+      },
+      {
+        "url": "media/images/alarchin-calculation-3.webp",
+        "caption": "Live-load arrangements: A11, N11 and pedestrian loading"
+      },
+      {
+        "url": "media/images/alarchin-calculation-4.webp",
+        "caption": "Abutment model and pile arrangement"
+      },
+      {
+        "url": "media/images/alarchin-calculation-5.webp",
+        "caption": "Abutment model with pile–soil interaction springs"
+      },
+      {
+        "url": "media/images/alarchin-calculation-6.webp",
+        "caption": "Intermediate-support model and pile arrangement"
+      },
+      {
+        "url": "media/images/alarchin-calculation-7.webp",
+        "caption": "Intermediate-support model with pile–soil interaction springs"
+      }
+    ],
+    "drawings": [
+      {
+        "label": "Main superstructure and connection details",
+        "url": "media/docs/alarchin-drawing-superstructure.pdf"
+      },
+      {
+        "label": "Abutments and intermediate supports",
+        "url": "media/docs/alarchin-drawing-supports.pdf"
+      },
+      {
+        "label": "Complete drawing set · 8 sheets",
+        "url": "media/docs/alarchin-drawings-all-8-sheets.pdf"
+      }
+    ],
+    "presentation": {
+      "label": "English project presentation · 44 slides · PDF",
+      "url": "media/docs/alarchin-project-presentation-en.pdf"
+    }
   },
   {
     "slug": "steel-bridge-orthotropic-deck",
