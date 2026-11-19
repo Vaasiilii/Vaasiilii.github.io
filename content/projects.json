@@ -7,7 +7,7 @@
     "year": "2026",
     "summary": "Major rehabilitation design for a protected bridge crossing the Griboyedov Canal in Saint Petersburg.",
     "role": "Independent graduate qualification project",
-    "methods": "Finite-element analysis · rehabilitation design · steel / concrete · drawings",
+    "methods": "Finite-element analysis (PARIS) · rehabilitation design · steel / concrete · drawings",
     "challenge": "Develop a rehabilitation scheme for an existing heritage bridge while addressing structural performance, site constraints and conservation requirements.",
     "approach": "Developed structural models, examined the existing bridge configuration and designed rehabilitation interventions. Prepared calculation and drawing documentation.",
     "outcome": "Graduate qualification work defended with Excellent (A). The bridge also serves as a case study in lifecycle-management research.",
@@ -88,6 +88,7 @@
       "label": "English project presentation · 44 slides · PDF",
       "url": "media/docs/alarchin-project-presentation-en.pdf"
     },
+    "calculation_software": "PARIS — finite element analysis (FEA) software",
     "calculation_summary": "The superstructure checks are reported for the governing main girder Bm4, identified as the most heavily loaded beam in the model. Pile checks are shown separately for intermediate support Op2 and abutment Ok1.",
     "calculation_results": [
       {

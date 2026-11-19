@@ -165,9 +165,24 @@ function mediaOf(x){
   }).join('');
   return cards?'<div class="evidence-gallery evidence-file-list">'+cards+'</div>':'';
  };
+ const documentGrid=(items)=>{
+  const icons={
+   drawing:'<path d="M8 28V13h20v15z M8 13l20 15 M8 28l20-15 M8 32h20"/>',
+   summary:'<path d="M8 29V14m0 15h20M12 25v-5m6 5V15m6 10v-8"/>',
+   presentation:'<rect x="8" y="13" width="20" height="14" rx="1"/><path d="M14 31h8m-4-4v4M12 23l5-5 3 3 4-4"/>'
+  };
+  const cards=items.filter(d=>url(d.url)).map(d=>{
+   const href=url(d.url),label=short(d.label||'Project document').replace(/\s*·\s*PDF$/i,'');
+   const icon='<svg viewBox="0 0 36 44" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 1h21l9 9v33H3z M24 1v9h9"/>'+icons[d.kind]+'</svg>';
+   return '<a class="project-document-card" href="'+E(href)+'" target="_blank" rel="noopener noreferrer" aria-label="'+E('Open PDF: '+label)+'"><span class="project-document-icon">'+icon+'</span><span class="project-document-meta">'+E(d.category)+' · PDF</span><span class="project-document-title">'+E(label)+'</span><span class="project-document-open">Open PDF '+uiIcon('external')+'</span></a>';
+  }).join('');
+  return cards?'<div class="project-document-grid">'+cards+'</div>':'';
+ };
  const section=(title,body,extra='')=>body?'<section class="project-media-section '+extra+'"><div class="project-media-heading"><h4>'+E(title)+'</h4></div>'+body+'</section>':'';
  const visualisations=imageCards(x.gallery,'visual');
- const calculations=imageCards(x.calculations,'technical');
+ const calculationImages=imageCards(x.calculations,'technical');
+ const softwareNote=x.calculation_software?'<p class="project-calculation-software"><strong>Calculation software:</strong> '+E(x.calculation_software)+'</p>':'';
+ const calculations=calculationImages?softwareNote+calculationImages:'';
  const resultCards=(x.calculation_results||[]).map(r=>{
   const metrics=[['Result',r.result],['Limit',r.limit],['Utilisation',r.utilisation],['Settlement',r.settlement]].filter(v=>v[1]).map(([label,value])=>'<div class="project-result-metric"><small>'+E(label)+'</small><strong>'+E(value)+'</strong></div>').join('');
   return '<article class="project-result-card"><span class="project-result-group">'+E(r.group||'')+'</span><h5>'+E(r.check||'')+'</h5><div class="project-result-metrics">'+metrics+'</div><p class="project-result-location">'+E(r.location||'')+'</p></article>';
@@ -178,13 +193,20 @@ function mediaOf(x){
  const drawings=fileCards(x.drawings);
  const documents=fileCards(x.documents);
  const presentation=x.presentation&&url(x.presentation.url)?fileCards([x.presentation]):'';
+ const groupedDocuments=x.slug==='alarchin-bridge-rehabilitation';
+ const grouped=groupedDocuments?documentGrid([
+  ...(x.drawings||[]).map(d=>({...d,kind:'drawing',category:'Technical drawing'})),
+  ...(x.documents||[]).map(d=>({...d,kind:'summary',category:'Calculation summary'})),
+  ...(x.presentation?[{...x.presentation,kind:'presentation',category:'Presentation'}]:[])
+ ]):'';
+ const resultsDisclosure=results?'<details class="project-media-section results-section project-results-disclosure"><summary class="project-media-heading"><span class="project-results-title">Critical calculation results</span><span class="plus" aria-hidden="true"></span></summary><div class="project-results-panel">'+results+'</div></details>':'';
  const html=[
   section('Visualisations',visualisations,'visualisations-section'),
   section('Calculation illustrations',calculations,'calculations-section'),
-  section('Critical calculation results',results,'results-section'),
-  section('Technical drawings',drawings,'drawings-section'),
-  section('Calculation summary',documents,'documents-section'),
-  section('Project presentation',presentation,'presentation-section')
+  resultsDisclosure,
+  groupedDocuments?section('Project documents',grouped,'project-documents-section'):section('Technical drawings',drawings,'drawings-section'),
+  groupedDocuments?'':section('Calculation summary',documents,'documents-section'),
+  groupedDocuments?'':section('Project presentation',presentation,'presentation-section')
  ].join('');
  return html?'<div class="project-media-groups">'+html+'</div>':'';
 }
