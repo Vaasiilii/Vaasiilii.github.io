@@ -171,6 +171,23 @@ content:
             options:
               media: images
           - {name: caption, label: Caption, type: string}
+      - {name: calculation_summary, label: Calculation interpretation / governing girder note, type: text}
+      - name: calculation_results
+        label: Critical calculation results
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{check} · {group}"
+        fields:
+          - {name: group, label: Structural group / governing element, type: string}
+          - {name: check, label: Verification, type: string}
+          - {name: result, label: Calculated result, type: string}
+          - {name: limit, label: Limit / resistance, type: string}
+          - {name: utilisation, label: Utilisation, type: string}
+          - {name: settlement, label: Settlement (if applicable), type: string}
+          - {name: location, label: Governing location / load combination, type: text}
+      - {name: calculation_note, label: Engineering note / interpretation, type: text}
       - name: drawings
         label: Technical drawings (individual sheets and full set)
         type: object
