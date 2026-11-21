@@ -94,7 +94,7 @@ const safeId=s=>String(s||'').replace(/[^a-zA-Z0-9_-]/g,'');
 function intro(p,projects,pubs){return '<section id="home" class="intro-section"><div class="intro-grid"><div class="intro-main"><div class="intro-label">'+E('ACADEMIC & ENGINEERING PORTFOLIO')+'</div><h1>'+E(p.name||'Vasilii Andreev')+'</h1><p class="profession">'+E(p.professional_title||'Civil & Structural Engineer')+'</p><p class="intro-scope">'+E(p.intro_scope||'Structural design of buildings and bridges')+'</p><p class="research-status">'+E(p.postgraduate_label||'Postgraduate Researcher')+'</p></div>'+showcase(projects,pubs)+'</div><div class="intro-foot"><span class="intro-spacer"></span><a class="text-link" href="#research">Explore '+uiIcon('down')+'</a>'+(p.show_cv===true?link(p.resume_url,'Academic CV','text-link'):'')+'</div></section>'}
 function mergeWorks(projects,pubs){
  let pr=(projects||[]).filter(x=>x.visible!==false).slice(0,6).map(x=>({...x,entryType:'project'}));
- let pu=(pubs||[]).filter(x=>x.visible!==false).slice(0,6).map(x=>({...x,entryType:'publication'}));
+ let pu=(pubs||[]).filter(x=>x.visible!==false&&x.type!=='Conference abstract').slice(0,6).map(x=>({...x,entryType:'publication'}));
  const combined=[];
  for(let i=0;i<Math.max(pr.length,pu.length);i++){if(pr[i])combined.push(pr[i]);if(pu[i])combined.push(pu[i])}
  return combined;
@@ -143,18 +143,22 @@ function carouselStart(enabled){
 }
 function research(p,pubs){
  const topics=(p.research_areas||[]).map((x,i)=>'<article class="topic"><span class="topic-index">'+String(i+1).padStart(2,'0')+'</span><div><h3>'+E(x.title)+'</h3><p>'+E(short(x.description))+'</p></div></article>').join('');
- const profileLink=name=>((p.links||[]).find(l=>l.label.toLowerCase()===name.toLowerCase())||{}).url;
- const papers=(pubs||[]).filter(x=>x.visible!==false).map((x,i)=>{
+ const all=(pubs||[]).filter(x=>x.visible!==false);
+ const papers=all.filter(x=>x.type!=='Conference abstract');
+ const abstracts=all.filter(x=>x.type==='Conference abstract');
+ const renderPaper=(x,i)=>{
   const id='publication-'+(safeId(x.slug)||String(i+1));
-  const inner='<span class="paper-year">'+E(x.year||'')+'</span><span class="paper-main"><span class="paper-meta">'+E([x.type,x.status].filter(Boolean).join(' · '))+'</span><span class="paper-title">'+E(short(x.title))+'</span><span class="paper-citation">'+E([x.authors,x.venue].filter(Boolean).join(' · '))+'</span></span><span class="plus" aria-hidden="true"></span>';
+  const meta=[x.type,x.status&&x.status!=='Published'?x.status:''].filter(Boolean).join(' · ');
+  const inner='<span class="paper-year">'+E(x.year||'')+'</span><span class="paper-main"><span class="paper-meta">'+E(meta)+'</span><span class="paper-title">'+E(short(x.title))+'</span><span class="paper-citation">'+E([x.authors,x.venue].filter(Boolean).join(' · '))+'</span></span><span class="plus" aria-hidden="true"></span>';
   const primary=url(x.researchgate_url)?link(x.researchgate_url,'Read on ResearchGate','paper-action paper-action-primary'):'';
   const source=link(x.url,x.source_label||'Original publication','paper-action'+(primary?'':' paper-action-primary'));
-  const orcid=link(x.orcid_url||profileLink('ORCID'),x.orcid_url?'ORCID record':'ORCID profile','paper-action');
-  const rg=primary?'':link(profileLink('ResearchGate'),'ResearchGate profile','paper-action');
-  const pdf=url(x.pdf_url)?'<details class="paper-pdf"><summary>Read PDF on this site <span class="plus" aria-hidden="true"></span></summary><div class="paper-pdf-body"><iframe data-publication-pdf="'+E(url(x.pdf_url))+'" title="'+E('PDF: '+x.title)+'" loading="lazy"></iframe>'+link(x.pdf_url,'Open PDF in a new tab','paper-action')+'</div></details>':'';
-  return '<li class="paper" id="'+E(id)+'"><details class="paper-entry"><summary class="paper-inner">'+inner+'</summary><div class="paper-expanded">'+(x.original_title?'<p class="paper-original-title" lang="ru">'+E(x.original_title)+'</p>':'')+(x.abstract?'<h5>Research overview</h5><p class="paper-abstract">'+E(x.abstract)+'</p>':'')+'<div class="paper-actions">'+primary+source+orcid+rg+'</div>'+pdf+'</div></details></li>';
- }).join('');
- return '<section class="site-section" id="research">'+heading('I','Research')+'<div class="intro-two"><p class="section-lead">'+E(p.research_statement)+'</p><p class="section-note">'+E(p.research_note)+'</p></div><div class="topic-list">'+topics+'</div><div class="subsection-head"><h3>Publications</h3></div><ol class="paper-list">'+papers+'</ol></section>'
+  const actions=[primary,source].filter(Boolean).join('');
+  return '<li class="paper" id="'+E(id)+'"><details class="paper-entry"><summary class="paper-inner">'+inner+'</summary><div class="paper-expanded">'+(x.original_title?'<p class="paper-original-title" lang="ru">'+E(x.original_title)+'</p>':'')+(x.abstract?'<h5>Overview</h5><p class="paper-abstract">'+E(x.abstract)+'</p>':'')+'<div class="paper-actions">'+actions+'</div></div></details></li>';
+ };
+ const paperCards=papers.map(renderPaper).join('');
+ const abstractCards=abstracts.map(renderPaper).join('');
+ const abstractSection=abstractCards?'<div class="subsection-head conference-abstract-head"><h3>Conference abstracts</h3></div><ol class="paper-list paper-list-abstracts">'+abstractCards+'</ol>':'';
+ return '<section class="site-section" id="research">'+heading('I','Research')+'<div class="intro-two"><p class="section-lead">'+E(p.research_statement)+'</p><p class="section-note">'+E(p.research_note)+'</p></div><div class="topic-list">'+topics+'</div><div class="subsection-head"><h3>Publications</h3></div><ol class="paper-list">'+paperCards+'</ol>'+abstractSection+'</section>'
 }
 function mediaOf(x){
  if(x.show_media!==true)return '';
@@ -444,10 +448,6 @@ function setupPublications(){
   const a=event.target.closest('a[href^="#publication-"]');if(!a)return;
   const entry=document.getElementById(a.hash.slice(1))?.querySelector('.paper-entry');if(entry)entry.open=true;
  });
- $$('.paper-pdf').forEach(details=>{details.addEventListener('toggle',()=>{
-  if(!details.open)return;const frame=$('iframe[data-publication-pdf]',details);
-  if(frame&&!frame.hasAttribute('src'))frame.src=frame.dataset.publicationPdf+'#toolbar=0';
- })});
  openHash();
 }
 
