@@ -260,7 +260,7 @@ function about(p){
 }
 
 function additional(rows,options={}){
- const settings={roman:'VII',title:'Additional information',id:'additional',lead:'Independent iOS applications and product development',...options};
+ const settings={roman:'VII',title:'Additional information',id:'additional',lead:'Independent software projects · Competitive sailing',...options};
  const cards=(rows||[]).filter(x=>x.visible!==false).map(x=>{
   const isSailing=(x.regattas||[]).length>0;
   const links=(x.links||[]).filter(y=>url(y.url));
@@ -277,7 +277,7 @@ function additional(rows,options={}){
  return collapsible(settings.roman,settings.title,settings.id,settings.lead,'<div class="additional-grid">'+cards+'</div>');
 }
 function achievements(rows){
- return additional(rows,{roman:'V',title:'Achievements',id:'achievements',lead:'Engineering recognition · International competitive sailing'});
+ return additional(rows,{roman:'V',title:'Achievements',id:'achievements',lead:'Professional recognition · Engineering and research'});
 }
 
 const targets=[['research','Research','I'],['projects','Projects','II'],['education','Education','III'],['about','About','IV'],['achievements','Achievements','V'],['software','Software','VI'],['additional','Additional','VII']];
