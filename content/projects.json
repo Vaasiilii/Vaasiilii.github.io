@@ -11,8 +11,8 @@
     "challenge": "Develop a rehabilitation scheme for an existing heritage bridge while addressing structural performance, site constraints and conservation requirements.",
     "approach": "Developed structural models, examined the existing bridge configuration and designed rehabilitation interventions. Prepared calculation and drawing documentation.",
     "outcome": "Graduate qualification work defended with Excellent (A). The bridge also serves as a case study in lifecycle-management research.",
-    "cover_image": "media/images/alarchin-visual-3.webp",
-    "image_alt": "Proposed rehabilitation visualisation of Alarchin Bridge over the Griboyedov Canal",
+    "cover_image": "media/images/alarchin-visual-2.webp",
+    "image_alt": "Aerial view of Alarchin Bridge and the surrounding urban fabric",
     "gallery": [
       {
         "url": "media/images/alarchin-visual-1.webp",
@@ -21,14 +21,6 @@
       {
         "url": "media/images/alarchin-visual-2.webp",
         "caption": "Aerial view of the bridge and surrounding urban fabric"
-      },
-      {
-        "url": "media/images/alarchin-visual-3.webp",
-        "caption": "Perspective view of the bridge superstructure and granite supports"
-      },
-      {
-        "url": "media/images/alarchin-visual-4.webp",
-        "caption": "View along the bridge roadway"
       }
     ],
     "documents": [
