@@ -229,9 +229,10 @@ function mediaOf(x){
 function projects(rows){
  const visible=(rows||[]).filter(x=>x.visible!==false);
  const group=kind=>visible.filter(x=>x.kind===kind).map((x,i)=>{
-  const facts=[['Contribution',x.role],['Context',x.challenge],['Approach',x.approach],['Outcome',x.outcome],['Methods',x.methods]].filter(y=>y[1]);
+  const facts=[['Contribution',x.role],['Context',x.challenge],['Approach',x.approach],['Outcome',x.outcome],['Recognition',x.recognition],['Methods',x.methods]].filter(y=>y[1]);
   const detail=facts.map(([k,v])=>'<div class="project-fact"><dt>'+E(k)+'</dt><dd>'+E(short(v))+'</dd></div>').join('');
-  return '<details class="project-entry"><summary><span class="project-index">'+String(i+1).padStart(2,'0')+'</span><span class="project-info"><span class="project-title">'+E(short(x.title))+'</span><span class="project-description">'+E(short(x.summary))+'</span><span class="project-discipline">'+E(x.discipline||'')+'</span></span><span class="project-year">'+E(x.year||'')+'</span><span class="plus" aria-hidden="true"></span></summary><div class="project-expanded"><dl>'+detail+'</dl>'+mediaOf(x)+'</div></details>';
+  const recognitionLink=url(x.recognition_url)?'<p class="project-recognition-source"><a href="'+E(url(x.recognition_url))+'" target="_blank" rel="noopener noreferrer">Official award entry '+uiIcon('external')+'</a></p>':'';
+  return '<details class="project-entry"><summary><span class="project-index">'+String(i+1).padStart(2,'0')+'</span><span class="project-info"><span class="project-title">'+E(short(x.title))+'</span><span class="project-description">'+E(short(x.summary))+'</span><span class="project-discipline">'+E(x.discipline||'')+'</span></span><span class="project-year">'+E(x.year||'')+'</span><span class="plus" aria-hidden="true"></span></summary><div class="project-expanded"><dl>'+detail+'</dl>'+recognitionLink+mediaOf(x)+'</div></details>';
  }).join('');
  return '<section class="site-section" id="projects">'+heading('II','Projects')+'<div class="subsection-head" id="academic-projects"><h3>Academic projects</h3></div><div class="project-list">'+group('Academic')+'</div><div class="subsection-head project-group" id="professional-projects"><h3>Professional projects</h3></div><div class="project-list">'+group('Professional')+'</div></section>';
 }
@@ -258,23 +259,28 @@ function about(p){
  return collapsible('IV','About','about',lead,'<div class="about-grid editorial-about"><div class="about-main">'+main+'</div>'+side+others+'</div>');
 }
 
-function additional(rows){
+function additional(rows,options={}){
+ const settings={roman:'VII',title:'Additional information',id:'additional',lead:'Independent iOS applications and product development',...options};
  const cards=(rows||[]).filter(x=>x.visible!==false).map(x=>{
   const isSailing=(x.regattas||[]).length>0;
   const links=(x.links||[]).filter(y=>url(y.url));
   const refs=links.map(ref=>'<li><a href="'+E(url(ref.url))+'" target="_blank" rel="noopener noreferrer"><span class="evidence-title">'+E(ref.title||'External reference')+'</span><span class="evidence-source">'+E(ref.source||'Source')+' '+uiIcon('external')+'</span></a></li>').join('');
   const events=(x.regattas||[]).map(ev=>{
-    const sources=(ev.sources||[]).filter(s=>url(s.url)).map(s=>'<a class="regatta-source" href="'+E(url(s.url))+'" target="_blank" rel="noopener noreferrer"><span class="source-kind">'+E(s.kind||'Source')+'</span><span class="source-title">'+E(s.label||'Reference')+'</span>'+uiIcon('external')+'</a>').join('');
-    return '<li class="regatta-entry"><span class="regatta-year">'+E(ev.year||'')+'</span><div class="regatta-content"><h4>'+E(ev.competition||'')+'</h4><div class="regatta-result">'+E(ev.result||'')+'</div>'+(ev.detail?'<p class="regatta-detail">'+E(ev.detail)+'</p>':'')+(sources?'<div class="regatta-sources" aria-label="Race results and articles">'+sources+'</div>':'')+'</div><span class="regatta-class">'+E(ev.class||'')+'</span></li>';
+   const sources=(ev.sources||[]).filter(s=>url(s.url)).map(s=>'<a class="regatta-source" href="'+E(url(s.url))+'" target="_blank" rel="noopener noreferrer"><span class="source-kind">'+E(s.kind||'Source')+'</span><span class="source-title">'+E(s.label||'Reference')+'</span>'+uiIcon('external')+'</a>').join('');
+   return '<li class="regatta-entry"><span class="regatta-year">'+E(ev.year||'')+'</span><div class="regatta-content"><h4>'+E(ev.competition||'')+'</h4><div class="regatta-result">'+E(ev.result||'')+'</div>'+(ev.detail?'<p class="regatta-detail">'+E(ev.detail)+'</p>':'')+(sources?'<div class="regatta-sources" aria-label="Race results and articles">'+sources+'</div>':'')+'</div><span class="regatta-class">'+E(ev.class||'')+'</span></li>';
   }).join('');
   const keyFacts=(x.highlights||[]).map(t=>'<li>'+E(short(t))+'</li>').join('');
   const evidence=events?'<ol class="regatta-list">'+events+'</ol>':refs?'<ul class="additional-evidence">'+refs+'</ul>':'';
-  return '<article class="additional-card '+(isSailing?'additional-sailing':'')+'"><h3>'+E(x.title)+'</h3><p>'+E(short(x.description))+'</p>'+(keyFacts?'<ul class="additional-highlights">'+keyFacts+'</ul>':'')+(evidence?'<details class="evidence-disclosure"><summary><span>'+(isSailing?'Competition archive':'Articles & applications')+'</span><span class="archive-count">'+(isSailing?(x.regattas||[]).length:links.length)+' entries</span><span class="plus" aria-hidden="true"></span></summary><div class="evidence-panel">'+evidence+'</div></details>':'')+'</article>';
+  const evidenceLabel=x.evidence_label||(isSailing?'Competition archive':'Articles & applications');
+  return '<article class="additional-card '+(isSailing?'additional-sailing':'')+'"><h3>'+E(x.title)+'</h3><p>'+E(short(x.description))+'</p>'+(keyFacts?'<ul class="additional-highlights">'+keyFacts+'</ul>':'')+(evidence?'<details class="evidence-disclosure"><summary><span>'+E(evidenceLabel)+'</span><span class="archive-count">'+(isSailing?(x.regattas||[]).length:links.length)+' entries</span><span class="plus" aria-hidden="true"></span></summary><div class="evidence-panel">'+evidence+'</div></details>':'')+'</article>';
  }).join('');
- return collapsible('VI','Additional information','additional','Independent iOS applications · International competitive sailing','<div class="additional-grid">'+cards+'</div>');
+ return collapsible(settings.roman,settings.title,settings.id,settings.lead,'<div class="additional-grid">'+cards+'</div>');
+}
+function achievements(rows){
+ return additional(rows,{roman:'V',title:'Achievements',id:'achievements',lead:'Engineering recognition · International competitive sailing'});
 }
 
-const targets=[['research','Research','I'],['projects','Projects','II'],['education','Education','III'],['about','About','IV'],['software','Software','V'],['additional','Additional','VI']];
+const targets=[['research','Research','I'],['projects','Projects','II'],['education','Education','III'],['about','About','IV'],['achievements','Achievements','V'],['software','Software','VI'],['additional','Additional','VII']];
 function navigation(){
  const aside=document.createElement('nav');
  aside.className='side-index';
@@ -453,10 +459,10 @@ function setupPublications(){
 
 async function main(){
  try{
- const names=['profile','projects','publications','education','software','additional'];
+ const names=['profile','projects','publications','education','software','achievements','additional'];
  const values=await Promise.all(names.map(n=>fetch('content/'+n+'.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error(n+' '+r.status);return r.json()})));
  const d=Object.fromEntries(names.map((k,i)=>[k,values[i]]));
- $('#app').innerHTML=intro(d.profile,d.projects,d.publications)+research(d.profile,d.publications)+projects(d.projects)+education(d.education)+about(d.profile)+software(d.software)+additional(d.additional);
+ $('#app').innerHTML=intro(d.profile,d.projects,d.publications)+research(d.profile,d.publications)+projects(d.projects)+education(d.education)+about(d.profile)+achievements(d.achievements)+software(d.software)+additional(d.additional);
  $('#header-contact').href='#contact';
  $('#copyright-year').textContent=new Date().getFullYear();
  const safeInit=(name,fn)=>{try{fn()}catch(error){console.error('Portfolio '+name+' initialization failed:',error)}};

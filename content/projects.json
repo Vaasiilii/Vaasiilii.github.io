@@ -136,7 +136,9 @@
         "location": "Abutment Ok1."
       }
     ],
-    "calculation_note": "The intermediate-support pile utilisation is 0.973, close to the calculated pile resistance; it should not be interpreted as a large reserve."
+    "calculation_note": "The intermediate-support pile utilisation is 0.973, close to the calculated pile resistance; it should not be interpreted as a large reserve.",
+    "recognition": "Silver Certificate — Golden Trezzini Awards 2026, Best Project of Building or Facility by Student.",
+    "recognition_url": "https://www.goldtrezzini.ru/en/nominees/alarchin-bridge-en"
   },
   {
     "slug": "steel-bridge-orthotropic-deck",

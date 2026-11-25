@@ -1052,3 +1052,8 @@ details.evidence-disclosure[open]>summary .plus::after{transform:rotate(60deg)}
 @media(max-width:760px){.paper-entry>summary{grid-template-columns:45px minmax(0,1fr) 18px;gap:9px}.paper-title{font-size:16px}.paper-citation{font-size:13px}.paper-expanded{margin-left:54px;margin-right:0}.paper-actions{gap:5px 14px}.paper .paper-abstract{font-size:13px}}
 @media(max-width:420px){.paper-entry>summary{grid-template-columns:40px minmax(0,1fr) 18px}.paper-expanded{margin-left:49px}.paper .paper-original-title{overflow-wrap:anywhere}}
 @media(prefers-reduced-motion:reduce){.paper-title{transition:none}}
+
+/* Recognition source links in project detail */
+.project-recognition-source{margin:0 0 18px;font-size:13px;line-height:1.5}
+.project-recognition-source a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--line)}
+.project-recognition-source a:hover,.project-recognition-source a:focus-visible{border-color:var(--accent)}
