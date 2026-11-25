@@ -272,7 +272,7 @@ content:
       - {name: visible, label: Show on public site, type: boolean}
 
   - name: software
-    label: 05 · Software and evidence
+    label: 06 · Software and evidence
     type: file
     path: content/software.json
     format: json
@@ -315,7 +315,7 @@ content:
       - {name: visible, label: Display on website, type: boolean}
 
   - name: achievements
-    label: 06 · Personal achievements
+    label: 05 · Personal achievements
     type: file
     path: content/achievements.json
     format: json

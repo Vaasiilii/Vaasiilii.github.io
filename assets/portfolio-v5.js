@@ -246,7 +246,7 @@ function education(rows){
 }
 function software(rows){
  const list=(rows||[]).filter(x=>x.visible!==false).map((x,i)=>'<details class="software-entry"><summary><span class="software-index">'+String(i+1).padStart(2,'0')+'</span><span class="software-summary"><span class="software-name">'+E(x.name)+'</span><span class="software-desc">'+E(short(x.description))+'</span></span><span class="software-category">'+E(x.category)+'</span><span class="plus" aria-hidden="true"></span></summary><div class="software-expanded"><p>'+E(short(x.methods||''))+'</p>'+mediaOf(x)+'</div></details>').join('');
- return collapsible('V','Software & methods','software','AutoCAD · Revit · Tekla · SOFiSTiK · SCAD · LIRA-SAPR · PLAXIS','<div class="software-list">'+list+'</div>')
+ return collapsible('VI','Software & methods','software','AutoCAD · Revit · Tekla · SOFiSTiK · SCAD · LIRA-SAPR · PLAXIS','<div class="software-list">'+list+'</div>')
 }
 function about(p){
  const groups=(p.about_sections||[]).filter(x=>x.title||x.body||x.points?.length);
