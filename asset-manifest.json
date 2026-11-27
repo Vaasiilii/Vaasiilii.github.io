@@ -244,5 +244,245 @@
     "source": "plaxis-slide-18.webp",
     "site_path": "media/images/plaxis-slide-18.webp",
     "size_mb": 0.068
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_calculation_scheme_1.jpg",
+    "site_path": "media/images/tunnel-calculation-01.webp",
+    "size_mb": 0.049,
+    "bytes": 50958,
+    "git_sha": "06c0d1b641ad05d3f22e1c2c1470255c9b1ad3d1"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_calculation_scheme_2.jpg",
+    "site_path": "media/images/tunnel-calculation-02.webp",
+    "size_mb": 0.198,
+    "bytes": 207410,
+    "git_sha": "9bb3bec08b75379a8233397027e6c8d65cc57568"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_calculation_scheme_3.jpg",
+    "site_path": "media/images/tunnel-calculation-03.webp",
+    "size_mb": 0.115,
+    "bytes": 120898,
+    "git_sha": "e8862de022c488e8a8a83bf3e91142d616f7edc8"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_calculation_scheme_4.jpg",
+    "site_path": "media/images/tunnel-calculation-04.webp",
+    "size_mb": 0.146,
+    "bytes": 152716,
+    "git_sha": "936117d209710d4bcadf8c73346f6217d33bbd32"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_calculation_scheme_5.jpg",
+    "site_path": "media/images/tunnel-calculation-05.webp",
+    "size_mb": 0.155,
+    "bytes": 162838,
+    "git_sha": "20688e83ac05b9c9da3be6d64b8a4da390768a90"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_calculation_scheme_6.jpg",
+    "site_path": "media/images/tunnel-calculation-06.webp",
+    "size_mb": 0.146,
+    "bytes": 152788,
+    "git_sha": "9c3bda848686e4f59902aedade83beeea60ed373"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_calculation_scheme_7.jpg",
+    "site_path": "media/images/tunnel-calculation-07.webp",
+    "size_mb": 0.158,
+    "bytes": 165548,
+    "git_sha": "335fff7864c85681be563c3e2c95d4a3f68716b3"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_calculation_scheme_8.jpg",
+    "site_path": "media/images/tunnel-calculation-08.webp",
+    "size_mb": 0.22,
+    "bytes": 230300,
+    "git_sha": "f25ea5aafb4a1ae46f434dfbe49a887a5b1b5d7e"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_calculation_scheme_9.jpg",
+    "site_path": "media/images/tunnel-calculation-09.webp",
+    "size_mb": 0.197,
+    "bytes": 206274,
+    "git_sha": "c7792777189c3ab658424f509ffcd6f0c81f2a9c"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_calculation_scheme_10.jpg",
+    "site_path": "media/images/tunnel-calculation-10.webp",
+    "size_mb": 0.156,
+    "bytes": 163344,
+    "git_sha": "a87ba23be0fa195cdc4d6ce1ab03384462caca4e"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_calculation_scheme_11.jpg",
+    "site_path": "media/images/tunnel-calculation-11.webp",
+    "size_mb": 0.161,
+    "bytes": 168760,
+    "git_sha": "49c3f61b80a8af5180e71af4d67d8efafcea06a5"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_calculation_scheme_12.jpg",
+    "site_path": "media/images/tunnel-calculation-12.webp",
+    "size_mb": 0.144,
+    "bytes": 151008,
+    "git_sha": "36c4a1200a97bcd7be6f364f7411256e5476bd6d"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_calculation_scheme_13.jpg",
+    "site_path": "media/images/tunnel-calculation-13.webp",
+    "size_mb": 0.155,
+    "bytes": 162280,
+    "git_sha": "bbbbc3188eb9bdf93ed0a8ac7d1d883a0bd9f09b"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_photo_of_intersection.jpg",
+    "site_path": "media/images/tunnel-site-intersection.webp",
+    "size_mb": 0.184,
+    "bytes": 192712,
+    "git_sha": "f0f25dff6cac5d836b2dc3b6613cece7f846399e"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_situational_plan_glonass.jpg",
+    "site_path": "media/images/tunnel-site-aerial.webp",
+    "size_mb": 0.24,
+    "bytes": 251490,
+    "git_sha": "b0bcf86245b4dad4bf38bdeb9a48745220994043"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_PZ.pdf · PDF p. 6",
+    "site_path": "media/images/tunnel-site-pedestrian-plan.webp",
+    "size_mb": 0.195,
+    "bytes": 204816,
+    "git_sha": "718abb88540df41475c3027a9291c7724a3191d5"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_PZ.pdf · PDF p. 14",
+    "site_path": "media/images/tunnel-variant-01-plan.webp",
+    "size_mb": 0.012,
+    "bytes": 13102,
+    "git_sha": "7c6ff893799fccb140318f5d0f0ebcdd164903e4"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_PZ.pdf · PDF p. 16",
+    "site_path": "media/images/tunnel-variant-02-plan.webp",
+    "size_mb": 0.023,
+    "bytes": 24476,
+    "git_sha": "c1ae71c8e0652e0d2b55940a49612f7baa42eb19"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_PZ.pdf · PDF p. 18",
+    "site_path": "media/images/tunnel-variant-03-plan.webp",
+    "size_mb": 0.061,
+    "bytes": 64406,
+    "git_sha": "da9d43506ef62fe2ff662af255e61a858ec7ddf3"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_PZ.pdf · student record number redacted",
+    "site_path": "media/docs/tunnel-design-report-ru.pdf",
+    "size_mb": 6.849,
+    "bytes": 7181740,
+    "git_sha": "22b4d86a249103d5dc7904847034d49a783bc8aa"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_drawings.pdf · student record number redacted",
+    "site_path": "media/docs/tunnel-drawing-album.pdf",
+    "size_mb": 0.954,
+    "bytes": 1000821,
+    "git_sha": "286b6a43e8e132ecccac7f4ba81c6f5ebc5a2d72"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_drawings_1.pdf",
+    "site_path": "media/docs/tunnel-drawing-topographic-plan.pdf",
+    "size_mb": 0.072,
+    "bytes": 75972,
+    "git_sha": "4b543c39e5aa46063bb2e372ae957306f69bea23"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_drawings_1.pdf · preview",
+    "site_path": "media/images/tunnel-drawing-topographic-plan.webp",
+    "size_mb": 0.228,
+    "bytes": 238858,
+    "git_sha": "bf575746d21c1f7da77342e145c00bb0d59d4752"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_drawings_2.pdf",
+    "site_path": "media/docs/tunnel-drawing-variant-01.pdf",
+    "size_mb": 0.1,
+    "bytes": 105378,
+    "git_sha": "a42be78ce80b70cf2c296811e8fca28851555629"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_drawings_3.pdf",
+    "site_path": "media/docs/tunnel-drawing-variant-02.pdf",
+    "size_mb": 0.108,
+    "bytes": 113695,
+    "git_sha": "9195a43975ae43f51f8163a12be2b58b1750efa0"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_drawings_4.pdf",
+    "site_path": "media/docs/tunnel-drawing-variant-03.pdf",
+    "size_mb": 0.12,
+    "bytes": 125538,
+    "git_sha": "70642561d9d247a6a55c53eca955c7c0ae2824b3"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_drawings_5.pdf",
+    "site_path": "media/docs/tunnel-drawing-detailed-sections.pdf",
+    "size_mb": 0.144,
+    "bytes": 150710,
+    "git_sha": "50f446f3f9960619f489af77823896205e85d373"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_drawings_5.pdf · preview",
+    "site_path": "media/images/tunnel-drawing-detailed-sections.webp",
+    "size_mb": 0.308,
+    "bytes": 322476,
+    "git_sha": "941b048bb213314da6dafb134f85653489569ff4"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_drawings_6.pdf",
+    "site_path": "media/docs/tunnel-drawing-construction-sequence.pdf",
+    "size_mb": 0.152,
+    "bytes": 159837,
+    "git_sha": "89a6385211044dbc37b0a907e96048a2511599d1"
+  },
+  {
+    "project": "tunnel",
+    "source": "tunnel_drawings_6.pdf · preview",
+    "site_path": "media/images/tunnel-drawing-construction-sequence.webp",
+    "size_mb": 0.366,
+    "bytes": 384188,
+    "git_sha": "b98d13efc7eb662d9381bec0700537e08a8ec715"
   }
 ]

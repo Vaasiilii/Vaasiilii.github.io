@@ -105,7 +105,7 @@ function showcase(projects,pubs){
   const paper=x.entryType==='publication',type=paper?'PUBLICATION':'PROJECT';
   const photo=!paper&&x.show_media===true&&url(x.cover_image)?'<img class="showcase-image" loading="lazy" src="'+E(url(x.cover_image))+'" alt="'+E(x.title)+'">':paper&&x.show_media===true&&url(x.cover_image)?'<img class="showcase-image" loading="lazy" src="'+E(url(x.cover_image))+'" alt="'+E(x.title)+'">':'<div class="showcase-canvas '+(paper?'canvas-publication':'canvas-project')+'" aria-hidden="true"><span class="canvas-motif"></span></div>';
   const excerpt=paper?short(x.venue):short(x.summary);
-  const dest=paper?'#publication-'+(safeId(x.slug)||String((pubs||[]).filter(y=>y.visible!==false).findIndex(y=>y.title===x.title)+1)):'#projects';
+  const dest=paper?'#publication-'+(safeId(x.slug)||String((pubs||[]).filter(y=>y.visible!==false).findIndex(y=>y.title===x.title)+1)):(x.case_study?.metrics?.length?'#project-'+safeId(x.slug):'#projects');
   const external='';
   const title=short(x.title);
   return '<article class="showcase-slide'+(i===0?' is-current':'')+'" role="group" aria-roledescription="slide" aria-label="'+(i+1)+' of '+items.length+'" aria-hidden="'+(i===0?'false':'true')+'" data-item-type="'+type+'"><div class="showcase-image-region">'+photo+'</div><div class="showcase-slide-copy"><span class="showcase-category">'+type+' · '+E(x.year||'')+'</span><h3>'+E(title)+'</h3><p>'+E(excerpt)+'</p><a class="showcase-link" href="'+E(dest)+'"'+external+' aria-label="Explore '+E(title)+'">View '+uiIcon('external')+'</a></div></article>';
@@ -231,6 +231,25 @@ function mediaOf(x){
   ...(x.presentation_source?[x.presentation_source]:[])
  ]):'';
  const disclosure=(title,body,extra='')=>body?'<details class="project-media-section project-media-disclosure '+E(extra)+'"><summary class="project-media-heading"><span class="project-results-title">'+E(title)+'</span><span class="plus" aria-hidden="true"></span></summary><div class="project-results-panel">'+body+'</div></details>':'';
+
+ if(x.case_study?.metrics?.length){
+  const c=x.case_study,base='case-'+safeId(x.slug);
+  const panel=(key,title,body,open=false)=>body?'<details class="project-media-section project-media-disclosure case-panel" id="'+E(base+'-'+key)+'"'+(open?' open':'')+'><summary class="project-media-heading"><span class="project-results-title">'+E(title)+'</span><span class="plus" aria-hidden="true"></span></summary><div class="project-results-panel">'+body+'</div></details>':'';
+  const note=t=>t?'<p class="case-note">'+E(t)+'</p>':'';
+  const drawing=d=>d&&url(d.url)&&url(d.preview)?'<figure class="case-drawing"><button type="button" class="evidence-image is-technical" data-lightbox-src="'+E(url(d.preview))+'" data-lightbox-caption="'+E(d.label)+'" data-lightbox-alt="'+E(d.label)+'" aria-label="'+E('Enlarge '+d.label)+'"><img src="'+E(url(d.preview))+'" alt="'+E(d.label)+'" loading="lazy"></button><figcaption><span>'+E(d.label)+'</span>'+link(d.url,'Open full PDF','case-document-link')+'</figcaption></figure>':'';
+  const kpis=c.metrics.map(v=>'<div class="case-metric"><strong>'+E(v.value)+'</strong><span class="case-unit">'+E(v.unit)+'</span><small>'+E(v.label)+'</small></div>').join('');
+  const variants=(c.variants||[]).map(v=>'<article class="case-variant'+(v.chosen?' is-selected':'')+'"><header><span>'+E(v.name)+'</span>'+(v.chosen?'<span class="case-selected">Selected</span>':'')+'</header><h5>'+E(v.heading)+'</h5><button class="case-plan evidence-image" type="button" data-lightbox-src="'+E(url(v.image))+'" data-lightbox-caption="'+E(v.name+' — '+v.heading)+'" data-lightbox-alt="'+E(v.name+' — '+v.heading)+'" aria-label="'+E('Enlarge '+v.name+' plan')+'"><img src="'+E(url(v.image))+'" alt="'+E(v.name+' plan')+'" loading="lazy"></button><div class="case-variant-quantity"><strong>'+E(v.volume)+' <small>m³</small></strong><span>Reported total quantity</span></div><p>'+E(v.description)+'</p>'+link(v.pdf,'View drawing PDF','case-document-link')+'</article>').join('');
+  const nav=[['context','Site & demand'],['alternatives','Alternatives'],['structure','Structure'],['analysis','FE analysis'],['results','Results'],['construction','Construction'],['documents','Documents']].map(([key,label])=>'<a href="#'+E(base+'-'+key)+'">'+E(label)+'</a>').join('');
+  const stages=(c.construction_steps||[]).map(t=>'<li>'+E(t)+'</li>').join('');
+  return '<div class="project-media-groups case-study"><div class="case-metrics">'+kpis+'</div><nav class="case-nav" aria-label="Case study sections">'+nav+'</nav>'+
+   panel('context','01 / Site & pedestrian demand',note(c.context_note)+'<div class="case-context">'+visualisations+'</div>'+drawing(c.topography),true)+
+   panel('alternatives','02 / Design alternatives','<div class="case-variants">'+variants+'</div>'+note(c.comparison_note),true)+
+   panel('structure','03 / Selected structural solution',drawing(c.structure),true)+
+   panel('analysis','04 / Finite-element model & load cases',softwareNote+note(c.model_note)+'<div class="case-model">'+imageCards(c.model,'technical','Finite-element model')+'</div><h5 class="case-subhead">Design load combinations / ULS</h5>'+imageCards(c.design_loads,'technical','Design load combinations')+'<h5 class="case-subhead">Characteristic load combinations / SLS</h5>'+imageCards(c.characteristic_loads,'technical','Characteristic load combinations'))+
+   panel('results','05 / Critical calculation results',results,true)+
+   panel('construction','06 / Construction sequence','<ol class="case-steps">'+stages+'</ol>'+drawing(c.construction))+
+   panel('documents','07 / Project documents',grouped)+'</div>';
+ }
  const html=[
   section('Visualisations',visualisations,'visualisations-section'),
   section('Design alternatives',designAlternatives,'design-alternatives-section'),
@@ -249,7 +268,7 @@ function projects(rows){
   const facts=[['Contribution',x.role],['Context',x.challenge],['Approach',x.approach],['Outcome',x.outcome],['Recognition',x.recognition],['Methods',x.methods]].filter(y=>y[1]);
   const detail=facts.map(([k,v])=>'<div class="project-fact"><dt>'+E(k)+'</dt><dd>'+E(short(v))+'</dd></div>').join('');
   const recognitionLink=url(x.recognition_url)?'<p class="project-recognition-source"><a href="'+E(url(x.recognition_url))+'" target="_blank" rel="noopener noreferrer">Official award entry '+uiIcon('external')+'</a></p>':'';
-  return '<details class="project-entry"><summary><span class="project-index">'+String(i+1).padStart(2,'0')+'</span><span class="project-info"><span class="project-title">'+E(short(x.title))+'</span><span class="project-description">'+E(short(x.summary))+'</span><span class="project-discipline">'+E(x.discipline||'')+'</span></span><span class="project-year">'+E(x.year||'')+'</span><span class="plus" aria-hidden="true"></span></summary><div class="project-expanded"><dl>'+detail+'</dl>'+recognitionLink+mediaOf(x)+'</div></details>';
+  return '<details class="project-entry'+(x.case_study?.metrics?.length?' project-case-entry':'')+'"'+(x.case_study?.metrics?.length?' id="project-'+E(safeId(x.slug))+'"':'')+'><summary><span class="project-index">'+String(i+1).padStart(2,'0')+'</span><span class="project-info"><span class="project-title">'+E(short(x.title))+'</span><span class="project-description">'+E(short(x.summary))+'</span><span class="project-discipline">'+E(x.discipline||'')+'</span></span><span class="project-year">'+E(x.year||'')+'</span><span class="plus" aria-hidden="true"></span></summary><div class="project-expanded"><dl>'+detail+'</dl>'+recognitionLink+mediaOf(x)+'</div></details>';
  }).join('');
  const academic=group('Academic'),professional=group('Professional');
  return '<section class="site-section" id="projects">'+heading('II','Projects')+(academic?'<div class="subsection-head" id="academic-projects"><h3>Academic projects</h3></div><div class="project-list">'+academic+'</div>':'')+(professional?'<div class="subsection-head project-group" id="professional-projects"><h3>Professional projects</h3></div><div class="project-list">'+professional+'</div>':'')+'</section>';
@@ -522,6 +541,21 @@ async function main(){
  safeInit('CV links',()=>setupCvLinks(d.profile));
  safeInit('section controls',()=>setupDisclosures());
  safeInit('publication controls',()=>setupPublications());
+ safeInit('case navigation',()=>{
+  const openCase=()=>{
+   const target=document.getElementById(location.hash.slice(1));if(!target)return;
+   const entry=target.closest('.project-case-entry');if(!entry)return;
+   entry.open=true;if(target.matches('details'))target.open=true;
+   if(target!==entry)requestAnimationFrame(()=>target.scrollIntoView({block:'start'}));
+  };
+  window.addEventListener('hashchange',openCase);
+  document.addEventListener('click',event=>{
+   const a=event.target.closest('a[href^="#case-"],a[href^="#project-"]');if(!a)return;
+   const target=document.getElementById(a.hash.slice(1));const entry=target?.closest('.project-case-entry');
+   if(entry){entry.open=true;if(target.matches('details'))target.open=true;}
+  });
+  openCase();
+ });
  safeInit('contact actions',()=>setupContactActions());
  safeInit('evidence lightbox',()=>setupEvidenceLightbox());
  safeInit('evidence carousels',()=>setupEvidenceCarousels());

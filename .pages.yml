@@ -265,6 +265,74 @@ content:
             options:
               media: docs
               extensions: [pptx]
+      - name: case_study
+        label: Long-form engineering case study (optional)
+        type: object
+        fields:
+          - name: metrics
+            label: Key metrics
+            type: object
+            list: true
+            fields:
+              - {name: value, type: string}
+              - {name: unit, type: string}
+              - {name: label, type: string}
+          - {name: context_note, type: text}
+          - name: variants
+            label: Comparative design alternatives
+            type: object
+            list: true
+            fields:
+              - {name: name, type: string}
+              - {name: heading, type: string}
+              - {name: description, type: text}
+              - {name: volume, type: string}
+              - {name: length, type: string}
+              - {name: chosen, type: boolean}
+              - {name: image, type: image, options: {media: images}}
+              - {name: pdf, type: file, options: {media: docs, extensions: [pdf]}}
+          - {name: comparison_note, type: text}
+          - name: topography
+            type: object
+            fields:
+              - {name: label, type: string}
+              - {name: url, type: file, options: {media: docs, extensions: [pdf]}}
+              - {name: preview, type: image, options: {media: images}}
+          - name: structure
+            type: object
+            fields:
+              - {name: label, type: string}
+              - {name: url, type: file, options: {media: docs, extensions: [pdf]}}
+              - {name: preview, type: image, options: {media: images}}
+          - name: construction
+            type: object
+            fields:
+              - {name: label, type: string}
+              - {name: url, type: file, options: {media: docs, extensions: [pdf]}}
+              - {name: preview, type: image, options: {media: images}}
+          - {name: model_note, type: text}
+          - name: model
+            type: object
+            list: true
+            fields:
+              - {name: url, type: image, options: {media: images}}
+              - {name: caption, type: string}
+              - {name: white_canvas, type: boolean}
+          - name: design_loads
+            type: object
+            list: true
+            fields:
+              - {name: url, type: image, options: {media: images}}
+              - {name: caption, type: string}
+              - {name: white_canvas, type: boolean}
+          - name: characteristic_loads
+            type: object
+            list: true
+            fields:
+              - {name: url, type: image, options: {media: images}}
+              - {name: caption, type: string}
+              - {name: white_canvas, type: boolean}
+          - {name: construction_steps, type: string, list: true}
       - {name: featured, label: Featured (reserved for later), type: boolean}
       - {name: visible, label: Show on public site, type: boolean}
       - {name: grouped_documents, label: Use grouped drawing previews and project documents, type: boolean}

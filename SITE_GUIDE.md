@@ -174,3 +174,9 @@
 - Six selected PLAXIS preview images are restored under `media/images/plaxis-slide-*.webp` and displayed in the project's manual carousel. The complete presentation remains available in the PDF and PPTX files.
 - The project record retains the engineering-geological conditions, PLAXIS 2D staged-construction model, sheet-pile and strut design, and reported calculation results as a standalone portfolio entry.
 - Pages CMS supports both PDF and PPTX uploads in `media/docs/`; document cards identify the actual file type and use the appropriate open/download action.
+
+## Urban pedestrian tunnel case study — 27 November 2026
+
+- Separate 2024 academic case study `urban-shallow-tunnel` with optional `case_study` object; the original project cards are unchanged.
+- Four key metrics, context photographs and plan, three comparative design cards, large drawing previews, two six-image FE carousels, reported calculation results with source caveats, construction sequence and documents. Manual navigation, keyboard/fullscreen viewing and mobile adaptation.
+- Source report: 53 pages, Russian. Drawing album: 8 PDF pages (7 numbered sheets plus cover). Public copies redact only the student record number; duplicate five-page partial drawing album omitted. Verify all 30 Git blob hashes in asset-manifest.json before merging the upload branch.
