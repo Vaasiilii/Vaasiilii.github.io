@@ -151,3 +151,8 @@
 - On wide screens (1550 px and above), the page container expands responsively to a maximum 1500 px while reserving space for the fixed right-side section index.
 - Project image canvases are pure white. Main visualisations preserve their original aspect ratio and are not cropped.
 - For a project with carousel mode enabled, galleries with four or fewer images render as a full-width vertical stack. Galleries with five or more images retain manual horizontal navigation (three visible on desktop, two on tablet, one on mobile). Existing Alarchin galleries are not changed by this project-specific rule.
+
+## Hero preview and Orto visualisation layout — 27 November 2026
+
+- The selected-works preview on desktop is lowered by 34 px and its minimum height is increased to 620 px (viewport minimum 470 px), providing a larger image window. This adjustment applies above 1100 px; tablet and mobile layouts retain their existing geometry.
+- Orto Visualisations now use a two-column grid rather than a vertical stack. At widths below 780 px the images return to a single column for legibility. The six Design Alternatives and five Calculation Illustrations remain in their manual carousels.

@@ -1090,13 +1090,25 @@ details.evidence-disclosure[open]>summary .plus::after{transform:rotate(60deg)}
  object-fit:contain;
  background:#fff;
 }
-.evidence-gallery.is-stacked{
- grid-template-columns:minmax(0,1fr);
- gap:28px;
+.evidence-gallery.is-grid-two{
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:24px;
 }
-.evidence-gallery.is-stacked .evidence-image img{
+.evidence-gallery.is-grid-two .evidence-image img{
  height:auto;
  aspect-ratio:auto;
  object-fit:contain;
  background:#fff;
+}
+@media(max-width:780px){
+ .evidence-gallery.is-grid-two{grid-template-columns:minmax(0,1fr);gap:22px}
+}
+
+/* Hero refinement: move the selected-work preview lower and give its image more room. */
+@media(min-width:1101px){
+ .showcase{
+  min-height:620px;
+  transform:translateY(34px);
+ }
+ .showcase-viewport{min-height:470px}
 }
