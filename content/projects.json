@@ -324,6 +324,14 @@
         "url": "media/docs/orto-sofistik-calculation-report.pdf"
       }
     ],
+    "presentation": {
+      "label": "English project presentation",
+      "url": "media/docs/orto-project-presentation-en.pdf"
+    },
+    "presentation_source": {
+      "label": "Editable PowerPoint presentation",
+      "url": "media/docs/orto-project-presentation-en.pptx"
+    },
     "grouped_documents": true,
     "featured": false,
     "visible": true,

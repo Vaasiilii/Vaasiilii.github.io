@@ -177,15 +177,23 @@ function mediaOf(x){
  };
  const fileCards=(items)=>{
   const cards=(items||[]).filter(d=>url(d.url)).map(d=>{
-   const href=url(d.url);
-   return '<a class="evidence-document" href="'+E(href)+'" target="_blank" rel="noopener noreferrer"><span>'+E(short(d.label||'Project document'))+'</span><span>Open PDF ↗</span></a>';
+   const href=url(d.url),powerPoint=/\.pptx?$/i.test(href.split(/[?#]/)[0]);
+   const label=short(d.label||'Project document').replace(/\s*·\s*(PDF|PPTX)$/i,'');
+   const type=powerPoint?'PPTX':'PDF',action=powerPoint?'Download':'Open';
+   const icon=powerPoint?uiIcon('down'):uiIcon('external');
+   const attrs=powerPoint?' download':' target="_blank" rel="noopener noreferrer"';
+   return '<a class="evidence-document" href="'+E(href)+'"'+attrs+'><span>'+E(label)+'</span><span>'+action+' '+type+' '+icon+'</span></a>';
   }).join('');
   return cards?'<div class="evidence-gallery evidence-file-list">'+cards+'</div>':'';
  };
  const documentGrid=(items,extra='')=>{
   const cards=items.filter(d=>url(d.url)).map(d=>{
-   const href=url(d.url),label=short(d.label||'Project document').replace(/\s*·\s*PDF$/i,'');
-   return '<a class="project-document-card" href="'+E(href)+'" target="_blank" rel="noopener noreferrer" aria-label="'+E('Open PDF: '+label)+'"><span class="project-document-title">'+E(label)+'</span><span class="project-document-open" aria-hidden="true">PDF '+uiIcon('external')+'</span></a>';
+   const href=url(d.url),powerPoint=/\.pptx?$/i.test(href.split(/[?#]/)[0]);
+   const label=short(d.label||'Project document').replace(/\s*·\s*(PDF|PPTX)$/i,'');
+   const type=powerPoint?'PPTX':'PDF',action=powerPoint?'Download':'Open';
+   const icon=powerPoint?uiIcon('down'):uiIcon('external');
+   const attrs=powerPoint?' download':' target="_blank" rel="noopener noreferrer"';
+   return '<a class="project-document-card" href="'+E(href)+'"'+attrs+' aria-label="'+E(action+' '+type+': '+label)+'"><span class="project-document-title">'+E(label)+'</span><span class="project-document-open" aria-hidden="true">'+type+' '+icon+'</span></a>';
   }).join('');
   return cards?'<div class="project-document-grid '+E(extra)+'">'+cards+'</div>':'';
  };
@@ -219,7 +227,8 @@ function mediaOf(x){
  const grouped=groupedDocuments?documentGrid([
   ...remainingDrawings,
   ...(x.documents||[]),
-  ...(x.presentation?[x.presentation]:[])
+  ...(x.presentation?[x.presentation]:[]),
+  ...(x.presentation_source?[x.presentation_source]:[])
  ]):'';
  const disclosure=(title,body,extra='')=>body?'<details class="project-media-section project-media-disclosure '+E(extra)+'"><summary class="project-media-heading"><span class="project-results-title">'+E(title)+'</span><span class="plus" aria-hidden="true"></span></summary><div class="project-results-panel">'+body+'</div></details>':'';
  const html=[
