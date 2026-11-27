@@ -165,3 +165,10 @@
 
 - The fixed 2:1 white canvas is applied only to media entries with `white_canvas: true`. It is enabled for the 15 white-background visualisations, alternatives and calculation illustrations in the Orto project. Alarchin gallery images have no flag and retain their original image sizing, aspect ratio and treatment.
 - Pages CMS exposes the `white_canvas` boolean on each Visualisations, Design Alternatives and Calculation Illustrations item so future white-background drawings can opt in individually. Ordinary photographs and renderings should leave it unchecked.
+
+## Orto project presentation files — 27 November 2026
+
+- The English project presentation is included in the existing Orto project's grouped Project documents section.
+- The PDF opens in a new browser tab; the editable PPTX is offered as a download.
+- The two files are referenced by the `presentation` and `presentation_source` properties in `content/projects.json`.
+- Pages CMS supports both PDF and PPTX uploads in `media/docs/`; the document cards identify the actual file type and use the appropriate open/download action.

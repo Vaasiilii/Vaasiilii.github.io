@@ -8,10 +8,10 @@ media:
     extensions: [jpg, jpeg, png, webp, svg]
     rename: safe
   - name: docs
-    label: Public documents (review before uploading)
+    label: Public documents (PDF and PowerPoint; review before uploading)
     input: media/docs
     output: /media/docs
-    extensions: [pdf]
+    extensions: [pdf, pptx]
     rename: safe
 content:
   - name: profile
@@ -254,6 +254,17 @@ content:
             options:
               media: docs
               extensions: [pdf]
+      - name: presentation_source
+        label: Editable PowerPoint presentation (PPTX)
+        type: object
+        fields:
+          - {name: label, label: PowerPoint link label, type: string}
+          - name: url
+            label: Upload editable PowerPoint file
+            type: file
+            options:
+              media: docs
+              extensions: [pptx]
       - {name: featured, label: Featured (reserved for later), type: boolean}
       - {name: visible, label: Show on public site, type: boolean}
       - {name: grouped_documents, label: Use grouped drawing previews and project documents, type: boolean}
