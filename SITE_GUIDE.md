@@ -122,3 +122,10 @@
 - Image previews open in a full-viewport viewer with previous/next navigation and keyboard arrow support.
 - Upload the files from `alarchin_site_package/media/images/` to `media/images/` and files from `alarchin_site_package/media/docs/` to `media/docs/`. The package README contains the exact file mapping.
 - The full presentation is published as PDF for browser viewing; the editable PPTX is not included in the public media set.
+
+## Project inventory reset — 27 November 2026
+
+- The completed Alarchin Bridge case study (two visualisations, seven calculation illustrations and five PDFs) remains published, including its award recognition.
+- Eight earlier text-only project entries and their unused media have been removed from the current branch to prepare for fresh, individually reviewed project packages. The preceding commit retains the original material in Git history.
+- Empty project categories are not rendered. Academic and professional categories appear automatically when corresponding visible project records are added.
+- The asset manifest is reconciled with the retained project files. Future project packages should be reviewed for confidentiality, added under unique project slugs, and checked for missing links before publication. Software entries, CVs and other sections remain unchanged.

@@ -234,7 +234,8 @@ function projects(rows){
   const recognitionLink=url(x.recognition_url)?'<p class="project-recognition-source"><a href="'+E(url(x.recognition_url))+'" target="_blank" rel="noopener noreferrer">Official award entry '+uiIcon('external')+'</a></p>':'';
   return '<details class="project-entry"><summary><span class="project-index">'+String(i+1).padStart(2,'0')+'</span><span class="project-info"><span class="project-title">'+E(short(x.title))+'</span><span class="project-description">'+E(short(x.summary))+'</span><span class="project-discipline">'+E(x.discipline||'')+'</span></span><span class="project-year">'+E(x.year||'')+'</span><span class="plus" aria-hidden="true"></span></summary><div class="project-expanded"><dl>'+detail+'</dl>'+recognitionLink+mediaOf(x)+'</div></details>';
  }).join('');
- return '<section class="site-section" id="projects">'+heading('II','Projects')+'<div class="subsection-head" id="academic-projects"><h3>Academic projects</h3></div><div class="project-list">'+group('Academic')+'</div><div class="subsection-head project-group" id="professional-projects"><h3>Professional projects</h3></div><div class="project-list">'+group('Professional')+'</div></section>';
+ const academic=group('Academic'),professional=group('Professional');
+ return '<section class="site-section" id="projects">'+heading('II','Projects')+(academic?'<div class="subsection-head" id="academic-projects"><h3>Academic projects</h3></div><div class="project-list">'+academic+'</div>':'')+(professional?'<div class="subsection-head project-group" id="professional-projects"><h3>Professional projects</h3></div><div class="project-list">'+professional+'</div>':'')+'</section>';
 }
 function education(rows){
  const cards=(rows||[]).filter(x=>x.visible!==false).map((x,i)=>{
