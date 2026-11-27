@@ -1112,3 +1112,25 @@ details.evidence-disclosure[open]>summary .plus::after{transform:rotate(60deg)}
  }
  .showcase-viewport{min-height:470px}
 }
+
+/* Uniform white image canvases: all project gallery images share the same frame. */
+.evidence-image-frame{
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ width:100%;
+ aspect-ratio:2/1;
+ overflow:hidden;
+ background:#fff;
+}
+.evidence-image-frame img{
+ display:block;
+ width:100%;
+ height:100%;
+ aspect-ratio:auto;
+ object-fit:contain;
+ background:#fff;
+ border:0;
+ padding:0;
+}
+.evidence-image:hover .evidence-image-frame img{transform:none}
