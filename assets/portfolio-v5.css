@@ -1169,3 +1169,42 @@ details.evidence-disclosure[open]>summary .plus::after{transform:rotate(60deg)}
 .case-steps li::before{content:counter(case-step,decimal-leading-zero);display:block;font-size:12px;color:var(--accent);margin-bottom:7px}
 @media(max-width:900px){.case-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.case-metric:nth-child(3){border-left:0;padding-left:0}.case-metric:nth-child(n+3){border-top:1px solid var(--line)}.case-variants,.case-context .evidence-gallery.is-grid-two,.case-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.case-variants,.case-context .evidence-gallery.is-grid-two,.case-steps{grid-template-columns:1fr}.case-variant h5{min-height:0}.case-study .evidence-carousel-track{--gallery-visible:1;gap:12px}.case-study .evidence-carousel-track>.evidence-image{flex-basis:100%}.case-drawing .evidence-image img{max-height:none}.case-nav{gap:4px 13px}.case-metric strong{font-size:26px}.case-metric+.case-metric{padding-left:10px}.case-metric:nth-child(3){padding-left:0}}
+
+/* Tunnel case: balanced 2×2 site context and drawing-led alternatives. */
+.case-context{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px var(--case-gap);align-items:start}
+.case-context>.evidence-gallery{display:contents}
+.case-context>.case-drawing{margin:0}
+.case-context .evidence-image{display:block}
+.case-context .evidence-image img,.case-context .case-drawing .evidence-image img{width:100%;height:auto;aspect-ratio:4/3;max-height:none;object-fit:contain;background:#fff;border:1px solid var(--line);padding:0;transform:none}
+.case-context .case-drawing .evidence-image img{padding:6px}
+.case-context .evidence-image small,.case-context .case-drawing figcaption{display:block;font-size:12px;line-height:1.45;color:var(--muted);margin:8px 0 0}
+.case-context .case-drawing figcaption .case-document-link{display:inline-flex;min-height:0;margin:5px 0 0;padding-bottom:2px}
+.case-context .case-drawing figcaption>span{display:block}
+.case-variants{grid-template-columns:minmax(0,1fr);gap:30px}
+.case-variant{padding-top:14px}
+.case-variant h5{font-size:18px;min-height:0;margin:8px 0 16px}
+.case-variant-media{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:var(--case-gap);align-items:start}
+.case-variant-scheme,.case-variant-sheet{min-width:0}
+.case-variant .case-plan{display:flex;aspect-ratio:1;align-items:center;justify-content:center;border:1px solid var(--line);background:#fff;overflow:hidden}
+.case-variant .case-plan img{width:100%;height:100%;padding:8px;object-fit:contain;transform:none}
+.case-media-caption{display:block;font-size:12px;line-height:1.45;color:var(--muted);margin-top:8px}
+.case-variant-sheet .project-document-grid.project-drawing-grid{display:block;margin:0}
+.case-variant-sheet .project-drawing-preview-card{display:block;border:1px solid var(--line);background:#fff;min-height:0;padding:0;border-radius:0;overflow:hidden}
+.case-variant-sheet .project-drawing-preview-frame{aspect-ratio:2 / 1!important;min-height:0}
+.case-variant-sheet .project-drawing-preview-frame canvas{object-fit:contain}
+.case-variant-sheet .project-drawing-preview-caption{padding:8px 10px;gap:8px}
+.case-variant-sheet .project-drawing-preview-caption .project-document-title{font-size:12px;font-weight:500}
+.case-variant-sheet .project-drawing-preview-caption .project-document-open{font-size:12px}
+.case-variant-sheet .project-drawing-preview-card:hover,.case-variant-sheet .project-drawing-preview-card:focus-visible{border-color:var(--accent)}
+.case-variant-summary{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:var(--case-gap);align-items:center;margin:15px 0 0}
+.case-variant-summary .case-variant-quantity{margin:0}
+.case-variant-summary p{margin:0;font-size:13px;line-height:1.6}
+@media(max-width:620px){
+ .case-context{grid-template-columns:minmax(0,1fr);gap:20px}
+ .case-variant-media,.case-variant-summary{grid-template-columns:minmax(0,1fr);gap:12px}
+ .case-variant-scheme{max-width:240px}
+ .case-variant-sheet{grid-row:1}
+ .case-variant h5{font-size:16px}
+ .case-variant-summary{margin-top:12px}
+ .case-variants{gap:24px}
+}
