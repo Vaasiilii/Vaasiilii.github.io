@@ -163,6 +163,20 @@ content:
             options:
               media: images
           - {name: caption, label: Caption, type: string}
+      - name: design_alternatives
+        label: Design alternatives
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{caption}"
+        fields:
+          - name: url
+            label: Alternative drawing or image
+            type: image
+            options:
+              media: images
+          - {name: caption, label: Caption, type: string}
       - name: calculations
         label: Calculation illustrations (keep order 1–7)
         type: object
@@ -239,6 +253,7 @@ content:
               extensions: [pdf]
       - {name: featured, label: Featured (reserved for later), type: boolean}
       - {name: visible, label: Show on public site, type: boolean}
+      - {name: grouped_documents, label: Use grouped drawing previews and project documents, type: boolean}
       - {name: show_media, label: Show images and PDF documents on site, type: boolean}
 
   - name: education

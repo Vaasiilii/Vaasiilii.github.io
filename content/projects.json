@@ -131,5 +131,187 @@
     "calculation_note": "The intermediate-support pile utilisation is 0.973, close to the calculated pile resistance; it should not be interpreted as a large reserve.",
     "recognition": "Nominee awarded a Silver Certificate — Golden Trezzini Awards 2026, Best Project of Building or Facility by Student.",
     "recognition_url": "https://www.goldtrezzini.ru/en/nominees/alarchin-bridge-en"
+  },
+  {
+    "slug": "orthotropic-deck-bridge-superstructure",
+    "title": "Road Bridge Superstructure with an Orthotropic Deck / Design & Analysis",
+    "kind": "Academic",
+    "discipline": "Steel bridge design · orthotropic deck · finite-element analysis",
+    "year": "2025",
+    "summary": "Three bridge superstructure schemes were compared; the selected steel bridge uses four main I-girders and an orthotropic deck, with a 473.57 m total length and a (42.30 + 6 × 63.00 + 42.30 m) span arrangement.",
+    "role": "Individual academic course project — bridge superstructure design and structural analysis.",
+    "methods": "SOFiSTiK Structural Desktop / SOFiPLUS-X / ASE / MAXIMA / Eigenvalues / TEDDY · Microsoft Excel · BridgeInfluenceAreas · finite-element modelling · staged launching analysis.",
+    "challenge": "Develop three alternative superstructure schemes for a road bridge with a 420 m navigable opening and two 60 × 10 m navigation clearances; select and develop one configuration for detailed design.",
+    "approach": "Developed three schemes: a four-I-girder steel superstructure, a twin steel-box-girder alternative with reinforced-concrete approach spans, and a combined box-girder/arch scheme. Variant 1 was selected as the most economically advantageous. The selected scheme was developed through checks of the orthotropic deck, main girders, fatigue, serviceability, local stability, connections, bearings and expansion joints. Beam-grillage and shell finite-element models were built in SOFiSTiK; moving-load positioning and load processing used BridgeInfluenceAreas and Microsoft Excel. A separate construction-stage model examined longitudinal launching and natural vibration.",
+    "outcome": "Variant 1 was selected as the most economically advantageous. The reported main-girder and orthotropic-deck strength and stability checks satisfy their stated resistance criteria. The separate launching analysis identifies a temporary-support requirement in span No. 7 and a first-mode period exceeding the stated limit at one launching position.",
+    "cover_image": "media/images/orto-visualization-01.webp",
+    "image_alt": "Perspective view of a four-girder steel bridge superstructure with an orthotropic deck.",
+    "gallery": [
+      {
+        "url": "media/images/orto-visualization-01.webp",
+        "caption": "Overall perspective of the four-girder steel superstructure and orthotropic deck"
+      },
+      {
+        "url": "media/images/orto-visualization-02.webp",
+        "caption": "Colour-coded model view of the orthotropic deck and main girders"
+      },
+      {
+        "url": "media/images/orto-visualization-03.webp",
+        "caption": "Perspective view of the steel superstructure, main girders and transverse bracing"
+      },
+      {
+        "url": "media/images/orto-visualization-04.webp",
+        "caption": "Underside view of the orthotropic deck, cross-girders and bracing"
+      }
+    ],
+    "design_alternatives": [
+      {
+        "url": "media/images/orto-variant-01-elevation.webp",
+        "caption": "Bridge elevation — Variant 1"
+      },
+      {
+        "url": "media/images/orto-variant-01-cross-section.webp",
+        "caption": "Typical cross-section — Variant 1"
+      },
+      {
+        "url": "media/images/orto-variant-02-elevation.webp",
+        "caption": "Bridge elevation — Variant 2"
+      },
+      {
+        "url": "media/images/orto-variant-02-cross-section.webp",
+        "caption": "Typical cross-section — Variant 2"
+      },
+      {
+        "url": "media/images/orto-variant-03-elevation.webp",
+        "caption": "Bridge elevation — Variant 3"
+      },
+      {
+        "url": "media/images/orto-variant-03-cross-section.webp",
+        "caption": "Typical cross-section — Variant 3"
+      }
+    ],
+    "calculations": [
+      {
+        "url": "media/images/orto-calculation-fe-model.webp",
+        "caption": "SOFiSTiK shell-element finite-element model of the bridge superstructure, with the mesh displayed"
+      },
+      {
+        "url": "media/images/orto-result-point-b-full.webp",
+        "caption": "Stress distribution at point B — longitudinal rib at the transverse-beam connection, full member view"
+      },
+      {
+        "url": "media/images/orto-result-point-b-detail.webp",
+        "caption": "Stress distribution at point B — local region around the verification point"
+      },
+      {
+        "url": "media/images/orto-result-point-c-full.webp",
+        "caption": "Stress distribution at point C — lower fibre at midspan, full longitudinal-rib view"
+      },
+      {
+        "url": "media/images/orto-result-point-c-detail.webp",
+        "caption": "Stress distribution at point C — local region around the verification point"
+      }
+    ],
+    "calculation_software": "SOFiSTiK — finite-element analysis (beam-grillage and shell-element models).",
+    "calculation_summary": "The main-girder normal-stress check reaches 259.29 MPa against a 295.00 MPa resistance (87.9% utilisation). The reported local strength and stability checks of the orthotropic deck also remain within their stated resistances.",
+    "calculation_results": [
+      {
+        "group": "Main girder · strength",
+        "check": "Normal stress",
+        "result": "259.29 MPa",
+        "limit": "295.00 MPa",
+        "utilisation": "87.9%",
+        "location": "Main-girder normal-stress verification, explanatory note §4.5.1."
+      },
+      {
+        "group": "Main girder · strength",
+        "check": "Shear stress at support",
+        "result": "68.94 MPa",
+        "limit": "171.76 MPa",
+        "utilisation": "40.1%",
+        "location": "Support section; explanatory note §4.5.2."
+      },
+      {
+        "group": "Orthotropic deck · strength",
+        "check": "Longitudinal rib — lower fibre",
+        "result": "125.07 MPa",
+        "limit": "295.00 MPa",
+        "utilisation": "42.4%",
+        "location": "At the connection to the transverse beam, verification point B."
+      },
+      {
+        "group": "Orthotropic deck · strength",
+        "check": "Transverse rib — lower flange",
+        "result": "7.20 MPa",
+        "limit": "295.00 MPa",
+        "utilisation": "2.4%",
+        "location": "At midspan of the transverse beam, verification point C."
+      },
+      {
+        "group": "Orthotropic deck · strength",
+        "check": "Deck plate — point D1",
+        "result": "52.43 MPa",
+        "limit": "324.50 MPa",
+        "utilisation": "16.2%",
+        "location": "Combined-stress verification of the deck plate at point D1."
+      },
+      {
+        "group": "Orthotropic deck · stability",
+        "check": "Overall plate stability",
+        "result": "10.72 MPa",
+        "limit": "82.895 MPa",
+        "utilisation": "12.9%",
+        "location": "Overall stability check of the orthotropic plate."
+      },
+      {
+        "group": "Orthotropic deck · stability",
+        "check": "Longitudinal rib stability",
+        "result": "104.35 MPa",
+        "limit": "295.00 MPa",
+        "utilisation": "35.4%",
+        "location": "Stability verification of the longitudinal rib."
+      },
+      {
+        "group": "Launching stage · vibration",
+        "check": "First-mode period at 293 m advance",
+        "result": "4.17 s",
+        "limit": "3.00 s",
+        "utilisation": "138.9%",
+        "location": "At 293 m of launching, 1 m before intermediate support No. 6; exceeds the criterion stated in the report."
+      },
+      {
+        "group": "Launching stage · structural arrangement",
+        "check": "Bending-moment envelope",
+        "result": "Temporary support required in span No. 7",
+        "location": "The report states that the superstructure capacity is insufficient for launching-stage bending moments and calls for a more detailed check including longitudinal and transverse bracing."
+      }
+    ],
+    "calculation_note": "The staged-launching analysis identifies two construction-stage findings: a first-mode period of 4.17 s at 293 m of launching, above the stated 3.00 s criterion, and the need for a temporary support in span No. 7 because of the launching-stage bending-moment demand. The report recommends a more detailed check including longitudinal and transverse bracing.",
+    "drawings": [
+      {
+        "label": "Variant design — bridge elevations and cross-sections (Sheet 1 of 2)",
+        "url": "media/docs/orto-drawing-01-variant-design.pdf",
+        "highlight": true
+      },
+      {
+        "label": "Block layout, superstructure cross-section and structural details (Sheet 2 of 2)",
+        "url": "media/docs/orto-drawing-02-structural-details.pdf",
+        "highlight": true
+      }
+    ],
+    "documents": [
+      {
+        "label": "Explanatory note — bridge superstructure with an orthotropic deck",
+        "url": "media/docs/orto-explanatory-note.pdf"
+      },
+      {
+        "label": "SOFiSTiK calculation report — orthotropic deck and launching analysis",
+        "url": "media/docs/orto-sofistik-calculation-report.pdf"
+      }
+    ],
+    "grouped_documents": true,
+    "featured": false,
+    "visible": false,
+    "show_media": true
   }
 ]

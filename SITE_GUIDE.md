@@ -129,3 +129,13 @@
 - Eight earlier text-only project entries and their unused media have been removed from the current branch to prepare for fresh, individually reviewed project packages. The preceding commit retains the original material in Git history.
 - Empty project categories are not rendered. Academic and professional categories appear automatically when corresponding visible project records are added.
 - The asset manifest is reconciled with the retained project files. Future project packages should be reviewed for confidentiality, added under unique project slugs, and checked for missing links before publication. Software entries, CVs and other sections remain unchanged.
+
+## Orthotropic-deck bridge project — 27 November 2026
+
+- A hidden academic-project draft is prepared in `content/projects.json` under slug `orthotropic-deck-bridge-superstructure`.
+- The source package contains an explanatory note, a separate 28-page SOFiSTiK calculation report, and two one-page drawing PDFs. The main explanatory-note PDF contains 149 PDF pages; its title block states 146 sheets.
+- The design compares three superstructure variants. Variant 1 is selected as the most economically advantageous; its stated span arrangement is 42.30 + 6 × 63.00 + 42.30 m, total length 473.57 m and opening 436.00 m.
+- The draft uses separate Visualisations, Design alternatives, Calculation illustrations, Technical drawings, Critical calculation results, and Project documents sections. The renderer supports `design_alternatives` and `grouped_documents` for projects using the Alarchin-style hierarchy.
+- Project media paths are prepared under `media/images/orto-*` and `media/docs/orto-*`. The draft remains hidden until all binary assets are uploaded and verified; `asset-manifest.json` must then be updated.
+- Key reported results include main-girder normal stress 259.29/295 MPa, main-girder shear stress 68.94/171.76 MPa, orthotropic-deck strength/stability checks, a 4.17 s first-mode period at 293 m of launching against a 3.00 s criterion, and a reported need for a temporary support in span 7.
+- Review note: the source deflection check prints 63/400 = 0.01575 m, although the arithmetic is 0.1575 m; do not present the deflection check as verified until the source calculation is corrected or confirmed.

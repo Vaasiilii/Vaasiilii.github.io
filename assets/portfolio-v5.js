@@ -192,6 +192,7 @@ function mediaOf(x){
  };
  const section=(title,body,extra='')=>body?'<section class="project-media-section '+extra+'"><div class="project-media-heading"><h4>'+E(title)+'</h4></div>'+body+'</section>':'';
  const visualisations=imageCards(x.gallery,'visual');
+ const designAlternatives=imageCards(x.design_alternatives,'technical');
  const calculationImages=imageCards(x.calculations,'technical');
  const softwareNote=x.calculation_software?'<p class="project-calculation-software"><strong>Calculation software:</strong> '+E(x.calculation_software)+'</p>':'';
  const calculations=calculationImages?softwareNote+calculationImages:'';
@@ -205,7 +206,7 @@ function mediaOf(x){
  const drawings=fileCards(x.drawings);
  const documents=fileCards(x.documents);
  const presentation=x.presentation&&url(x.presentation.url)?fileCards([x.presentation]):'';
- const groupedDocuments=x.slug==='alarchin-bridge-rehabilitation';
+ const groupedDocuments=x.grouped_documents===true||x.slug==='alarchin-bridge-rehabilitation';
  const selectedDrawings=groupedDocuments?(x.drawings||[]).filter(d=>d.highlight===true):[];
  const remainingDrawings=groupedDocuments?(x.drawings||[]).filter(d=>d.highlight!==true):[];
  const selected=groupedDocuments?drawingPreviews(selectedDrawings):'';
@@ -217,6 +218,7 @@ function mediaOf(x){
  const disclosure=(title,body,extra='')=>body?'<details class="project-media-section project-media-disclosure '+E(extra)+'"><summary class="project-media-heading"><span class="project-results-title">'+E(title)+'</span><span class="plus" aria-hidden="true"></span></summary><div class="project-results-panel">'+body+'</div></details>':'';
  const html=[
   section('Visualisations',visualisations,'visualisations-section'),
+  section('Design alternatives',designAlternatives,'design-alternatives-section'),
   section('Calculation illustrations',calculations,'calculations-section'),
   groupedDocuments?section('Technical drawings',selected,'drawings-section'):'',
   disclosure('Critical calculation results',results,'results-section project-results-disclosure'),
