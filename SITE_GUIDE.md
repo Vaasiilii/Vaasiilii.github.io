@@ -160,3 +160,8 @@
 ## Uniform project-image frames — 27 November 2026
 
 - All project gallery images now sit inside a fixed 2:1 white canvas. The source image is contained (never cropped) and centered within the canvas; captions remain outside the frame. This keeps adjacent cards the same height despite differing source-image aspect ratios and avoids layout jumps. The rule applies to visualisations, design alternatives, calculation illustrations and other `evidence-image` galleries, including carousels.
+
+## White image canvas is opt-in per image — 27 November 2026
+
+- The fixed 2:1 white canvas is applied only to media entries with `white_canvas: true`. It is enabled for the 15 white-background visualisations, alternatives and calculation illustrations in the Orto project. Alarchin gallery images have no flag and retain their original image sizing, aspect ratio and treatment.
+- Pages CMS exposes the `white_canvas` boolean on each Visualisations, Design Alternatives and Calculation Illustrations item so future white-background drawings can opt in individually. Ordinary photographs and renderings should leave it unchecked.

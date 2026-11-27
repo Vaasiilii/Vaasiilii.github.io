@@ -149,67 +149,82 @@
     "gallery": [
       {
         "url": "media/images/orto-visualization-01.webp",
-        "caption": "Overall perspective of the four-girder steel superstructure and orthotropic deck"
+        "caption": "Overall perspective of the four-girder steel superstructure and orthotropic deck",
+        "white_canvas": true
       },
       {
         "url": "media/images/orto-visualization-02.webp",
-        "caption": "Colour-coded model view of the orthotropic deck and main girders"
+        "caption": "Colour-coded model view of the orthotropic deck and main girders",
+        "white_canvas": true
       },
       {
         "url": "media/images/orto-visualization-03.webp",
-        "caption": "Perspective view of the steel superstructure, main girders and transverse bracing"
+        "caption": "Perspective view of the steel superstructure, main girders and transverse bracing",
+        "white_canvas": true
       },
       {
         "url": "media/images/orto-visualization-04.webp",
-        "caption": "Underside view of the orthotropic deck, cross-girders and bracing"
+        "caption": "Underside view of the orthotropic deck, cross-girders and bracing",
+        "white_canvas": true
       }
     ],
     "design_alternatives": [
       {
         "url": "media/images/orto-variant-01-elevation.webp",
-        "caption": "Bridge elevation — Variant 1"
+        "caption": "Bridge elevation — Variant 1",
+        "white_canvas": true
       },
       {
         "url": "media/images/orto-variant-01-cross-section.webp",
-        "caption": "Typical cross-section — Variant 1"
+        "caption": "Typical cross-section — Variant 1",
+        "white_canvas": true
       },
       {
         "url": "media/images/orto-variant-02-elevation.webp",
-        "caption": "Bridge elevation — Variant 2"
+        "caption": "Bridge elevation — Variant 2",
+        "white_canvas": true
       },
       {
         "url": "media/images/orto-variant-02-cross-section.webp",
-        "caption": "Typical cross-section — Variant 2"
+        "caption": "Typical cross-section — Variant 2",
+        "white_canvas": true
       },
       {
         "url": "media/images/orto-variant-03-elevation.webp",
-        "caption": "Bridge elevation — Variant 3"
+        "caption": "Bridge elevation — Variant 3",
+        "white_canvas": true
       },
       {
         "url": "media/images/orto-variant-03-cross-section.webp",
-        "caption": "Typical cross-section — Variant 3"
+        "caption": "Typical cross-section — Variant 3",
+        "white_canvas": true
       }
     ],
     "calculations": [
       {
         "url": "media/images/orto-calculation-fe-model.webp",
-        "caption": "SOFiSTiK shell-element finite-element model of the bridge superstructure, with the mesh displayed"
+        "caption": "SOFiSTiK shell-element finite-element model of the bridge superstructure, with the mesh displayed",
+        "white_canvas": true
       },
       {
         "url": "media/images/orto-result-point-b-full.webp",
-        "caption": "Stress distribution at point B — longitudinal rib at the transverse-beam connection, full member view"
+        "caption": "Stress distribution at point B — longitudinal rib at the transverse-beam connection, full member view",
+        "white_canvas": true
       },
       {
         "url": "media/images/orto-result-point-b-detail.webp",
-        "caption": "Stress distribution at point B — local region around the verification point"
+        "caption": "Stress distribution at point B — local region around the verification point",
+        "white_canvas": true
       },
       {
         "url": "media/images/orto-result-point-c-full.webp",
-        "caption": "Stress distribution at point C — lower fibre at midspan, full longitudinal-rib view"
+        "caption": "Stress distribution at point C — lower fibre at midspan, full longitudinal-rib view",
+        "white_canvas": true
       },
       {
         "url": "media/images/orto-result-point-c-detail.webp",
-        "caption": "Stress distribution at point C — local region around the verification point"
+        "caption": "Stress distribution at point C — local region around the verification point",
+        "white_canvas": true
       }
     ],
     "calculation_software": "SOFiSTiK — finite-element analysis (beam-grillage and shell-element models).",

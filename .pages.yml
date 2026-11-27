@@ -163,6 +163,7 @@ content:
             options:
               media: images
           - {name: caption, label: Caption, type: string}
+          - {name: white_canvas, label: Use white 2:1 canvas for this image, type: boolean}
       - name: design_alternatives
         label: Design alternatives
         type: object
@@ -177,6 +178,7 @@ content:
             options:
               media: images
           - {name: caption, label: Caption, type: string}
+          - {name: white_canvas, label: Use white 2:1 canvas for this image, type: boolean}
       - name: calculations
         label: Calculation illustrations (keep order 1–7)
         type: object
@@ -191,6 +193,7 @@ content:
             options:
               media: images
           - {name: caption, label: Caption, type: string}
+          - {name: white_canvas, label: Use white 2:1 canvas for this image, type: boolean}
       - {name: calculation_software, label: Calculation software / FEM, type: string}
       - {name: calculation_summary, label: Calculation interpretation / governing girder note, type: text}
       - name: calculation_results

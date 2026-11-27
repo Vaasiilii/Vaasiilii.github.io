@@ -1079,26 +1079,9 @@ details.evidence-disclosure[open]>summary .plus::after{transform:rotate(60deg)}
 @media(min-width:1550px){
  :root{--main:min(1500px,calc(100vw - 380px))}
 }
-.evidence-image img{
- height:auto;
- aspect-ratio:auto;
- object-fit:contain;
- background:#fff;
-}
-.evidence-image.is-technical img{
- aspect-ratio:1.65;
- object-fit:contain;
- background:#fff;
-}
 .evidence-gallery.is-grid-two{
  grid-template-columns:repeat(2,minmax(0,1fr));
  gap:24px;
-}
-.evidence-gallery.is-grid-two .evidence-image img{
- height:auto;
- aspect-ratio:auto;
- object-fit:contain;
- background:#fff;
 }
 @media(max-width:780px){
  .evidence-gallery.is-grid-two{grid-template-columns:minmax(0,1fr);gap:22px}
@@ -1127,6 +1110,13 @@ details.evidence-disclosure[open]>summary .plus::after{transform:rotate(60deg)}
  display:block;
  width:100%;
  height:100%;
+ aspect-ratio:auto;
+ object-fit:contain;
+ background:#fff;
+ border:0;
+ padding:0;
+}
+.evidence-image.is-technical .evidence-image-frame img{
  aspect-ratio:auto;
  object-fit:contain;
  background:#fff;

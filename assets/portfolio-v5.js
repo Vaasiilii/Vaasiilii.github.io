@@ -166,7 +166,9 @@ function mediaOf(x){
   const valid=(items||[]).filter(g=>url(g.url));
   const cards=valid.map(g=>{
    const src=url(g.url),caption=short(g.caption||x.title||'Project image');
-   return '<button type="button" class="evidence-image '+(kind==='technical'?'is-technical':'')+'" data-lightbox-src="'+E(src)+'" data-lightbox-caption="'+E(caption)+'" data-lightbox-alt="'+E(caption)+'" aria-label="Open image full screen: '+E(caption)+'"><span class="evidence-image-frame"><img alt="'+E(caption)+'" src="'+E(src)+'" loading="lazy"></span><small>'+E(caption)+'</small></button>';
+   const image='<img alt="'+E(caption)+'" src="'+E(src)+'" loading="lazy">';
+   const media=g.white_canvas===true?'<span class="evidence-image-frame">'+image+'</span>':image;
+   return '<button type="button" class="evidence-image '+(kind==='technical'?'is-technical':'')+'" data-lightbox-src="'+E(src)+'" data-lightbox-caption="'+E(caption)+'" data-lightbox-alt="'+E(caption)+'" aria-label="Open image full screen: '+E(caption)+'">'+media+'<small>'+E(caption)+'</small></button>';
   }).join('');
   if(!cards)return '';
   if(x.gallery_carousel===true&&valid.length<=4)return '<div class="evidence-gallery is-grid-two">'+cards+'</div>';
