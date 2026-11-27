@@ -177,8 +177,8 @@ function mediaOf(x){
  };
  const fileCards=(items)=>{
   const cards=(items||[]).filter(d=>url(d.url)).map(d=>{
-   const href=url(d.url),powerPoint=/\\.pptx?$/i.test(href.split(/[?#]/)[0]);
-   const label=short(d.label||'Project document').replace(/\\s*·\\s*(PDF|PPTX)$/i,'');
+   const href=url(d.url),powerPoint=/\.pptx?$/i.test(href.split(/[?#]/)[0]);
+   const label=short(d.label||'Project document').replace(/\s*·\s*(PDF|PPTX)$/i,'');
    const type=powerPoint?'PPTX':'PDF',action=powerPoint?'Download':'Open';
    const icon=powerPoint?uiIcon('down'):uiIcon('external');
    const attrs=powerPoint?' download':' target="_blank" rel="noopener noreferrer"';
@@ -188,8 +188,8 @@ function mediaOf(x){
  };
  const documentGrid=(items,extra='')=>{
   const cards=items.filter(d=>url(d.url)).map(d=>{
-   const href=url(d.url),powerPoint=/\\.pptx?$/i.test(href.split(/[?#]/)[0]);
-   const label=short(d.label||'Project document').replace(/\\s*·\\s*(PDF|PPTX)$/i,'');
+   const href=url(d.url),powerPoint=/\.pptx?$/i.test(href.split(/[?#]/)[0]);
+   const label=short(d.label||'Project document').replace(/\s*·\s*(PDF|PPTX)$/i,'');
    const type=powerPoint?'PPTX':'PDF',action=powerPoint?'Download':'Open';
    const icon=powerPoint?uiIcon('down'):uiIcon('external');
    const attrs=powerPoint?' download':' target="_blank" rel="noopener noreferrer"';
