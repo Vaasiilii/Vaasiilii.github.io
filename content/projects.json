@@ -415,5 +415,232 @@
     "calculation_note": "The selected support system comprises Larsen AZ 38 sheet piles and Ø820 × 16 mm welded steel pipe struts. The presentation also checks adjacent-building settlement against a 30 mm criterion and the relative settlement difference between free-standing foundations (0.0010).",
     "grouped_documents": true,
     "gallery_carousel": true
+  },
+  {
+    "slug": "urban-shallow-tunnel",
+    "title": "Urban Pedestrian Tunnel / Shallow Cut-and-Cover Design",
+    "kind": "Academic",
+    "discipline": "Underground structures · urban transport · reinforced concrete · finite-element analysis",
+    "year": "2024",
+    "summary": "Academic design of a shallow pedestrian underpass in Saint Petersburg, from pedestrian-flow observations and three layout alternatives to structural analysis and construction planning.",
+    "role": "Individual academic design project — site investigation, alternative development, structural modelling, calculation documentation and construction planning.",
+    "methods": "Pedestrian-flow survey · comparative design · SOFiSTiK / SOFiPLUS-X / SSD / Report Browser · Winkler foundation model · reinforced-concrete design · cut-and-cover construction",
+    "challenge": "Design a grade-separated pedestrian connection at the Savushkina Street / Lipovaya Alley intersection near Staraya Derevnya transport interchange, addressing pedestrian–vehicle conflicts, accessibility and future pedestrian demand.",
+    "approach": "Undertook short-duration pedestrian counts, estimated design demand, developed three H-shaped alternatives, compared the reported construction quantities, modelled the selected tunnel lining with a Winkler elastic foundation in SOFiSTiK, and developed detailed sections and a construction sequence.",
+    "outcome": "Selected Variant 1, a precast reinforced-concrete H-shaped tunnel with a 33.80 m main passage, four passenger lifts and 0.88 m of overburden. The report includes load combinations, internal-force diagrams, sectional checks and a construction scheme. Academic design study; not a constructed project.",
+    "cover_image": "media/images/tunnel-site-intersection.webp",
+    "image_alt": "Existing Savushkina Street and Lipovaya Alley intersection, Saint Petersburg",
+    "gallery": [
+      {
+        "url": "media/images/tunnel-site-intersection.webp",
+        "caption": "Existing intersection — pedestrian and vehicle conflicts"
+      },
+      {
+        "url": "media/images/tunnel-site-aerial.webp",
+        "caption": "Aerial view of the project area"
+      },
+      {
+        "url": "media/images/tunnel-site-pedestrian-plan.webp",
+        "caption": "Site context and pedestrian movement directions"
+      }
+    ],
+    "calculation_software": "SOFiSTiK finite-element analysis — SOFiPLUS-X, Structural Desktop (SSD), Report Browser.",
+    "calculation_summary": "The report adopts the N14 traffic combination with permanent and pedestrian loads for subsequent sectional checks. Reported design and characteristic actions are distinguished below. These are academic calculation results, not an independent structural safety certification.",
+    "calculation_results": [
+      {
+        "group": "ULS · section 1",
+        "check": "Bending moment",
+        "result": "609.4 kN·m",
+        "location": "Reported design action; §4.1.2.1 (printed p. 40). The stated resistance is 716.43 kN·m, but the printed substitution is inconsistent."
+      },
+      {
+        "group": "ULS · section 2",
+        "check": "Shear force",
+        "result": "354.1 kN",
+        "location": "Reported design action; §4.1.2.2 (printed pp. 40–41). The report states 429.0 kN for the concrete shear check."
+      },
+      {
+        "group": "SLS · section 1",
+        "check": "Characteristic bending moment",
+        "result": "608.7 kN·m",
+        "location": "Reported moment used in the crack-width calculation; §4.1.3 (printed p. 41)."
+      },
+      {
+        "group": "SLS · section 1",
+        "check": "Crack width (reported)",
+        "result": "0.18 mm",
+        "limit": "0.20 mm",
+        "location": "§4.1.3 (printed pp. 41–42). The crack-width coefficient and reinforcement-radius substitution require reconciliation."
+      }
+    ],
+    "calculation_note": "Source review: the bending-resistance substitution and inclined-crack compression calculation contain inconsistent intermediate numbers; the crack-width formula and reinforcement-radius substitution also differ within the source. Reported resistance and crack-width values are not represented as independently verified passes.",
+    "documents": [
+      {
+        "url": "media/docs/tunnel-design-report-ru.pdf",
+        "label": "Design and calculation report · Russian · 53 pages"
+      },
+      {
+        "url": "media/docs/tunnel-drawing-album.pdf",
+        "label": "Complete drawing album · 7 numbered sheets + cover"
+      }
+    ],
+    "grouped_documents": true,
+    "gallery_carousel": true,
+    "featured": true,
+    "visible": true,
+    "show_media": true,
+    "case_study": {
+      "metrics": [
+        {
+          "value": "8,000",
+          "unit": "people/h",
+          "label": "Design pedestrian demand"
+        },
+        {
+          "value": "33.80",
+          "unit": "m",
+          "label": "Selected main passage length"
+        },
+        {
+          "value": "4",
+          "unit": "lifts",
+          "label": "Step-free access"
+        },
+        {
+          "value": "610.02",
+          "unit": "m³",
+          "label": "Reported total work quantities"
+        }
+      ],
+      "context_note": "September 2024 observations underpin an estimated design demand of 8,000 people/h (not a measured peak). The report adopts G-4 tunnel clearance. The study links metro, rail, bus and tram stops, surrounding services and park destinations.",
+      "variants": [
+        {
+          "name": "Variant 01",
+          "heading": "Precast reinforced concrete",
+          "description": "H-shaped arrangement; main passage 33.80 m, stair approaches 16.80 m. Selected on the reported quantity comparison.",
+          "volume": "610.02",
+          "length": "33.80 m",
+          "chosen": true,
+          "image": "media/images/tunnel-variant-01-plan.webp",
+          "pdf": "media/docs/tunnel-drawing-variant-01.pdf"
+        },
+        {
+          "name": "Variant 02",
+          "heading": "In-situ reinforced concrete",
+          "description": "Angled exits 1 and 3 reduce approach distances to bus stops; main passage 17.35 m.",
+          "volume": "699.38",
+          "length": "17.35 m",
+          "chosen": false,
+          "image": "media/images/tunnel-variant-02-plan.webp",
+          "pdf": "media/docs/tunnel-drawing-variant-02.pdf"
+        },
+        {
+          "name": "Variant 03",
+          "heading": "Hybrid precast / in-situ system",
+          "description": "Additional entrances follow existing footpaths; in-situ walls and floor, mainly precast roof slabs; main passage 9.66 m.",
+          "volume": "1067.28",
+          "length": "9.66 m",
+          "chosen": false,
+          "image": "media/images/tunnel-variant-03-plan.webp",
+          "pdf": "media/docs/tunnel-drawing-variant-03.pdf"
+        }
+      ],
+      "comparison_note": "Reported quantities from Tables 3.4.1–3.4.3 (printed pp. 18–19). Totals combine concrete elements, parapets and masonry partitions; they are not a monetary cost estimate. Variant 1 is selected in the source.",
+      "topography": {
+        "url": "media/docs/tunnel-drawing-topographic-plan.pdf",
+        "label": "Topographic plan — existing utilities and site constraints",
+        "preview": "media/images/tunnel-drawing-topographic-plan.webp"
+      },
+      "structure": {
+        "url": "media/docs/tunnel-drawing-detailed-sections.pdf",
+        "label": "Detailed sections 1–1 and 2–2 of the selected tunnel",
+        "preview": "media/images/tunnel-drawing-detailed-sections.webp"
+      },
+      "model": [
+        {
+          "url": "media/images/tunnel-calculation-01.webp",
+          "caption": "SOFiPLUS-X model of the closed lining on Winkler springs",
+          "white_canvas": true
+        }
+      ],
+      "model_note": "The tunnel lining was modelled as a rigid closed frame on independent elastic springs. The report adopts a Winkler subgrade reaction coefficient of 40,000 kN/m³ for sandy loam. The design specifies B40 concrete and A400 reinforcement; detailed sectional reinforcement values remain in the source drawings and report.",
+      "design_loads": [
+        {
+          "url": "media/images/tunnel-calculation-02.webp",
+          "caption": "Design loads — A14 traffic, permanent and pedestrian actions",
+          "white_canvas": true
+        },
+        {
+          "url": "media/images/tunnel-calculation-03.webp",
+          "caption": "Design loads — N14 traffic, permanent and pedestrian actions",
+          "white_canvas": true
+        },
+        {
+          "url": "media/images/tunnel-calculation-04.webp",
+          "caption": "Design bending moment — A14 combination",
+          "white_canvas": true
+        },
+        {
+          "url": "media/images/tunnel-calculation-05.webp",
+          "caption": "Design shear force — A14 combination",
+          "white_canvas": true
+        },
+        {
+          "url": "media/images/tunnel-calculation-06.webp",
+          "caption": "Design bending moment — N14 combination",
+          "white_canvas": true
+        },
+        {
+          "url": "media/images/tunnel-calculation-07.webp",
+          "caption": "Design shear force — N14 combination",
+          "white_canvas": true
+        }
+      ],
+      "characteristic_loads": [
+        {
+          "url": "media/images/tunnel-calculation-08.webp",
+          "caption": "Characteristic loads — A14 traffic, permanent and pedestrian actions",
+          "white_canvas": true
+        },
+        {
+          "url": "media/images/tunnel-calculation-09.webp",
+          "caption": "Characteristic loads — N14 traffic, permanent and pedestrian actions",
+          "white_canvas": true
+        },
+        {
+          "url": "media/images/tunnel-calculation-10.webp",
+          "caption": "Characteristic bending moment — A14 combination",
+          "white_canvas": true
+        },
+        {
+          "url": "media/images/tunnel-calculation-11.webp",
+          "caption": "Characteristic shear force — A14 combination",
+          "white_canvas": true
+        },
+        {
+          "url": "media/images/tunnel-calculation-12.webp",
+          "caption": "Characteristic bending moment — N14 combination",
+          "white_canvas": true
+        },
+        {
+          "url": "media/images/tunnel-calculation-13.webp",
+          "caption": "Characteristic shear force — N14 combination",
+          "white_canvas": true
+        }
+      ],
+      "construction": {
+        "url": "media/docs/tunnel-drawing-construction-sequence.pdf",
+        "label": "Cut-and-cover construction sequence",
+        "preview": "media/images/tunnel-drawing-construction-sequence.webp"
+      },
+      "construction_steps": [
+        "Site preparation and pavement removal",
+        "Install sheet-pile enclosure and excavate",
+        "Prepare base, waterproofing and drainage",
+        "Install precast reinforced-concrete sections and stair blocks; complete joints",
+        "Backfill and compact in layers; extract sheet piles",
+        "Reinstate pavement, footpaths and landscaping"
+      ]
+    }
   }
 ]
