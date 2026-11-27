@@ -198,15 +198,51 @@
     "size_mb": 2.098
   },
   {
-    "project": "orto",
+    "project": "plaxis",
     "source": "Presentation for notion(3).pdf",
-    "site_path": "media/docs/orto-project-presentation-en.pdf",
+    "site_path": "media/docs/plaxis-excavation-presentation-en.pdf",
     "size_mb": 1.349
   },
   {
-    "project": "orto",
+    "project": "plaxis",
     "source": "Presentation for notion(2).pptx",
-    "site_path": "media/docs/orto-project-presentation-en.pptx",
+    "site_path": "media/docs/plaxis-excavation-presentation-en.pptx",
     "size_mb": 2.267
+  },
+  {
+    "project": "plaxis",
+    "source": "plaxis-slide-2.webp",
+    "site_path": "media/images/plaxis-slide-2.webp",
+    "size_mb": 0.05
+  },
+  {
+    "project": "plaxis",
+    "source": "plaxis-slide-6.webp",
+    "site_path": "media/images/plaxis-slide-6.webp",
+    "size_mb": 0.029
+  },
+  {
+    "project": "plaxis",
+    "source": "plaxis-slide-11.webp",
+    "site_path": "media/images/plaxis-slide-11.webp",
+    "size_mb": 0.081
+  },
+  {
+    "project": "plaxis",
+    "source": "plaxis-slide-12.webp",
+    "site_path": "media/images/plaxis-slide-12.webp",
+    "size_mb": 0.041
+  },
+  {
+    "project": "plaxis",
+    "source": "plaxis-slide-17.webp",
+    "site_path": "media/images/plaxis-slide-17.webp",
+    "size_mb": 0.097
+  },
+  {
+    "project": "plaxis",
+    "source": "plaxis-slide-18.webp",
+    "site_path": "media/images/plaxis-slide-18.webp",
+    "size_mb": 0.068
   }
 ]
