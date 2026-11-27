@@ -324,18 +324,96 @@
         "url": "media/docs/orto-sofistik-calculation-report.pdf"
       }
     ],
-    "presentation": {
-      "label": "English project presentation",
-      "url": "media/docs/orto-project-presentation-en.pdf"
-    },
-    "presentation_source": {
-      "label": "Editable PowerPoint presentation",
-      "url": "media/docs/orto-project-presentation-en.pptx"
-    },
     "grouped_documents": true,
     "featured": false,
     "visible": true,
     "show_media": true,
+    "gallery_carousel": true
+  },
+  {
+    "slug": "excavation-plaxis-geotechnical-model",
+    "title": "Excavation / PLAXIS Analysis",
+    "kind": "Academic",
+    "discipline": "Geotechnical engineering · excavation support design",
+    "year": "2025",
+    "summary": "PLAXIS 2D finite-element analysis of a sheet-pile-supported excavation, including staged construction, soil–structure interaction and the assessment of adjacent-building settlements.",
+    "role": "Individual academic project — geotechnical modelling and excavation-support design.",
+    "methods": "PLAXIS 2D · finite-element modelling · soil–structure interaction · staged excavation · pore-pressure analysis",
+    "challenge": "Assess the behaviour of a sheet-pile-supported excavation in a built-up environment, accounting for the construction sequence, pore-pressure response and effects on neighbouring foundations.",
+    "approach": "Developed a two-dimensional finite-element model in PLAXIS 2D using the engineering-geological profile and selected support layout. Analysed the excavation in construction stages, including installation of the sheet-pile wall and struts, sequential excavation, pore-pressure response, and deformation of the surrounding soil and nearby foundations. Selected the sheet-pile and strut sections through iterative checks.",
+    "outcome": "Selected Larsen AZ 38 sheet piles and welded steel pipe struts Ø820 × 16 mm. The reported maximum sheet-pile bending moment is 602.2 kN·m, with a verification ratio of 0.4686 (<1.0).",
+    "cover_image": "media/images/plaxis-slide-17.webp",
+    "image_alt": "Selected PLAXIS 2D finite-element analysis illustrations for a sheet-pile-supported excavation.",
+    "gallery": [
+      {
+        "url": "media/images/plaxis-slide-2.webp",
+        "caption": "Selected PLAXIS analysis illustration — slide 02"
+      },
+      {
+        "url": "media/images/plaxis-slide-6.webp",
+        "caption": "Selected PLAXIS analysis illustration — slide 06"
+      },
+      {
+        "url": "media/images/plaxis-slide-11.webp",
+        "caption": "Selected PLAXIS analysis illustration — slide 11"
+      },
+      {
+        "url": "media/images/plaxis-slide-12.webp",
+        "caption": "Selected PLAXIS analysis illustration — slide 12"
+      },
+      {
+        "url": "media/images/plaxis-slide-17.webp",
+        "caption": "Selected PLAXIS analysis illustration — slide 17"
+      },
+      {
+        "url": "media/images/plaxis-slide-18.webp",
+        "caption": "Selected PLAXIS analysis illustration — slide 18"
+      }
+    ],
+    "documents": [],
+    "featured": false,
+    "visible": true,
+    "show_media": true,
+    "presentation": {
+      "label": "English project presentation",
+      "url": "media/docs/plaxis-excavation-presentation-en.pdf"
+    },
+    "presentation_source": {
+      "label": "Editable PowerPoint presentation",
+      "url": "media/docs/plaxis-excavation-presentation-en.pptx"
+    },
+    "calculation_software": "PLAXIS 2D — finite-element modelling of soil–structure interaction.",
+    "calculation_summary": "The model evaluates the excavation in staged construction, including ground response, pore-pressure changes and the effect on adjacent foundations. Reported vertical displacements at the assessment points are −28.85, −28.78 and −27.26 mm. The maximum sheet-pile bending moment is 602.2 kN·m, with a reported verification ratio of 0.4686 (<1.0).",
+    "calculation_results": [
+      {
+        "group": "Sheet-pile wall",
+        "check": "Bending verification",
+        "result": "602.2 kN·m",
+        "limit": "1.0",
+        "utilisation": "0.4686",
+        "location": "Governing sheet-pile section in the PLAXIS-supported excavation analysis."
+      },
+      {
+        "group": "Ground response",
+        "check": "Vertical displacement — assessment point 1",
+        "result": "−28.85 mm",
+        "location": "PLAXIS 2D finite-element results."
+      },
+      {
+        "group": "Ground response",
+        "check": "Vertical displacement — assessment point 2",
+        "result": "−28.78 mm",
+        "location": "PLAXIS 2D finite-element results."
+      },
+      {
+        "group": "Ground response",
+        "check": "Vertical displacement — assessment point 3",
+        "result": "−27.26 mm",
+        "location": "PLAXIS 2D finite-element results."
+      }
+    ],
+    "calculation_note": "The selected support system comprises Larsen AZ 38 sheet piles and Ø820 × 16 mm welded steel pipe struts. The presentation also checks adjacent-building settlement against a 30 mm criterion and the relative settlement difference between free-standing foundations (0.0010).",
+    "grouped_documents": true,
     "gallery_carousel": true
   }
 ]
