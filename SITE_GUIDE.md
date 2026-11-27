@@ -145,3 +145,9 @@
 - All 19 uploaded media files match the prepared package by Git blob SHA. The project is visible under Academic projects; the source explanatory note is retained without correcting its arithmetic typo, and that deflection verification remains excluded from the result cards.
 - The `gallery_carousel` project option enables separate manual horizontal carousels for visualisations, alternatives and calculation illustrations. Desktop shows three images, tablet two, phone one; arrows advance one image, native horizontal scrolling supports swipe, and the existing full-screen viewer remains available. No autoplay is used for technical evidence.
 - Drawing previews and grouped project documents retain the Alarchin-style layout. The 19 media paths are added to the asset manifest. No other project content is changed.
+
+## Project gallery and desktop layout refinement — 27 November 2026
+
+- On wide screens (1550 px and above), the page container expands responsively to a maximum 1500 px while reserving space for the fixed right-side section index.
+- Project image canvases are pure white. Main visualisations preserve their original aspect ratio and are not cropped.
+- For a project with carousel mode enabled, galleries with four or fewer images render as a full-width vertical stack. Galleries with five or more images retain manual horizontal navigation (three visible on desktop, two on tablet, one on mobile). Existing Alarchin galleries are not changed by this project-specific rule.

@@ -1074,3 +1074,29 @@ details.evidence-disclosure[open]>summary .plus::after{transform:rotate(60deg)}
 .evidence-carousel-buttons .ui-icon{width:17px;height:17px}
 @media(max-width:900px){.evidence-gallery.evidence-carousel-track{--gallery-visible:2;gap:12px}.evidence-carousel-track>.evidence-image{flex-basis:calc((100% - 12px)/2)}}
 @media(max-width:560px){.evidence-gallery.evidence-carousel-track{--gallery-visible:1;gap:12px}.evidence-carousel-track>.evidence-image{flex-basis:100%}}
+
+/* Project presentation refinements — wider desktop layout and true-white image canvases. */
+@media(min-width:1550px){
+ :root{--main:min(1500px,calc(100vw - 380px))}
+}
+.evidence-image img{
+ height:auto;
+ aspect-ratio:auto;
+ object-fit:contain;
+ background:#fff;
+}
+.evidence-image.is-technical img{
+ aspect-ratio:1.65;
+ object-fit:contain;
+ background:#fff;
+}
+.evidence-gallery.is-stacked{
+ grid-template-columns:minmax(0,1fr);
+ gap:28px;
+}
+.evidence-gallery.is-stacked .evidence-image img{
+ height:auto;
+ aspect-ratio:auto;
+ object-fit:contain;
+ background:#fff;
+}

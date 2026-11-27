@@ -169,6 +169,7 @@ function mediaOf(x){
    return '<button type="button" class="evidence-image '+(kind==='technical'?'is-technical':'')+'" data-lightbox-src="'+E(src)+'" data-lightbox-caption="'+E(caption)+'" data-lightbox-alt="'+E(caption)+'" aria-label="Open image full screen: '+E(caption)+'"><img alt="'+E(caption)+'" src="'+E(src)+'" loading="lazy"><small>'+E(caption)+'</small></button>';
   }).join('');
   if(!cards)return '';
+  if(x.gallery_carousel===true&&valid.length<=4)return '<div class="evidence-gallery is-stacked">'+cards+'</div>';
   if(x.gallery_carousel!==true||valid.length<2)return '<div class="evidence-gallery">'+cards+'</div>';
   return '<div class="evidence-carousel" role="region" aria-roledescription="carousel" aria-label="'+E(label||'Project images')+'"><div class="evidence-gallery evidence-carousel-track" tabindex="0" aria-label="Browse images with arrow keys or swipe">'+cards+'</div><div class="evidence-carousel-controls"><span class="evidence-carousel-count" aria-live="polite">1 / '+valid.length+'</span><div class="evidence-carousel-buttons"><button type="button" class="evidence-carousel-prev" aria-label="Previous image" disabled>'+uiIcon('left')+'</button><button type="button" class="evidence-carousel-next" aria-label="Next image">'+uiIcon('right')+'</button></div></div></div>';
  };
