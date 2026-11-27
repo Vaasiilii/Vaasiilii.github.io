@@ -82,5 +82,119 @@
     "source": "alarchin_calculation_summary.pdf",
     "site_path": "media/docs/alarchin-calculation-summary.pdf",
     "size_mb": 0.004
+  },
+  {
+    "project": "orto",
+    "source": "orto_vizualization_1.jpg",
+    "site_path": "media/images/orto-visualization-01.webp",
+    "size_mb": 0.262
+  },
+  {
+    "project": "orto",
+    "source": "orto_vizualization_2.jpg",
+    "site_path": "media/images/orto-visualization-02.webp",
+    "size_mb": 0.293
+  },
+  {
+    "project": "orto",
+    "source": "orto_vizualization_3.jpg",
+    "site_path": "media/images/orto-visualization-03.webp",
+    "size_mb": 0.345
+  },
+  {
+    "project": "orto",
+    "source": "orto_vizualization_4.jpg",
+    "site_path": "media/images/orto-visualization-04.webp",
+    "size_mb": 0.155
+  },
+  {
+    "project": "orto",
+    "source": "orto_variant_1_facade.jpg",
+    "site_path": "media/images/orto-variant-01-elevation.webp",
+    "size_mb": 0.161
+  },
+  {
+    "project": "orto",
+    "source": "orto_variant_1_cross section.jpg",
+    "site_path": "media/images/orto-variant-01-cross-section.webp",
+    "size_mb": 0.09
+  },
+  {
+    "project": "orto",
+    "source": "orto_variant_2_facade.jpg",
+    "site_path": "media/images/orto-variant-02-elevation.webp",
+    "size_mb": 0.16
+  },
+  {
+    "project": "orto",
+    "source": "orto_variant_2_cross section.jpg",
+    "site_path": "media/images/orto-variant-02-cross-section.webp",
+    "size_mb": 0.113
+  },
+  {
+    "project": "orto",
+    "source": "orto_variant_3_facade.jpg",
+    "site_path": "media/images/orto-variant-03-elevation.webp",
+    "size_mb": 0.181
+  },
+  {
+    "project": "orto",
+    "source": "orto_variant_3_cross section.jpg",
+    "site_path": "media/images/orto-variant-03-cross-section.webp",
+    "size_mb": 0.062
+  },
+  {
+    "project": "orto",
+    "source": "orto_calculation_1.jpg",
+    "site_path": "media/images/orto-calculation-fe-model.webp",
+    "size_mb": 0.506
+  },
+  {
+    "project": "orto",
+    "source": "orto_results_Bsx_Csy_1.jpg",
+    "site_path": "media/images/orto-result-point-b-full.webp",
+    "size_mb": 0.064
+  },
+  {
+    "project": "orto",
+    "source": "orto_results_Bsx_Csy_2.jpg",
+    "site_path": "media/images/orto-result-point-b-detail.webp",
+    "size_mb": 0.074
+  },
+  {
+    "project": "orto",
+    "source": "orto_results_Bsx_Csy_3.jpg",
+    "site_path": "media/images/orto-result-point-c-full.webp",
+    "size_mb": 0.128
+  },
+  {
+    "project": "orto",
+    "source": "orto_results_Bsx_Csy_4.jpg",
+    "site_path": "media/images/orto-result-point-c-detail.webp",
+    "size_mb": 0.087
+  },
+  {
+    "project": "orto",
+    "source": "orto_drawing_1.pdf",
+    "site_path": "media/docs/orto-drawing-01-variant-design.pdf",
+    "size_mb": 0.472
+  },
+  {
+    "project": "orto",
+    "source": "orto_drawing_2.pdf",
+    "site_path": "media/docs/orto-drawing-02-structural-details.pdf",
+    "size_mb": 0.46
+  },
+  {
+    "project": "orto",
+    "source": "orto_whole_project_PZ.pdf",
+    "site_path": "media/docs/orto-explanatory-note.pdf",
+    "size_mb": 4.978
+  },
+  {
+    "project": "orto",
+    "source": "orto_calculation_PZ_sofistik.pdf",
+    "site_path": "media/docs/orto-sofistik-calculation-report.pdf",
+    "size_mb": 2.098
   }
 ]

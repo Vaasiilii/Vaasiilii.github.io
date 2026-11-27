@@ -162,12 +162,15 @@ function research(p,pubs){
 }
 function mediaOf(x){
  if(x.show_media!==true)return '';
- const imageCards=(items,kind)=>{
-  const cards=(items||[]).filter(g=>url(g.url)).map(g=>{
+ const imageCards=(items,kind,label)=>{
+  const valid=(items||[]).filter(g=>url(g.url));
+  const cards=valid.map(g=>{
    const src=url(g.url),caption=short(g.caption||x.title||'Project image');
    return '<button type="button" class="evidence-image '+(kind==='technical'?'is-technical':'')+'" data-lightbox-src="'+E(src)+'" data-lightbox-caption="'+E(caption)+'" data-lightbox-alt="'+E(caption)+'" aria-label="Open image full screen: '+E(caption)+'"><img alt="'+E(caption)+'" src="'+E(src)+'" loading="lazy"><small>'+E(caption)+'</small></button>';
   }).join('');
-  return cards?'<div class="evidence-gallery">'+cards+'</div>':'';
+  if(!cards)return '';
+  if(x.gallery_carousel!==true||valid.length<2)return '<div class="evidence-gallery">'+cards+'</div>';
+  return '<div class="evidence-carousel" role="region" aria-roledescription="carousel" aria-label="'+E(label||'Project images')+'"><div class="evidence-gallery evidence-carousel-track" tabindex="0" aria-label="Browse images with arrow keys or swipe">'+cards+'</div><div class="evidence-carousel-controls"><span class="evidence-carousel-count" aria-live="polite">1 / '+valid.length+'</span><div class="evidence-carousel-buttons"><button type="button" class="evidence-carousel-prev" aria-label="Previous image" disabled>'+uiIcon('left')+'</button><button type="button" class="evidence-carousel-next" aria-label="Next image">'+uiIcon('right')+'</button></div></div></div>';
  };
  const fileCards=(items)=>{
   const cards=(items||[]).filter(d=>url(d.url)).map(d=>{
@@ -191,9 +194,9 @@ function mediaOf(x){
   return cards?'<div class="project-document-grid project-drawing-grid">'+cards+'</div>':'';
  };
  const section=(title,body,extra='')=>body?'<section class="project-media-section '+extra+'"><div class="project-media-heading"><h4>'+E(title)+'</h4></div>'+body+'</section>':'';
- const visualisations=imageCards(x.gallery,'visual');
- const designAlternatives=imageCards(x.design_alternatives,'technical');
- const calculationImages=imageCards(x.calculations,'technical');
+ const visualisations=imageCards(x.gallery,'visual','Visualisations');
+ const designAlternatives=imageCards(x.design_alternatives,'technical','Design alternatives');
+ const calculationImages=imageCards(x.calculations,'technical','Calculation illustrations');
  const softwareNote=x.calculation_software?'<p class="project-calculation-software"><strong>Calculation software:</strong> '+E(x.calculation_software)+'</p>':'';
  const calculations=calculationImages?softwareNote+calculationImages:'';
  const resultCards=(x.calculation_results||[]).map(r=>{
@@ -363,6 +366,40 @@ function navigation(){
  scrollPosition();choose();setMenu(false);setSide(false);
 }
 
+function setupEvidenceCarousels(){
+ $$('.evidence-carousel').forEach(root=>{
+  const track=$('.evidence-carousel-track',root),items=Array.from(track.children);
+  const prev=$('.evidence-carousel-prev',root),next=$('.evidence-carousel-next',root),count=$('.evidence-carousel-count',root);
+  const offsets=()=>items.map(item=>item.offsetLeft-items[0].offsetLeft);
+  const maximum=()=>Math.max(0,track.scrollWidth-track.clientWidth);
+  const index=()=>{const positions=offsets(),left=track.scrollLeft;return positions.reduce((best,pos,i)=>Math.abs(Math.min(pos,maximum())-left)<Math.abs(Math.min(positions[best],maximum())-left)?i:best,0)};
+  const visible=()=>Math.max(1,Math.min(items.length,Number.parseInt(getComputedStyle(track).getPropertyValue('--gallery-visible'),10)||1));
+  function sync(){
+   if(!track.clientWidth)return;
+   const n=visible(),maxStart=Math.max(0,items.length-n),i=Math.min(index(),maxStart);
+   prev.disabled=track.scrollLeft<=2;
+   next.disabled=track.scrollLeft>=maximum()-2;
+   const label=(i+1)+'–'+Math.min(items.length,i+n)+' / '+items.length;
+   if(count.textContent!==label)count.textContent=label;
+  }
+  function move(step){
+   const maxStart=Math.max(0,items.length-visible());
+   const i=Math.max(0,Math.min(maxStart,index()+step));
+   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+   track.scrollTo({left:Math.min(maximum(),offsets()[i]),behavior:reduced?'auto':'smooth'});
+  }
+  prev.addEventListener('click',()=>move(-1));next.addEventListener('click',()=>move(1));
+  track.addEventListener('scroll',sync,{passive:true});
+  track.addEventListener('keydown',event=>{
+   if(event.key==='ArrowLeft'||event.key==='ArrowRight'){event.preventDefault();move(event.key==='ArrowLeft'?-1:1)}
+  });
+  if('ResizeObserver' in window){const observer=new ResizeObserver(sync);observer.observe(track)}
+  else window.addEventListener('resize',sync);
+  const project=root.closest('details.project-entry');if(project)project.addEventListener('toggle',sync);
+  sync();
+ });
+}
+
 function setupEvidenceLightbox(){
  if(document.querySelector('.evidence-lightbox'))return;
  const dialog=document.createElement('dialog');
@@ -475,6 +512,7 @@ async function main(){
  safeInit('publication controls',()=>setupPublications());
  safeInit('contact actions',()=>setupContactActions());
  safeInit('evidence lightbox',()=>setupEvidenceLightbox());
+ safeInit('evidence carousels',()=>setupEvidenceCarousels());
  safeInit('drawing previews',()=>setupDrawingPreviews());
  safeInit('back to top',()=>setupTopLink());
  safeInit('navigation',()=>navigation());

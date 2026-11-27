@@ -139,3 +139,9 @@
 - Project media paths are prepared under `media/images/orto-*` and `media/docs/orto-*`. The draft remains hidden until all binary assets are uploaded and verified; `asset-manifest.json` must then be updated.
 - Key reported results include main-girder normal stress 259.29/295 MPa, main-girder shear stress 68.94/171.76 MPa, orthotropic-deck strength/stability checks, a 4.17 s first-mode period at 293 m of launching against a 3.00 s criterion, and a reported need for a temporary support in span 7.
 - Review note: the source deflection check prints 63/400 = 0.01575 m, although the arithmetic is 0.1575 m; do not present the deflection check as verified until the source calculation is corrected or confirmed.
+
+## Orthotropic-deck bridge published — 27 November 2026
+
+- All 19 uploaded media files match the prepared package by Git blob SHA. The project is visible under Academic projects; the source explanatory note is retained without correcting its arithmetic typo, and that deflection verification remains excluded from the result cards.
+- The `gallery_carousel` project option enables separate manual horizontal carousels for visualisations, alternatives and calculation illustrations. Desktop shows three images, tablet two, phone one; arrows advance one image, native horizontal scrolling supports swipe, and the existing full-screen viewer remains available. No autoplay is used for technical evidence.
+- Drawing previews and grouped project documents retain the Alarchin-style layout. The 19 media paths are added to the asset manifest. No other project content is changed.

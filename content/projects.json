@@ -311,7 +311,8 @@
     ],
     "grouped_documents": true,
     "featured": false,
-    "visible": false,
-    "show_media": true
+    "visible": true,
+    "show_media": true,
+    "gallery_carousel": true
   }
 ]

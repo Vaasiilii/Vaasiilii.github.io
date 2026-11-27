@@ -1057,3 +1057,20 @@ details.evidence-disclosure[open]>summary .plus::after{transform:rotate(60deg)}
 .project-recognition-source{margin:0 0 18px;font-size:13px;line-height:1.5}
 .project-recognition-source a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--line)}
 .project-recognition-source a:hover,.project-recognition-source a:focus-visible{border-color:var(--accent)}
+
+/* Compact, manually browsable project galleries. Preserve the original image viewer. */
+.evidence-carousel{min-width:0}
+.evidence-gallery.evidence-carousel-track{--gallery-visible:3;display:flex;position:relative;gap:16px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--line) transparent;padding-bottom:8px;align-items:flex-start}
+.evidence-carousel-track>.evidence-image{flex:0 0 calc((100% - 32px)/3);width:auto;min-width:0;scroll-snap-align:start;scroll-snap-stop:always}
+.evidence-carousel-track>.evidence-image img{object-fit:contain}
+.evidence-carousel-track:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.evidence-carousel-track>.evidence-image:focus-visible{outline-offset:-2px}
+.evidence-carousel-controls{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:4px}
+.evidence-carousel-count{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.evidence-carousel-buttons{display:flex;gap:8px}
+.evidence-carousel-buttons button{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.evidence-carousel-buttons button:not(:disabled):hover,.evidence-carousel-buttons button:focus-visible{border-color:var(--accent);color:var(--accent)}
+.evidence-carousel-buttons button:disabled{opacity:.35;cursor:default}
+.evidence-carousel-buttons .ui-icon{width:17px;height:17px}
+@media(max-width:900px){.evidence-gallery.evidence-carousel-track{--gallery-visible:2;gap:12px}.evidence-carousel-track>.evidence-image{flex-basis:calc((100% - 12px)/2)}}
+@media(max-width:560px){.evidence-gallery.evidence-carousel-track{--gallery-visible:1;gap:12px}.evidence-carousel-track>.evidence-image{flex-basis:100%}}
